@@ -2567,7 +2567,7 @@ end
 
 ## retrieve_customer_payment_method
 
-> <CustomerPaymentMethodRetrievingResponse> retrieve_customer_payment_method(customer_id, id, , opts)
+> <CustomerPaymentMethodRetrievingResponse> retrieve_customer_payment_method(customer_id, id, opts)
 
 決済手段 取得
 
@@ -2601,7 +2601,7 @@ opts = {
 
 begin
   # 決済手段 取得
-  result = api_instance.retrieve_customer_payment_method(customer_id, id, , opts)
+  result = api_instance.retrieve_customer_payment_method(customer_id, id, opts)
   p result
 rescue FincodeApiClient::ApiError => e
   puts "Error when calling DefaultApi->retrieve_customer_payment_method: #{e}"
@@ -2612,12 +2612,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CustomerPaymentMethodRetrievingResponse>, Integer, Hash)> retrieve_customer_payment_method_with_http_info(customer_id, id, , opts)
+> <Array(<CustomerPaymentMethodRetrievingResponse>, Integer, Hash)> retrieve_customer_payment_method_with_http_info(customer_id, id, opts)
 
 ```ruby
 begin
   # 決済手段 取得
-  data, status_code, headers = api_instance.retrieve_customer_payment_method_with_http_info(customer_id, id, , opts)
+  data, status_code, headers = api_instance.retrieve_customer_payment_method_with_http_info(customer_id, id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <CustomerPaymentMethodRetrievingResponse>
@@ -2651,7 +2651,7 @@ end
 
 ## retrieve_customer_payment_method_list
 
-> <CustomerPaymentMethodListRetrievingResponse> retrieve_customer_payment_method_list(customer_id, , opts)
+> <CustomerPaymentMethodListRetrievingResponse> retrieve_customer_payment_method_list(customer_id, opts)
 
 決済手段 一覧取得
 
@@ -2684,7 +2684,7 @@ opts = {
 
 begin
   # 決済手段 一覧取得
-  result = api_instance.retrieve_customer_payment_method_list(customer_id, , opts)
+  result = api_instance.retrieve_customer_payment_method_list(customer_id, opts)
   p result
 rescue FincodeApiClient::ApiError => e
   puts "Error when calling DefaultApi->retrieve_customer_payment_method_list: #{e}"
@@ -2695,12 +2695,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CustomerPaymentMethodListRetrievingResponse>, Integer, Hash)> retrieve_customer_payment_method_list_with_http_info(customer_id, , opts)
+> <Array(<CustomerPaymentMethodListRetrievingResponse>, Integer, Hash)> retrieve_customer_payment_method_list_with_http_info(customer_id, opts)
 
 ```ruby
 begin
   # 決済手段 一覧取得
-  data, status_code, headers = api_instance.retrieve_customer_payment_method_list_with_http_info(customer_id, , opts)
+  data, status_code, headers = api_instance.retrieve_customer_payment_method_list_with_http_info(customer_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <CustomerPaymentMethodListRetrievingResponse>
@@ -2733,7 +2733,7 @@ end
 
 ## retrieve_payment
 
-> <RetrievePayment200Response> retrieve_payment(id, , opts)
+> <RetrievePayment200Response> retrieve_payment(id, opts)
 
 決済 取得
 
@@ -2763,7 +2763,7 @@ opts = {
 
 begin
   # 決済 取得
-  result = api_instance.retrieve_payment(id, , opts)
+  result = api_instance.retrieve_payment(id, opts)
   p result
 rescue FincodeApiClient::ApiError => e
   puts "Error when calling DefaultApi->retrieve_payment: #{e}"
@@ -2774,12 +2774,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<RetrievePayment200Response>, Integer, Hash)> retrieve_payment_with_http_info(id, , opts)
+> <Array(<RetrievePayment200Response>, Integer, Hash)> retrieve_payment_with_http_info(id, opts)
 
 ```ruby
 begin
   # 決済 取得
-  data, status_code, headers = api_instance.retrieve_payment_with_http_info(id, , opts)
+  data, status_code, headers = api_instance.retrieve_payment_with_http_info(id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <RetrievePayment200Response>
@@ -2812,7 +2812,7 @@ end
 
 ## retrieve_payment_bulk_detail_list
 
-> <PaymentBulkDetailListRetrievingResponse> retrieve_payment_bulk_detail_list(id, , opts)
+> <PaymentBulkDetailListRetrievingResponse> retrieve_payment_bulk_detail_list(id, opts)
 
 一括決済詳細 一覧取得
 
@@ -2842,7 +2842,7 @@ opts = {
 
 begin
   # 一括決済詳細 一覧取得
-  result = api_instance.retrieve_payment_bulk_detail_list(id, , opts)
+  result = api_instance.retrieve_payment_bulk_detail_list(id, opts)
   p result
 rescue FincodeApiClient::ApiError => e
   puts "Error when calling DefaultApi->retrieve_payment_bulk_detail_list: #{e}"
@@ -2853,12 +2853,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<PaymentBulkDetailListRetrievingResponse>, Integer, Hash)> retrieve_payment_bulk_detail_list_with_http_info(id, , opts)
+> <Array(<PaymentBulkDetailListRetrievingResponse>, Integer, Hash)> retrieve_payment_bulk_detail_list_with_http_info(id, opts)
 
 ```ruby
 begin
   # 一括決済詳細 一覧取得
-  data, status_code, headers = api_instance.retrieve_payment_bulk_detail_list_with_http_info(id, , opts)
+  data, status_code, headers = api_instance.retrieve_payment_bulk_detail_list_with_http_info(id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <PaymentBulkDetailListRetrievingResponse>

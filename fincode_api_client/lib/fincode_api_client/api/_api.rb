@@ -2251,8 +2251,8 @@ module FincodeApiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :tenant_shop_id &lt;span class&#x3D;\&quot;smallText color--red-400\&quot;&gt;※ 顧客情報を共有しないプラットフォームのメインショップのみ指定可&lt;/span&gt;\\ テナントショップID。\\ このテナントショップに紐づく顧客のうち、指定したIDの顧客に紐づく決済手段からIDで指定した決済手段を取得します。 
     # @return [CustomerPaymentMethodRetrievingResponse]
-    def retrieve_customer_payment_method(customer_id, id, , opts = {})
-      data, _status_code, _headers = retrieve_customer_payment_method_with_http_info(customer_id, id, , opts)
+    def retrieve_customer_payment_method(customer_id, id, opts = {})
+      data, _status_code, _headers = retrieve_customer_payment_method_with_http_info(customer_id, id, opts)
       data
     end
 
@@ -2264,7 +2264,7 @@ module FincodeApiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :tenant_shop_id &lt;span class&#x3D;\&quot;smallText color--red-400\&quot;&gt;※ 顧客情報を共有しないプラットフォームのメインショップのみ指定可&lt;/span&gt;\\ テナントショップID。\\ このテナントショップに紐づく顧客のうち、指定したIDの顧客に紐づく決済手段からIDで指定した決済手段を取得します。 
     # @return [Array<(CustomerPaymentMethodRetrievingResponse, Integer, Hash)>] CustomerPaymentMethodRetrievingResponse data, response status code and response headers
-    def retrieve_customer_payment_method_with_http_info(customer_id, id, , opts = {})
+    def retrieve_customer_payment_method_with_http_info(customer_id, id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DefaultApi.retrieve_customer_payment_method ...'
       end
@@ -2329,8 +2329,8 @@ module FincodeApiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :tenant_shop_id &lt;span class&#x3D;\&quot;smallText color--red-400\&quot;&gt;※ 顧客情報を共有しないプラットフォームのメインショップのみ指定可&lt;/span&gt;\\ テナントショップID。\\ このテナントショップに紐づく顧客のうち、指定したIDの顧客に紐づく決済手段から一覧で取得します。 
     # @return [CustomerPaymentMethodListRetrievingResponse]
-    def retrieve_customer_payment_method_list(customer_id, , opts = {})
-      data, _status_code, _headers = retrieve_customer_payment_method_list_with_http_info(customer_id, , opts)
+    def retrieve_customer_payment_method_list(customer_id, opts = {})
+      data, _status_code, _headers = retrieve_customer_payment_method_list_with_http_info(customer_id, opts)
       data
     end
 
@@ -2341,7 +2341,7 @@ module FincodeApiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :tenant_shop_id &lt;span class&#x3D;\&quot;smallText color--red-400\&quot;&gt;※ 顧客情報を共有しないプラットフォームのメインショップのみ指定可&lt;/span&gt;\\ テナントショップID。\\ このテナントショップに紐づく顧客のうち、指定したIDの顧客に紐づく決済手段から一覧で取得します。 
     # @return [Array<(CustomerPaymentMethodListRetrievingResponse, Integer, Hash)>] CustomerPaymentMethodListRetrievingResponse data, response status code and response headers
-    def retrieve_customer_payment_method_list_with_http_info(customer_id, , opts = {})
+    def retrieve_customer_payment_method_list_with_http_info(customer_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DefaultApi.retrieve_customer_payment_method_list ...'
       end
@@ -2402,8 +2402,8 @@ module FincodeApiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :tenant_shop_id &lt;span class&#x3D;\&quot;smallText color--red-400\&quot;&gt;※ プラットフォームのメインショップのみ指定可&lt;/span&gt;\\ テナントショップID。\\ 指定したテナントショップを販売主とした決済のうち、&#x60;id&#x60;で指定した決済情報を取得します。 
     # @return [RetrievePayment200Response]
-    def retrieve_payment(id, , opts = {})
-      data, _status_code, _headers = retrieve_payment_with_http_info(id, , opts)
+    def retrieve_payment(id, opts = {})
+      data, _status_code, _headers = retrieve_payment_with_http_info(id, opts)
       data
     end
 
@@ -2414,7 +2414,7 @@ module FincodeApiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :tenant_shop_id &lt;span class&#x3D;\&quot;smallText color--red-400\&quot;&gt;※ プラットフォームのメインショップのみ指定可&lt;/span&gt;\\ テナントショップID。\\ 指定したテナントショップを販売主とした決済のうち、&#x60;id&#x60;で指定した決済情報を取得します。 
     # @return [Array<(RetrievePayment200Response, Integer, Hash)>] RetrievePayment200Response data, response status code and response headers
-    def retrieve_payment_with_http_info(id, , opts = {})
+    def retrieve_payment_with_http_info(id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DefaultApi.retrieve_payment ...'
       end
@@ -2475,8 +2475,8 @@ module FincodeApiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :tenant_shop_id &lt;span class&#x3D;\&quot;smallText color--red-400\&quot;&gt;※ プラットフォームのメインショップのみ指定可&lt;/span&gt;\\ テナントショップID。\\ 指定したテナントショップを販売主とした一括決済の詳細を一覧で取得します。 
     # @return [PaymentBulkDetailListRetrievingResponse]
-    def retrieve_payment_bulk_detail_list(id, , opts = {})
-      data, _status_code, _headers = retrieve_payment_bulk_detail_list_with_http_info(id, , opts)
+    def retrieve_payment_bulk_detail_list(id, opts = {})
+      data, _status_code, _headers = retrieve_payment_bulk_detail_list_with_http_info(id, opts)
       data
     end
 
@@ -2487,7 +2487,7 @@ module FincodeApiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :tenant_shop_id &lt;span class&#x3D;\&quot;smallText color--red-400\&quot;&gt;※ プラットフォームのメインショップのみ指定可&lt;/span&gt;\\ テナントショップID。\\ 指定したテナントショップを販売主とした一括決済の詳細を一覧で取得します。 
     # @return [Array<(PaymentBulkDetailListRetrievingResponse, Integer, Hash)>] PaymentBulkDetailListRetrievingResponse data, response status code and response headers
-    def retrieve_payment_bulk_detail_list_with_http_info(id, , opts = {})
+    def retrieve_payment_bulk_detail_list_with_http_info(id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DefaultApi.retrieve_payment_bulk_detail_list ...'
       end
