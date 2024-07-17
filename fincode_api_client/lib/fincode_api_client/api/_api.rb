@@ -1849,7 +1849,7 @@ module FincodeApiClient
     # @param id [String] 売上入金情報のID
     # @param [Hash] opts the optional parameters
     # @option opts [String] :tenant_shop_id &lt;span class&#x3D;\&quot;smallText color--red-400\&quot;&gt;※ プラットフォームのメインショップのみ指定可&lt;/span&gt;\\ テナントショップID。\\ このテナントショップの売上入金情報のうち、指定したIDの売上入金情報の売上入金詳細を取得します。 
-    # @option opts [PaginationQueryParams] : 売上入金詳細の一覧取得において検索条件となるクエリパラメータ 
+    # @option opts [PaginationQueryParams] :query 売上入金詳細の一覧取得において検索条件となるクエリパラメータ 
     # @return [AccountDetailListRetrievingResponse]
     def retrieve_account_detail_list(id, opts = {})
       data, _status_code, _headers = retrieve_account_detail_list_with_http_info(id, opts)
@@ -1861,7 +1861,7 @@ module FincodeApiClient
     # @param id [String] 売上入金情報のID
     # @param [Hash] opts the optional parameters
     # @option opts [String] :tenant_shop_id &lt;span class&#x3D;\&quot;smallText color--red-400\&quot;&gt;※ プラットフォームのメインショップのみ指定可&lt;/span&gt;\\ テナントショップID。\\ このテナントショップの売上入金情報のうち、指定したIDの売上入金情報の売上入金詳細を取得します。 
-    # @option opts [PaginationQueryParams] : 売上入金詳細の一覧取得において検索条件となるクエリパラメータ 
+    # @option opts [PaginationQueryParams] :query 売上入金詳細の一覧取得において検索条件となるクエリパラメータ 
     # @return [Array<(AccountDetailListRetrievingResponse, Integer, Hash)>] AccountDetailListRetrievingResponse data, response status code and response headers
     def retrieve_account_detail_list_with_http_info(id, opts = {})
       if @api_client.config.debugging
@@ -1876,7 +1876,7 @@ module FincodeApiClient
 
       # query parameters
       query_params = opts[:query_params] || {}
-      query_params[:'クエリ'] = opts[:''] if !opts[:''].nil?
+      query_params[:'query'] = opts[:'query'] if !opts[:'query'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
@@ -1917,7 +1917,7 @@ module FincodeApiClient
     # 売上入金情報を一覧で取得します。クエリパラメータを指定して取得する条件を絞り込めます。 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :tenant_shop_id &lt;span class&#x3D;\&quot;smallText color--red-400\&quot;&gt;※ プラットフォームのメインショップのみ指定可&lt;/span&gt;\\ テナントショップID。\\ このテナントショップの売上入金情報から一覧で取得します。 
-    # @option opts [RetrieveAccountListParameter] : 売上入金情報の一覧取得において検索条件となるクエリパラメータ 
+    # @option opts [RetrieveAccountListQueryParameter] :query 売上入金情報の一覧取得において検索条件となるクエリパラメータ 
     # @return [AccountListRetrievingResponse]
     def retrieve_account_list(opts = {})
       data, _status_code, _headers = retrieve_account_list_with_http_info(opts)
@@ -1928,7 +1928,7 @@ module FincodeApiClient
     # 売上入金情報を一覧で取得します。クエリパラメータを指定して取得する条件を絞り込めます。 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :tenant_shop_id &lt;span class&#x3D;\&quot;smallText color--red-400\&quot;&gt;※ プラットフォームのメインショップのみ指定可&lt;/span&gt;\\ テナントショップID。\\ このテナントショップの売上入金情報から一覧で取得します。 
-    # @option opts [RetrieveAccountListParameter] : 売上入金情報の一覧取得において検索条件となるクエリパラメータ 
+    # @option opts [RetrieveAccountListQueryParameter] :query 売上入金情報の一覧取得において検索条件となるクエリパラメータ 
     # @return [Array<(AccountListRetrievingResponse, Integer, Hash)>] AccountListRetrievingResponse data, response status code and response headers
     def retrieve_account_list_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -1939,7 +1939,7 @@ module FincodeApiClient
 
       # query parameters
       query_params = opts[:query_params] || {}
-      query_params[:'クエリ'] = opts[:''] if !opts[:''].nil?
+      query_params[:'query'] = opts[:'query'] if !opts[:'query'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
@@ -2183,7 +2183,7 @@ module FincodeApiClient
     # 顧客 一覧取得
     # 顧客情報を一覧で取得します。クエリパラメータを指定して取得する条件を絞り込めます。 
     # @param [Hash] opts the optional parameters
-    # @option opts [RetrieveCustomerListParameter] : 顧客情報の一覧取得において検索条件となるクエリパラメータ 
+    # @option opts [RetrieveCustomerListQueryParameter] :query 顧客情報の一覧取得において検索条件となるクエリパラメータ 
     # @option opts [String] :tenant_shop_id &lt;span class&#x3D;\&quot;smallText color--red-400\&quot;&gt;※ 顧客情報を共有しないプラットフォームのメインショップのみ指定可&lt;/span&gt;\\ テナントショップID。\\ このテナントショップに紐づく顧客から一覧で取得します。 
     # @return [CustomerListRetrievingResponse]
     def retrieve_customer_list(opts = {})
@@ -2194,7 +2194,7 @@ module FincodeApiClient
     # 顧客 一覧取得
     # 顧客情報を一覧で取得します。クエリパラメータを指定して取得する条件を絞り込めます。 
     # @param [Hash] opts the optional parameters
-    # @option opts [RetrieveCustomerListParameter] : 顧客情報の一覧取得において検索条件となるクエリパラメータ 
+    # @option opts [RetrieveCustomerListQueryParameter] :query 顧客情報の一覧取得において検索条件となるクエリパラメータ 
     # @option opts [String] :tenant_shop_id &lt;span class&#x3D;\&quot;smallText color--red-400\&quot;&gt;※ 顧客情報を共有しないプラットフォームのメインショップのみ指定可&lt;/span&gt;\\ テナントショップID。\\ このテナントショップに紐づく顧客から一覧で取得します。 
     # @return [Array<(CustomerListRetrievingResponse, Integer, Hash)>] CustomerListRetrievingResponse data, response status code and response headers
     def retrieve_customer_list_with_http_info(opts = {})
@@ -2206,7 +2206,7 @@ module FincodeApiClient
 
       # query parameters
       query_params = opts[:query_params] || {}
-      query_params[:'クエリ'] = opts[:''] if !opts[:''].nil?
+      query_params[:'query'] = opts[:'query'] if !opts[:'query'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
@@ -2247,12 +2247,12 @@ module FincodeApiClient
     # `customer_id`で指定した顧客に対し紐づく決済手段のうち、`id`で指定したものを取得します。 
     # @param customer_id [String] 顧客ID
     # @param id [String] 決済手段ID
-    # @param  [CustomerPaymentMethodRetrievingQueryParams] 決済手段の取得において検索条件となるクエリパラメータ 
+    # @param query [CustomerPaymentMethodRetrievingQueryParams] 決済手段の取得において検索条件となるクエリパラメータ 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :tenant_shop_id &lt;span class&#x3D;\&quot;smallText color--red-400\&quot;&gt;※ 顧客情報を共有しないプラットフォームのメインショップのみ指定可&lt;/span&gt;\\ テナントショップID。\\ このテナントショップに紐づく顧客のうち、指定したIDの顧客に紐づく決済手段からIDで指定した決済手段を取得します。 
     # @return [CustomerPaymentMethodRetrievingResponse]
-    def retrieve_customer_payment_method(customer_id, id, opts = {})
-      data, _status_code, _headers = retrieve_customer_payment_method_with_http_info(customer_id, id, opts)
+    def retrieve_customer_payment_method(customer_id, id, query, opts = {})
+      data, _status_code, _headers = retrieve_customer_payment_method_with_http_info(customer_id, id, query, opts)
       data
     end
 
@@ -2260,11 +2260,11 @@ module FincodeApiClient
     # &#x60;customer_id&#x60;で指定した顧客に対し紐づく決済手段のうち、&#x60;id&#x60;で指定したものを取得します。 
     # @param customer_id [String] 顧客ID
     # @param id [String] 決済手段ID
-    # @param  [CustomerPaymentMethodRetrievingQueryParams] 決済手段の取得において検索条件となるクエリパラメータ 
+    # @param query [CustomerPaymentMethodRetrievingQueryParams] 決済手段の取得において検索条件となるクエリパラメータ 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :tenant_shop_id &lt;span class&#x3D;\&quot;smallText color--red-400\&quot;&gt;※ 顧客情報を共有しないプラットフォームのメインショップのみ指定可&lt;/span&gt;\\ テナントショップID。\\ このテナントショップに紐づく顧客のうち、指定したIDの顧客に紐づく決済手段からIDで指定した決済手段を取得します。 
     # @return [Array<(CustomerPaymentMethodRetrievingResponse, Integer, Hash)>] CustomerPaymentMethodRetrievingResponse data, response status code and response headers
-    def retrieve_customer_payment_method_with_http_info(customer_id, id, opts = {})
+    def retrieve_customer_payment_method_with_http_info(customer_id, id, query, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DefaultApi.retrieve_customer_payment_method ...'
       end
@@ -2276,16 +2276,16 @@ module FincodeApiClient
       if @api_client.config.client_side_validation && id.nil?
         fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.retrieve_customer_payment_method"
       end
-      # verify the required parameter '' is set
-      if @api_client.config.client_side_validation && .nil?
-        fail ArgumentError, "Missing the required parameter '' when calling DefaultApi.retrieve_customer_payment_method"
+      # verify the required parameter 'query' is set
+      if @api_client.config.client_side_validation && query.nil?
+        fail ArgumentError, "Missing the required parameter 'query' when calling DefaultApi.retrieve_customer_payment_method"
       end
       # resource path
       local_var_path = '/v1/customers/{customer_id}/payment_methods/{id}'.sub('{' + 'customer_id' + '}', CGI.escape(customer_id.to_s)).sub('{' + 'id' + '}', CGI.escape(id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
-      query_params[:'クエリ'] = 
+      query_params[:'query'] = query
 
       # header parameters
       header_params = opts[:header_params] || {}
@@ -2325,23 +2325,23 @@ module FincodeApiClient
     # 決済手段 一覧取得
     # `customer_id`で指定した顧客に対し紐づく決済手段を一覧で取得します。 
     # @param customer_id [String] 顧客ID
-    # @param  [CustomerPaymentMethodListRetrievingQueryParams] 決済手段の一覧取得において検索条件となるクエリパラメータ 
+    # @param query [CustomerPaymentMethodListRetrievingQueryParams] 決済手段の一覧取得において検索条件となるクエリパラメータ 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :tenant_shop_id &lt;span class&#x3D;\&quot;smallText color--red-400\&quot;&gt;※ 顧客情報を共有しないプラットフォームのメインショップのみ指定可&lt;/span&gt;\\ テナントショップID。\\ このテナントショップに紐づく顧客のうち、指定したIDの顧客に紐づく決済手段から一覧で取得します。 
     # @return [CustomerPaymentMethodListRetrievingResponse]
-    def retrieve_customer_payment_method_list(customer_id, opts = {})
-      data, _status_code, _headers = retrieve_customer_payment_method_list_with_http_info(customer_id, opts)
+    def retrieve_customer_payment_method_list(customer_id, query, opts = {})
+      data, _status_code, _headers = retrieve_customer_payment_method_list_with_http_info(customer_id, query, opts)
       data
     end
 
     # 決済手段 一覧取得
     # &#x60;customer_id&#x60;で指定した顧客に対し紐づく決済手段を一覧で取得します。 
     # @param customer_id [String] 顧客ID
-    # @param  [CustomerPaymentMethodListRetrievingQueryParams] 決済手段の一覧取得において検索条件となるクエリパラメータ 
+    # @param query [CustomerPaymentMethodListRetrievingQueryParams] 決済手段の一覧取得において検索条件となるクエリパラメータ 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :tenant_shop_id &lt;span class&#x3D;\&quot;smallText color--red-400\&quot;&gt;※ 顧客情報を共有しないプラットフォームのメインショップのみ指定可&lt;/span&gt;\\ テナントショップID。\\ このテナントショップに紐づく顧客のうち、指定したIDの顧客に紐づく決済手段から一覧で取得します。 
     # @return [Array<(CustomerPaymentMethodListRetrievingResponse, Integer, Hash)>] CustomerPaymentMethodListRetrievingResponse data, response status code and response headers
-    def retrieve_customer_payment_method_list_with_http_info(customer_id, opts = {})
+    def retrieve_customer_payment_method_list_with_http_info(customer_id, query, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DefaultApi.retrieve_customer_payment_method_list ...'
       end
@@ -2349,16 +2349,16 @@ module FincodeApiClient
       if @api_client.config.client_side_validation && customer_id.nil?
         fail ArgumentError, "Missing the required parameter 'customer_id' when calling DefaultApi.retrieve_customer_payment_method_list"
       end
-      # verify the required parameter '' is set
-      if @api_client.config.client_side_validation && .nil?
-        fail ArgumentError, "Missing the required parameter '' when calling DefaultApi.retrieve_customer_payment_method_list"
+      # verify the required parameter 'query' is set
+      if @api_client.config.client_side_validation && query.nil?
+        fail ArgumentError, "Missing the required parameter 'query' when calling DefaultApi.retrieve_customer_payment_method_list"
       end
       # resource path
       local_var_path = '/v1/customers/{customer_id}/payment_methods'.sub('{' + 'customer_id' + '}', CGI.escape(customer_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
-      query_params[:'クエリ'] = 
+      query_params[:'query'] = query
 
       # header parameters
       header_params = opts[:header_params] || {}
@@ -2398,23 +2398,23 @@ module FincodeApiClient
     # 決済 取得
     # 指定した決済情報を取得します。 
     # @param id [String] オーダーID（決済情報のID）
-    # @param  [PaymentRetrievingQueryParams] 決済の取得において検索条件となるクエリパラメータ 
+    # @param query [PaymentRetrievingQueryParams] 決済の取得において検索条件となるクエリパラメータ 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :tenant_shop_id &lt;span class&#x3D;\&quot;smallText color--red-400\&quot;&gt;※ プラットフォームのメインショップのみ指定可&lt;/span&gt;\\ テナントショップID。\\ 指定したテナントショップを販売主とした決済のうち、&#x60;id&#x60;で指定した決済情報を取得します。 
     # @return [RetrievePayment200Response]
-    def retrieve_payment(id, opts = {})
-      data, _status_code, _headers = retrieve_payment_with_http_info(id, opts)
+    def retrieve_payment(id, query, opts = {})
+      data, _status_code, _headers = retrieve_payment_with_http_info(id, query, opts)
       data
     end
 
     # 決済 取得
     # 指定した決済情報を取得します。 
     # @param id [String] オーダーID（決済情報のID）
-    # @param  [PaymentRetrievingQueryParams] 決済の取得において検索条件となるクエリパラメータ 
+    # @param query [PaymentRetrievingQueryParams] 決済の取得において検索条件となるクエリパラメータ 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :tenant_shop_id &lt;span class&#x3D;\&quot;smallText color--red-400\&quot;&gt;※ プラットフォームのメインショップのみ指定可&lt;/span&gt;\\ テナントショップID。\\ 指定したテナントショップを販売主とした決済のうち、&#x60;id&#x60;で指定した決済情報を取得します。 
     # @return [Array<(RetrievePayment200Response, Integer, Hash)>] RetrievePayment200Response data, response status code and response headers
-    def retrieve_payment_with_http_info(id, opts = {})
+    def retrieve_payment_with_http_info(id, query, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DefaultApi.retrieve_payment ...'
       end
@@ -2422,16 +2422,16 @@ module FincodeApiClient
       if @api_client.config.client_side_validation && id.nil?
         fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.retrieve_payment"
       end
-      # verify the required parameter '' is set
-      if @api_client.config.client_side_validation && .nil?
-        fail ArgumentError, "Missing the required parameter '' when calling DefaultApi.retrieve_payment"
+      # verify the required parameter 'query' is set
+      if @api_client.config.client_side_validation && query.nil?
+        fail ArgumentError, "Missing the required parameter 'query' when calling DefaultApi.retrieve_payment"
       end
       # resource path
       local_var_path = '/v1/payments/{id}'.sub('{' + 'id' + '}', CGI.escape(id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
-      query_params[:'クエリ'] = 
+      query_params[:'query'] = query
 
       # header parameters
       header_params = opts[:header_params] || {}
@@ -2471,23 +2471,23 @@ module FincodeApiClient
     # 一括決済詳細 一覧取得
     # IDで指定した一括決済情報の詳細（決済1件ごとの情報）と各決済で発生したエラーの情報を一覧で取得します。 
     # @param id [String] 一括決済ID。\\ 詳細を取得する一括決済情報のIDを指定します。 
-    # @param  [RetrievePaymentBulkDetailListParameter] 一括決済情報の一覧取得において検索条件となるクエリパラメータ 
+    # @param query [RetrievePaymentBulkDetailListQueryParameter] 一括決済情報の一覧取得において検索条件となるクエリパラメータ 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :tenant_shop_id &lt;span class&#x3D;\&quot;smallText color--red-400\&quot;&gt;※ プラットフォームのメインショップのみ指定可&lt;/span&gt;\\ テナントショップID。\\ 指定したテナントショップを販売主とした一括決済の詳細を一覧で取得します。 
     # @return [PaymentBulkDetailListRetrievingResponse]
-    def retrieve_payment_bulk_detail_list(id, opts = {})
-      data, _status_code, _headers = retrieve_payment_bulk_detail_list_with_http_info(id, opts)
+    def retrieve_payment_bulk_detail_list(id, query, opts = {})
+      data, _status_code, _headers = retrieve_payment_bulk_detail_list_with_http_info(id, query, opts)
       data
     end
 
     # 一括決済詳細 一覧取得
     # IDで指定した一括決済情報の詳細（決済1件ごとの情報）と各決済で発生したエラーの情報を一覧で取得します。 
     # @param id [String] 一括決済ID。\\ 詳細を取得する一括決済情報のIDを指定します。 
-    # @param  [RetrievePaymentBulkDetailListParameter] 一括決済情報の一覧取得において検索条件となるクエリパラメータ 
+    # @param query [RetrievePaymentBulkDetailListQueryParameter] 一括決済情報の一覧取得において検索条件となるクエリパラメータ 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :tenant_shop_id &lt;span class&#x3D;\&quot;smallText color--red-400\&quot;&gt;※ プラットフォームのメインショップのみ指定可&lt;/span&gt;\\ テナントショップID。\\ 指定したテナントショップを販売主とした一括決済の詳細を一覧で取得します。 
     # @return [Array<(PaymentBulkDetailListRetrievingResponse, Integer, Hash)>] PaymentBulkDetailListRetrievingResponse data, response status code and response headers
-    def retrieve_payment_bulk_detail_list_with_http_info(id, opts = {})
+    def retrieve_payment_bulk_detail_list_with_http_info(id, query, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DefaultApi.retrieve_payment_bulk_detail_list ...'
       end
@@ -2495,16 +2495,16 @@ module FincodeApiClient
       if @api_client.config.client_side_validation && id.nil?
         fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.retrieve_payment_bulk_detail_list"
       end
-      # verify the required parameter '' is set
-      if @api_client.config.client_side_validation && .nil?
-        fail ArgumentError, "Missing the required parameter '' when calling DefaultApi.retrieve_payment_bulk_detail_list"
+      # verify the required parameter 'query' is set
+      if @api_client.config.client_side_validation && query.nil?
+        fail ArgumentError, "Missing the required parameter 'query' when calling DefaultApi.retrieve_payment_bulk_detail_list"
       end
       # resource path
       local_var_path = '/v1/payments/bulk/{id}'.sub('{' + 'id' + '}', CGI.escape(id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
-      query_params[:'クエリ'] = 
+      query_params[:'query'] = query
 
       # header parameters
       header_params = opts[:header_params] || {}
@@ -2545,7 +2545,7 @@ module FincodeApiClient
     # fincodeに登録した一括決済の情報を一覧で取得します。 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :tenant_shop_id &lt;span class&#x3D;\&quot;smallText color--red-400\&quot;&gt;※ プラットフォームのメインショップのみ指定可&lt;/span&gt;\\ テナントショップID。\\ 指定したテナントショップを販売主とした一括決済情報を一覧で取得します。 
-    # @option opts [RetrievePaymentBulkListParameter] : 一括決済情報の一覧取得において検索条件となるクエリパラメータ 
+    # @option opts [RetrievePaymentBulkListQueryParameter] :query 一括決済情報の一覧取得において検索条件となるクエリパラメータ 
     # @return [PaymentBulkListRetrievingResponse]
     def retrieve_payment_bulk_list(opts = {})
       data, _status_code, _headers = retrieve_payment_bulk_list_with_http_info(opts)
@@ -2556,7 +2556,7 @@ module FincodeApiClient
     # fincodeに登録した一括決済の情報を一覧で取得します。 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :tenant_shop_id &lt;span class&#x3D;\&quot;smallText color--red-400\&quot;&gt;※ プラットフォームのメインショップのみ指定可&lt;/span&gt;\\ テナントショップID。\\ 指定したテナントショップを販売主とした一括決済情報を一覧で取得します。 
-    # @option opts [RetrievePaymentBulkListParameter] : 一括決済情報の一覧取得において検索条件となるクエリパラメータ 
+    # @option opts [RetrievePaymentBulkListQueryParameter] :query 一括決済情報の一覧取得において検索条件となるクエリパラメータ 
     # @return [Array<(PaymentBulkListRetrievingResponse, Integer, Hash)>] PaymentBulkListRetrievingResponse data, response status code and response headers
     def retrieve_payment_bulk_list_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -2567,7 +2567,7 @@ module FincodeApiClient
 
       # query parameters
       query_params = opts[:query_params] || {}
-      query_params[:'クエリ'] = opts[:''] if !opts[:''].nil?
+      query_params[:'query'] = opts[:'query'] if !opts[:'query'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
@@ -2606,35 +2606,35 @@ module FincodeApiClient
 
     # 決済 一覧取得
     # 決済情報の一覧を取得します。 
-    # @param  [RetrievePaymentListParameter] 決済の一覧取得において検索条件となるクエリパラメータ 
+    # @param query [RetrievePaymentListQueryParameter] 決済の一覧取得において検索条件となるクエリパラメータ 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :tenant_shop_id &lt;span class&#x3D;\&quot;smallText color--red-400\&quot;&gt;※ プラットフォームのメインショップのみ指定可&lt;/span&gt;\\ テナントショップID。\\ このテナントショップに紐づく決済から一覧で取得します。 
     # @return [RetrievePaymentList200Response]
-    def retrieve_payment_list(, opts = {})
-      data, _status_code, _headers = retrieve_payment_list_with_http_info(, opts)
+    def retrieve_payment_list(query, opts = {})
+      data, _status_code, _headers = retrieve_payment_list_with_http_info(query, opts)
       data
     end
 
     # 決済 一覧取得
     # 決済情報の一覧を取得します。 
-    # @param  [RetrievePaymentListParameter] 決済の一覧取得において検索条件となるクエリパラメータ 
+    # @param query [RetrievePaymentListQueryParameter] 決済の一覧取得において検索条件となるクエリパラメータ 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :tenant_shop_id &lt;span class&#x3D;\&quot;smallText color--red-400\&quot;&gt;※ プラットフォームのメインショップのみ指定可&lt;/span&gt;\\ テナントショップID。\\ このテナントショップに紐づく決済から一覧で取得します。 
     # @return [Array<(RetrievePaymentList200Response, Integer, Hash)>] RetrievePaymentList200Response data, response status code and response headers
-    def retrieve_payment_list_with_http_info(, opts = {})
+    def retrieve_payment_list_with_http_info(query, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DefaultApi.retrieve_payment_list ...'
       end
-      # verify the required parameter '' is set
-      if @api_client.config.client_side_validation && .nil?
-        fail ArgumentError, "Missing the required parameter '' when calling DefaultApi.retrieve_payment_list"
+      # verify the required parameter 'query' is set
+      if @api_client.config.client_side_validation && query.nil?
+        fail ArgumentError, "Missing the required parameter 'query' when calling DefaultApi.retrieve_payment_list"
       end
       # resource path
       local_var_path = '/v1/payments'
 
       # query parameters
       query_params = opts[:query_params] || {}
-      query_params[:'クエリ'] = 
+      query_params[:'query'] = query
 
       # header parameters
       header_params = opts[:header_params] || {}
@@ -2737,7 +2737,7 @@ module FincodeApiClient
     # プラン 一覧取得
     # プラン情報を一覧で取得します。クエリパラメータを指定して取得する条件を絞り込めます。 
     # @param [Hash] opts the optional parameters
-    # @option opts [RetrievePlanListParameter] : プラン情報の一覧取得において検索条件となるクエリパラメータ 
+    # @option opts [RetrievePlanListQueryParameter] :query プラン情報の一覧取得において検索条件となるクエリパラメータ 
     # @return [PlanListRetrievingResponse]
     def retrieve_plan_list(opts = {})
       data, _status_code, _headers = retrieve_plan_list_with_http_info(opts)
@@ -2747,7 +2747,7 @@ module FincodeApiClient
     # プラン 一覧取得
     # プラン情報を一覧で取得します。クエリパラメータを指定して取得する条件を絞り込めます。 
     # @param [Hash] opts the optional parameters
-    # @option opts [RetrievePlanListParameter] : プラン情報の一覧取得において検索条件となるクエリパラメータ 
+    # @option opts [RetrievePlanListQueryParameter] :query プラン情報の一覧取得において検索条件となるクエリパラメータ 
     # @return [Array<(PlanListRetrievingResponse, Integer, Hash)>] PlanListRetrievingResponse data, response status code and response headers
     def retrieve_plan_list_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -2758,7 +2758,7 @@ module FincodeApiClient
 
       # query parameters
       query_params = opts[:query_params] || {}
-      query_params[:'クエリ'] = opts[:''] if !opts[:''].nil?
+      query_params[:'query'] = opts[:'query'] if !opts[:'query'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
@@ -2860,7 +2860,7 @@ module FincodeApiClient
     # プラットフォーム利用料収入 一覧取得
     # プラットフォーム利用料による売上入金情報を一覧で取得します。クエリパラメータを指定して取得する条件を絞り込めます。 
     # @param [Hash] opts the optional parameters
-    # @option opts [RetrievePlatformAccountListParameter] : プラットフォーム利用料による売上入金情報の一覧取得において検索条件となるクエリパラメータ 
+    # @option opts [RetrievePlatformAccountListQueryParameter] :query プラットフォーム利用料による売上入金情報の一覧取得において検索条件となるクエリパラメータ 
     # @return [PlatformAccountListRetrievingResponse]
     def retrieve_platform_account_list(opts = {})
       data, _status_code, _headers = retrieve_platform_account_list_with_http_info(opts)
@@ -2870,7 +2870,7 @@ module FincodeApiClient
     # プラットフォーム利用料収入 一覧取得
     # プラットフォーム利用料による売上入金情報を一覧で取得します。クエリパラメータを指定して取得する条件を絞り込めます。 
     # @param [Hash] opts the optional parameters
-    # @option opts [RetrievePlatformAccountListParameter] : プラットフォーム利用料による売上入金情報の一覧取得において検索条件となるクエリパラメータ 
+    # @option opts [RetrievePlatformAccountListQueryParameter] :query プラットフォーム利用料による売上入金情報の一覧取得において検索条件となるクエリパラメータ 
     # @return [Array<(PlatformAccountListRetrievingResponse, Integer, Hash)>] PlatformAccountListRetrievingResponse data, response status code and response headers
     def retrieve_platform_account_list_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -2881,7 +2881,7 @@ module FincodeApiClient
 
       # query parameters
       query_params = opts[:query_params] || {}
-      query_params[:'クエリ'] = opts[:''] if !opts[:''].nil?
+      query_params[:'query'] = opts[:'query'] if !opts[:'query'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
@@ -2921,7 +2921,7 @@ module FincodeApiClient
     # IDで指定したプラットフォーム利用料収入のサマリーを一覧で取得します。クエリパラメータを指定して取得する条件を絞り込めます。\\ サマリー情報の中にはテナントショップごとの利用料収入についての情報が含まれます。 
     # @param id [String] プラットフォーム利用料収入ID
     # @param [Hash] opts the optional parameters
-    # @option opts [RetrievePlatformAccountSummaryListParameter] : プラットフォーム利用料による売上入金情報の一覧取得において検索条件となるクエリパラメータ 
+    # @option opts [RetrievePlatformAccountSummaryListQueryParameter] :query プラットフォーム利用料による売上入金情報の一覧取得において検索条件となるクエリパラメータ 
     # @return [PlatformAccountSummaryListRetrievingResponse]
     def retrieve_platform_account_summary_list(id, opts = {})
       data, _status_code, _headers = retrieve_platform_account_summary_list_with_http_info(id, opts)
@@ -2932,7 +2932,7 @@ module FincodeApiClient
     # IDで指定したプラットフォーム利用料収入のサマリーを一覧で取得します。クエリパラメータを指定して取得する条件を絞り込めます。\\ サマリー情報の中にはテナントショップごとの利用料収入についての情報が含まれます。 
     # @param id [String] プラットフォーム利用料収入ID
     # @param [Hash] opts the optional parameters
-    # @option opts [RetrievePlatformAccountSummaryListParameter] : プラットフォーム利用料による売上入金情報の一覧取得において検索条件となるクエリパラメータ 
+    # @option opts [RetrievePlatformAccountSummaryListQueryParameter] :query プラットフォーム利用料による売上入金情報の一覧取得において検索条件となるクエリパラメータ 
     # @return [Array<(PlatformAccountSummaryListRetrievingResponse, Integer, Hash)>] PlatformAccountSummaryListRetrievingResponse data, response status code and response headers
     def retrieve_platform_account_summary_list_with_http_info(id, opts = {})
       if @api_client.config.debugging
@@ -2947,7 +2947,7 @@ module FincodeApiClient
 
       # query parameters
       query_params = opts[:query_params] || {}
-      query_params[:'クエリ'] = opts[:''] if !opts[:''].nil?
+      query_params[:'query'] = opts[:'query'] if !opts[:'query'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
@@ -3049,7 +3049,7 @@ module FincodeApiClient
     # プラットフォームショップ 一覧取得
     # プラットフォームショップ（メインショップ・サブショップ）を一覧で取得します。\\ クエリパラメータを指定して取得する条件を絞り込めます。 
     # @param [Hash] opts the optional parameters
-    # @option opts [RetrievePlatformShopListParameter] : プラットフォーム情報の一覧取得において検索条件となるクエリパラメータ 
+    # @option opts [RetrievePlatformShopListQueryParameter] :query プラットフォーム情報の一覧取得において検索条件となるクエリパラメータ 
     # @return [PlatformShopListRetrievingResponse]
     def retrieve_platform_shop_list(opts = {})
       data, _status_code, _headers = retrieve_platform_shop_list_with_http_info(opts)
@@ -3059,7 +3059,7 @@ module FincodeApiClient
     # プラットフォームショップ 一覧取得
     # プラットフォームショップ（メインショップ・サブショップ）を一覧で取得します。\\ クエリパラメータを指定して取得する条件を絞り込めます。 
     # @param [Hash] opts the optional parameters
-    # @option opts [RetrievePlatformShopListParameter] : プラットフォーム情報の一覧取得において検索条件となるクエリパラメータ 
+    # @option opts [RetrievePlatformShopListQueryParameter] :query プラットフォーム情報の一覧取得において検索条件となるクエリパラメータ 
     # @return [Array<(PlatformShopListRetrievingResponse, Integer, Hash)>] PlatformShopListRetrievingResponse data, response status code and response headers
     def retrieve_platform_shop_list_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -3070,7 +3070,7 @@ module FincodeApiClient
 
       # query parameters
       query_params = opts[:query_params] || {}
-      query_params[:'クエリ'] = opts[:''] if !opts[:''].nil?
+      query_params[:'query'] = opts[:'query'] if !opts[:'query'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
@@ -3171,33 +3171,33 @@ module FincodeApiClient
 
     # サブスクリプション 一覧取得
     # サブスクリプション情報を一覧で取得します。クエリパラメータを指定して取得する条件を絞り込めます。 
-    # @param  [RetrieveSubscriptionListParameter] サブスクリプション情報の一覧取得において検索条件となるクエリパラメータ 
+    # @param query [RetrieveSubscriptionListQueryParameter] サブスクリプション情報の一覧取得において検索条件となるクエリパラメータ 
     # @param [Hash] opts the optional parameters
     # @return [SubscriptionListRetrievingResponse]
-    def retrieve_subscription_list(, opts = {})
-      data, _status_code, _headers = retrieve_subscription_list_with_http_info(, opts)
+    def retrieve_subscription_list(query, opts = {})
+      data, _status_code, _headers = retrieve_subscription_list_with_http_info(query, opts)
       data
     end
 
     # サブスクリプション 一覧取得
     # サブスクリプション情報を一覧で取得します。クエリパラメータを指定して取得する条件を絞り込めます。 
-    # @param  [RetrieveSubscriptionListParameter] サブスクリプション情報の一覧取得において検索条件となるクエリパラメータ 
+    # @param query [RetrieveSubscriptionListQueryParameter] サブスクリプション情報の一覧取得において検索条件となるクエリパラメータ 
     # @param [Hash] opts the optional parameters
     # @return [Array<(SubscriptionListRetrievingResponse, Integer, Hash)>] SubscriptionListRetrievingResponse data, response status code and response headers
-    def retrieve_subscription_list_with_http_info(, opts = {})
+    def retrieve_subscription_list_with_http_info(query, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DefaultApi.retrieve_subscription_list ...'
       end
-      # verify the required parameter '' is set
-      if @api_client.config.client_side_validation && .nil?
-        fail ArgumentError, "Missing the required parameter '' when calling DefaultApi.retrieve_subscription_list"
+      # verify the required parameter 'query' is set
+      if @api_client.config.client_side_validation && query.nil?
+        fail ArgumentError, "Missing the required parameter 'query' when calling DefaultApi.retrieve_subscription_list"
       end
       # resource path
       local_var_path = '/v1/subscriptions'
 
       # query parameters
       query_params = opts[:query_params] || {}
-      query_params[:'クエリ'] = 
+      query_params[:'query'] = query
 
       # header parameters
       header_params = opts[:header_params] || {}
@@ -3235,28 +3235,28 @@ module FincodeApiClient
 
     # サブスクリプション結果 一覧取得
     # サブスクリプションにより発生した課金の結果を一覧で取得します。クエリパラメータを指定して取得する条件を絞り込めます。 
-    # @param  [RetrieveSubscriptionResultListParameter] サブスクリプション結果の一覧取得において検索条件となるクエリパラメータ 
+    # @param query [RetrieveSubscriptionResultListQueryParameter] サブスクリプション結果の一覧取得において検索条件となるクエリパラメータ 
     # @param id [String] サブスクリプションID
     # @param [Hash] opts the optional parameters
     # @return [SubscriptionResultListRetrievingResponse]
-    def retrieve_subscription_result_list(, id, opts = {})
-      data, _status_code, _headers = retrieve_subscription_result_list_with_http_info(, id, opts)
+    def retrieve_subscription_result_list(query, id, opts = {})
+      data, _status_code, _headers = retrieve_subscription_result_list_with_http_info(query, id, opts)
       data
     end
 
     # サブスクリプション結果 一覧取得
     # サブスクリプションにより発生した課金の結果を一覧で取得します。クエリパラメータを指定して取得する条件を絞り込めます。 
-    # @param  [RetrieveSubscriptionResultListParameter] サブスクリプション結果の一覧取得において検索条件となるクエリパラメータ 
+    # @param query [RetrieveSubscriptionResultListQueryParameter] サブスクリプション結果の一覧取得において検索条件となるクエリパラメータ 
     # @param id [String] サブスクリプションID
     # @param [Hash] opts the optional parameters
     # @return [Array<(SubscriptionResultListRetrievingResponse, Integer, Hash)>] SubscriptionResultListRetrievingResponse data, response status code and response headers
-    def retrieve_subscription_result_list_with_http_info(, id, opts = {})
+    def retrieve_subscription_result_list_with_http_info(query, id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DefaultApi.retrieve_subscription_result_list ...'
       end
-      # verify the required parameter '' is set
-      if @api_client.config.client_side_validation && .nil?
-        fail ArgumentError, "Missing the required parameter '' when calling DefaultApi.retrieve_subscription_result_list"
+      # verify the required parameter 'query' is set
+      if @api_client.config.client_side_validation && query.nil?
+        fail ArgumentError, "Missing the required parameter 'query' when calling DefaultApi.retrieve_subscription_result_list"
       end
       # verify the required parameter 'id' is set
       if @api_client.config.client_side_validation && id.nil?
@@ -3267,7 +3267,7 @@ module FincodeApiClient
 
       # query parameters
       query_params = opts[:query_params] || {}
-      query_params[:'クエリ'] = 
+      query_params[:'query'] = query
 
       # header parameters
       header_params = opts[:header_params] || {}
@@ -3579,7 +3579,7 @@ module FincodeApiClient
     # テナントショップ 一覧取得
     # テナントショップを一覧で取得します。\\ クエリパラメータを指定して取得する条件を絞り込めます。 
     # @param [Hash] opts the optional parameters
-    # @option opts [RetrieveTenantShopListParameter] : テナント情報の一覧取得において検索条件となるクエリパラメータ 
+    # @option opts [RetrieveTenantShopListQueryParameter] :query テナント情報の一覧取得において検索条件となるクエリパラメータ 
     # @return [TenantShopListRetrievingResponse]
     def retrieve_tenant_shop_list(opts = {})
       data, _status_code, _headers = retrieve_tenant_shop_list_with_http_info(opts)
@@ -3589,7 +3589,7 @@ module FincodeApiClient
     # テナントショップ 一覧取得
     # テナントショップを一覧で取得します。\\ クエリパラメータを指定して取得する条件を絞り込めます。 
     # @param [Hash] opts the optional parameters
-    # @option opts [RetrieveTenantShopListParameter] : テナント情報の一覧取得において検索条件となるクエリパラメータ 
+    # @option opts [RetrieveTenantShopListQueryParameter] :query テナント情報の一覧取得において検索条件となるクエリパラメータ 
     # @return [Array<(TenantShopListRetrievingResponse, Integer, Hash)>] TenantShopListRetrievingResponse data, response status code and response headers
     def retrieve_tenant_shop_list_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -3600,7 +3600,7 @@ module FincodeApiClient
 
       # query parameters
       query_params = opts[:query_params] || {}
-      query_params[:'クエリ'] = opts[:''] if !opts[:''].nil?
+      query_params[:'query'] = opts[:'query'] if !opts[:'query'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
