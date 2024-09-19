@@ -186,7 +186,7 @@ module FincodeApiClient
       end
 
       if attributes.key?(:'tenant_shop_id')
-        self.tenant_shop_id = attributes[:'tenant_shop_id']
+        self.tenant_shop_id = attributes[:tenant_shop_id]
       end
 
       if attributes.key?(:'tenant_shop_name')
