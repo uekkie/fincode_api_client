@@ -54,7 +54,7 @@ module FincodeApiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      header_params[:'Tenant-Shop-Id'] = opts[:'tenant_shop_id'] if !opts[:'tenant_shop_id'].nil?
+      header_params['Tenant-Shop-Id'] = opts[:tenant_shop_id] if !opts[:tenant_shop_id].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
@@ -127,7 +127,7 @@ module FincodeApiClient
       if !content_type.nil?
           header_params['Content-Type'] = content_type
       end
-      header_params[:'Tenant-Shop-Id'] = opts[:'tenant_shop_id'] if !opts[:'tenant_shop_id'].nil?
+      header_params['Tenant-Shop-Id'] = opts[:tenant_shop_id] if !opts[:tenant_shop_id].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
