@@ -4,11 +4,11 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **date** | **String** | 日付   形式： &#x60;yyyy/MM/dd&#x60;    | [optional] |
-| **name** | **String** | 品目    | [optional] |
-| **unit_price** | **Float** | 単価    | [optional] |
-| **quantity** | **Integer** | 数量    | [optional] |
-| **tax_rate** | **Float** | 適用税率（%）    | [optional] |
+| **date** | **String** | 日付   形式： &#x60;yyyy/MM/dd&#x60;  | [optional] |
+| **name** | **String** | 品目  | [optional] |
+| **unit_price** | **Float** | 単価  | [optional] |
+| **quantity** | **Integer** | 数量  | [optional] |
+| **tax_rate** | **Float** | 適用税率（%）  | [optional] |
 
 ## Example
 

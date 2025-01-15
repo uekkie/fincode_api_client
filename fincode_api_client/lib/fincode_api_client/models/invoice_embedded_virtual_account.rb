@@ -16,19 +16,19 @@ require 'time'
 module FincodeApiClient
   # このインボイス情報に対して発行されたバーチャル口座情報\\ このバーチャル口座に対して振込を行うことでインボイスによる請求に対して支払いできます。 
   class InvoiceEmbeddedVirtualAccount
-    # バーチャル口座ID   
+    # バーチャル口座ID 
     attr_accessor :virtual_account_id
 
-    # 支店名   
+    # 支店名 
     attr_accessor :branch_name
 
-    # 支店コード   
+    # 支店コード 
     attr_accessor :branch_code
 
-    # 口座番号   
+    # 口座番号 
     attr_accessor :account_number
 
-    # 口座名義   
+    # 口座名義 
     attr_accessor :account_name
 
     # Attribute mapping from ruby-style variable name to JSON key.

@@ -22,25 +22,25 @@ module FincodeApiClient
     # 顧客（請求先）メールアドレス 
     attr_accessor :email
 
-    # 顧客（請求先）住所の国コード   
+    # 顧客（請求先）住所の国コード 
     attr_accessor :addr_country
 
-    # 顧客（請求先）住所の都道府県コード   
+    # 顧客（請求先）住所の都道府県コード 
     attr_accessor :addr_state
 
-    # 顧客（請求先）住所の市区町村   
+    # 顧客（請求先）住所の市区町村 
     attr_accessor :addr_city
 
-    # 顧客（請求先）住所の町名・番地   
+    # 顧客（請求先）住所の町名・番地 
     attr_accessor :addr_line_1
 
-    # 顧客（請求先）住所の建物名・部屋番号   
+    # 顧客（請求先）住所の建物名・部屋番号 
     attr_accessor :addr_line_2
 
-    # 顧客（請求先）住所 その他   
+    # 顧客（請求先）住所 その他 
     attr_accessor :addr_line_3
 
-    # 顧客（請求先）住所の郵便番号   
+    # 顧客（請求先）住所の郵便番号 
     attr_accessor :addr_post_code
 
     # Attribute mapping from ruby-style variable name to JSON key.

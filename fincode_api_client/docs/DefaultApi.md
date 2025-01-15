@@ -2046,7 +2046,7 @@ FincodeApiClient.configure do |config|
 end
 
 api_instance = FincodeApiClient::DefaultApi.new
-id = 'id_example' # String | インボイスID   
+id = 'id_example' # String | インボイスID 
 opts = {
   tenant_shop_id: TODO # String | <span class=\"smallText color--red-400\">※ プラットフォームのメインショップのみ指定可</span>\\ テナントショップID。\\ 指定することで、指定したテナントショップのインボイス請求書情報を取得できます。 
 }
@@ -2082,7 +2082,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **id** | **String** | インボイスID    |  |
+| **id** | **String** | インボイスID  |  |
 | **tenant_shop_id** | [**String**](.md) | &lt;span class&#x3D;\&quot;smallText color--red-400\&quot;&gt;※ プラットフォームのメインショップのみ指定可&lt;/span&gt;\\ テナントショップID。\\ 指定することで、指定したテナントショップのインボイス請求書情報を取得できます。  | [optional] |
 
 ### Return type
@@ -2105,7 +2105,7 @@ end
 
 インボイス 一覧取得
 
-インボイス情報を一覧で取得します。クエリパラメータを指定して取得する条件を絞り込めます。  
+インボイス情報を一覧で取得します。クエリパラメータを指定して取得する条件を絞り込めます。 
 
 ### Examples
 
@@ -2125,7 +2125,7 @@ end
 api_instance = FincodeApiClient::DefaultApi.new
 opts = {
   tenant_shop_id: TODO, # String | <span class=\"smallText color--red-400\">※ プラットフォームのメインショップのみ指定可</span>\\ テナントショップID。\\ 指定したテナントショップを請求元とした請求書情報を一覧で取得します。 
-  : FincodeApiClient::GetInvoicesListParameter.new # GetInvoicesListParameter | 検索条件クエリパラメータ 
+  query: FincodeApiClient::GetInvoicesListQueryParameter.new # GetInvoicesListQueryParameter | 検索条件クエリパラメータ 
 }
 
 begin
@@ -2160,7 +2160,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **tenant_shop_id** | [**String**](.md) | &lt;span class&#x3D;\&quot;smallText color--red-400\&quot;&gt;※ プラットフォームのメインショップのみ指定可&lt;/span&gt;\\ テナントショップID。\\ 指定したテナントショップを請求元とした請求書情報を一覧で取得します。  | [optional] |
-| **** | [**GetInvoicesListParameter**](.md) | 検索条件クエリパラメータ  | [optional] |
+| **query** | [**GetInvoicesListQueryParameter**](.md) | 検索条件クエリパラメータ  | [optional] |
 
 ### Return type
 
@@ -2742,7 +2742,7 @@ api_instance = FincodeApiClient::DefaultApi.new
 id = 'id_example' # String | 売上入金ID
 opts = {
   tenant_shop_id: TODO, # String | <span class=\"smallText color--red-400\">※ プラットフォームのメインショップのみ指定可</span>\\ テナントショップID。\\ このテナントショップの売上入金情報のうち、指定したIDの売上入金情報の売上入金詳細を取得します。 
-  : FincodeApiClient::PaginationQueryParams.new # PaginationQueryParams | 売上入金詳細の一覧取得において検索条件となるクエリパラメータ 
+  query: FincodeApiClient::PaginationQueryParams.new # PaginationQueryParams | 売上入金詳細の一覧取得において検索条件となるクエリパラメータ 
 }
 
 begin
@@ -2778,7 +2778,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **id** | **String** | 売上入金ID |  |
 | **tenant_shop_id** | [**String**](.md) | &lt;span class&#x3D;\&quot;smallText color--red-400\&quot;&gt;※ プラットフォームのメインショップのみ指定可&lt;/span&gt;\\ テナントショップID。\\ このテナントショップの売上入金情報のうち、指定したIDの売上入金情報の売上入金詳細を取得します。  | [optional] |
-| **** | [**PaginationQueryParams**](.md) | 売上入金詳細の一覧取得において検索条件となるクエリパラメータ  | [optional] |
+| **query** | [**PaginationQueryParams**](.md) | 売上入金詳細の一覧取得において検索条件となるクエリパラメータ  | [optional] |
 
 ### Return type
 
@@ -2820,7 +2820,7 @@ end
 api_instance = FincodeApiClient::DefaultApi.new
 opts = {
   tenant_shop_id: TODO, # String | <span class=\"smallText color--red-400\">※ プラットフォームのメインショップのみ指定可</span>\\ テナントショップID。\\ このテナントショップの売上入金情報から一覧で取得します。 
-  : FincodeApiClient::RetrieveAccountListParameter.new # RetrieveAccountListParameter | 売上入金情報の一覧取得において検索条件となるクエリパラメータ 
+  query: FincodeApiClient::RetrieveAccountListQueryParameter.new # RetrieveAccountListQueryParameter | 売上入金情報の一覧取得において検索条件となるクエリパラメータ 
 }
 
 begin
@@ -2855,7 +2855,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **tenant_shop_id** | [**String**](.md) | &lt;span class&#x3D;\&quot;smallText color--red-400\&quot;&gt;※ プラットフォームのメインショップのみ指定可&lt;/span&gt;\\ テナントショップID。\\ このテナントショップの売上入金情報から一覧で取得します。  | [optional] |
-| **** | [**RetrieveAccountListParameter**](.md) | 売上入金情報の一覧取得において検索条件となるクエリパラメータ  | [optional] |
+| **query** | [**RetrieveAccountListQueryParameter**](.md) | 売上入金情報の一覧取得において検索条件となるクエリパラメータ  | [optional] |
 
 ### Return type
 
@@ -3138,7 +3138,7 @@ end
 
 api_instance = FincodeApiClient::DefaultApi.new
 opts = {
-  : FincodeApiClient::RetrieveCustomerListParameter.new, # RetrieveCustomerListParameter | 顧客情報の一覧取得において検索条件となるクエリパラメータ 
+  query: FincodeApiClient::RetrieveCustomerListQueryParameter.new, # RetrieveCustomerListQueryParameter | 顧客情報の一覧取得において検索条件となるクエリパラメータ 
   tenant_shop_id: TODO # String | <span class=\"smallText color--red-400\">※ 顧客情報を共有しないプラットフォームのメインショップのみ指定可</span>\\ テナントショップID。\\ このテナントショップに紐づく顧客から一覧で取得します。 
 }
 
@@ -3173,7 +3173,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **** | [**RetrieveCustomerListParameter**](.md) | 顧客情報の一覧取得において検索条件となるクエリパラメータ  | [optional] |
+| **query** | [**RetrieveCustomerListQueryParameter**](.md) | 顧客情報の一覧取得において検索条件となるクエリパラメータ  | [optional] |
 | **tenant_shop_id** | [**String**](.md) | &lt;span class&#x3D;\&quot;smallText color--red-400\&quot;&gt;※ 顧客情報を共有しないプラットフォームのメインショップのみ指定可&lt;/span&gt;\\ テナントショップID。\\ このテナントショップに紐づく顧客から一覧で取得します。  | [optional] |
 
 ### Return type
@@ -3192,7 +3192,7 @@ end
 
 ## retrieve_customer_payment_method
 
-> <CustomerPaymentMethodRetrievingResponse> retrieve_customer_payment_method(customer_id, id, opts)
+> <CustomerPaymentMethodRetrievingResponse> retrieve_customer_payment_method(customer_id, id, query, opts)
 
 決済手段 取得
 
@@ -3219,14 +3219,14 @@ end
 api_instance = FincodeApiClient::DefaultApi.new
 customer_id = TODO # String | 顧客ID
 id = TODO # String | 決済手段ID
- = FincodeApiClient::CustomerPaymentMethodRetrievingQueryParams.new({pay_type: FincodeApiClient::PaymentMethodPayType::CARD}) # CustomerPaymentMethodRetrievingQueryParams | 決済手段の取得において検索条件となるクエリパラメータ 
+query = FincodeApiClient::CustomerPaymentMethodRetrievingQueryParams.new({pay_type: FincodeApiClient::PaymentMethodPayType::CARD}) # CustomerPaymentMethodRetrievingQueryParams | 決済手段の取得において検索条件となるクエリパラメータ 
 opts = {
   tenant_shop_id: TODO # String | <span class=\"smallText color--red-400\">※ 顧客情報を共有しないプラットフォームのメインショップのみ指定可</span>\\ テナントショップID。\\ このテナントショップに紐づく顧客のうち、指定したIDの顧客に紐づく決済手段からIDで指定した決済手段を取得します。 
 }
 
 begin
   # 決済手段 取得
-  result = api_instance.retrieve_customer_payment_method(customer_id, id, opts)
+  result = api_instance.retrieve_customer_payment_method(customer_id, id, query, opts)
   p result
 rescue FincodeApiClient::ApiError => e
   puts "Error when calling DefaultApi->retrieve_customer_payment_method: #{e}"
@@ -3237,12 +3237,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CustomerPaymentMethodRetrievingResponse>, Integer, Hash)> retrieve_customer_payment_method_with_http_info(customer_id, id, opts)
+> <Array(<CustomerPaymentMethodRetrievingResponse>, Integer, Hash)> retrieve_customer_payment_method_with_http_info(customer_id, id, query, opts)
 
 ```ruby
 begin
   # 決済手段 取得
-  data, status_code, headers = api_instance.retrieve_customer_payment_method_with_http_info(customer_id, id, opts)
+  data, status_code, headers = api_instance.retrieve_customer_payment_method_with_http_info(customer_id, id, query, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <CustomerPaymentMethodRetrievingResponse>
@@ -3257,7 +3257,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **customer_id** | [**String**](.md) | 顧客ID |  |
 | **id** | [**String**](.md) | 決済手段ID |  |
-| **** | [**CustomerPaymentMethodRetrievingQueryParams**](.md) | 決済手段の取得において検索条件となるクエリパラメータ  |  |
+| **query** | [**CustomerPaymentMethodRetrievingQueryParams**](.md) | 決済手段の取得において検索条件となるクエリパラメータ  |  |
 | **tenant_shop_id** | [**String**](.md) | &lt;span class&#x3D;\&quot;smallText color--red-400\&quot;&gt;※ 顧客情報を共有しないプラットフォームのメインショップのみ指定可&lt;/span&gt;\\ テナントショップID。\\ このテナントショップに紐づく顧客のうち、指定したIDの顧客に紐づく決済手段からIDで指定した決済手段を取得します。  | [optional] |
 
 ### Return type
@@ -3276,7 +3276,7 @@ end
 
 ## retrieve_customer_payment_method_list
 
-> <CustomerPaymentMethodListRetrievingResponse> retrieve_customer_payment_method_list(customer_id, opts)
+> <CustomerPaymentMethodListRetrievingResponse> retrieve_customer_payment_method_list(customer_id, query, opts)
 
 決済手段 一覧取得
 
@@ -3302,14 +3302,14 @@ end
 
 api_instance = FincodeApiClient::DefaultApi.new
 customer_id = TODO # String | 顧客ID
- = FincodeApiClient::CustomerPaymentMethodListRetrievingQueryParams.new({pay_type: FincodeApiClient::PaymentMethodPayType::CARD}) # CustomerPaymentMethodListRetrievingQueryParams | 決済手段の一覧取得において検索条件となるクエリパラメータ 
+query = FincodeApiClient::CustomerPaymentMethodListRetrievingQueryParams.new({pay_type: FincodeApiClient::PaymentMethodPayType::CARD}) # CustomerPaymentMethodListRetrievingQueryParams | 決済手段の一覧取得において検索条件となるクエリパラメータ 
 opts = {
   tenant_shop_id: TODO # String | <span class=\"smallText color--red-400\">※ 顧客情報を共有しないプラットフォームのメインショップのみ指定可</span>\\ テナントショップID。\\ このテナントショップに紐づく顧客のうち、指定したIDの顧客に紐づく決済手段から一覧で取得します。 
 }
 
 begin
   # 決済手段 一覧取得
-  result = api_instance.retrieve_customer_payment_method_list(customer_id, opts)
+  result = api_instance.retrieve_customer_payment_method_list(customer_id, query, opts)
   p result
 rescue FincodeApiClient::ApiError => e
   puts "Error when calling DefaultApi->retrieve_customer_payment_method_list: #{e}"
@@ -3320,12 +3320,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CustomerPaymentMethodListRetrievingResponse>, Integer, Hash)> retrieve_customer_payment_method_list_with_http_info(customer_id, opts)
+> <Array(<CustomerPaymentMethodListRetrievingResponse>, Integer, Hash)> retrieve_customer_payment_method_list_with_http_info(customer_id, query, opts)
 
 ```ruby
 begin
   # 決済手段 一覧取得
-  data, status_code, headers = api_instance.retrieve_customer_payment_method_list_with_http_info(customer_id, opts)
+  data, status_code, headers = api_instance.retrieve_customer_payment_method_list_with_http_info(customer_id, query, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <CustomerPaymentMethodListRetrievingResponse>
@@ -3339,7 +3339,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **customer_id** | [**String**](.md) | 顧客ID |  |
-| **** | [**CustomerPaymentMethodListRetrievingQueryParams**](.md) | 決済手段の一覧取得において検索条件となるクエリパラメータ  |  |
+| **query** | [**CustomerPaymentMethodListRetrievingQueryParams**](.md) | 決済手段の一覧取得において検索条件となるクエリパラメータ  |  |
 | **tenant_shop_id** | [**String**](.md) | &lt;span class&#x3D;\&quot;smallText color--red-400\&quot;&gt;※ 顧客情報を共有しないプラットフォームのメインショップのみ指定可&lt;/span&gt;\\ テナントショップID。\\ このテナントショップに紐づく顧客のうち、指定したIDの顧客に紐づく決済手段から一覧で取得します。  | [optional] |
 
 ### Return type
@@ -3358,7 +3358,7 @@ end
 
 ## retrieve_payment
 
-> <RetrievePayment200Response> retrieve_payment(id, opts)
+> <RetrievePayment200Response> retrieve_payment(id, query, opts)
 
 決済 取得
 
@@ -3381,14 +3381,14 @@ end
 
 api_instance = FincodeApiClient::DefaultApi.new
 id = TODO # String | オーダーID（決済情報のID）
- = FincodeApiClient::PaymentRetrievingQueryParams.new({pay_type: FincodeApiClient::PayType::CARD}) # PaymentRetrievingQueryParams | 決済の取得において検索条件となるクエリパラメータ 
+query = FincodeApiClient::PaymentRetrievingQueryParams.new({pay_type: FincodeApiClient::PayType::CARD}) # PaymentRetrievingQueryParams | 決済の取得において検索条件となるクエリパラメータ 
 opts = {
   tenant_shop_id: TODO # String | <span class=\"smallText color--red-400\">※ プラットフォームのメインショップのみ指定可</span>\\ テナントショップID。\\ 指定したテナントショップを販売主とした決済のうち、`id`で指定した決済情報を取得します。 
 }
 
 begin
   # 決済 取得
-  result = api_instance.retrieve_payment(id, opts)
+  result = api_instance.retrieve_payment(id, query, opts)
   p result
 rescue FincodeApiClient::ApiError => e
   puts "Error when calling DefaultApi->retrieve_payment: #{e}"
@@ -3399,12 +3399,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<RetrievePayment200Response>, Integer, Hash)> retrieve_payment_with_http_info(id, opts)
+> <Array(<RetrievePayment200Response>, Integer, Hash)> retrieve_payment_with_http_info(id, query, opts)
 
 ```ruby
 begin
   # 決済 取得
-  data, status_code, headers = api_instance.retrieve_payment_with_http_info(id, opts)
+  data, status_code, headers = api_instance.retrieve_payment_with_http_info(id, query, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <RetrievePayment200Response>
@@ -3418,7 +3418,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **id** | [**String**](.md) | オーダーID（決済情報のID） |  |
-| **** | [**PaymentRetrievingQueryParams**](.md) | 決済の取得において検索条件となるクエリパラメータ  |  |
+| **query** | [**PaymentRetrievingQueryParams**](.md) | 決済の取得において検索条件となるクエリパラメータ  |  |
 | **tenant_shop_id** | [**String**](.md) | &lt;span class&#x3D;\&quot;smallText color--red-400\&quot;&gt;※ プラットフォームのメインショップのみ指定可&lt;/span&gt;\\ テナントショップID。\\ 指定したテナントショップを販売主とした決済のうち、&#x60;id&#x60;で指定した決済情報を取得します。  | [optional] |
 
 ### Return type
@@ -3437,7 +3437,7 @@ end
 
 ## retrieve_payment_bulk_detail_list
 
-> <PaymentBulkDetailListRetrievingResponse> retrieve_payment_bulk_detail_list(id, opts)
+> <PaymentBulkDetailListRetrievingResponse> retrieve_payment_bulk_detail_list(id, query, opts)
 
 一括決済詳細 一覧取得
 
@@ -3460,14 +3460,14 @@ end
 
 api_instance = FincodeApiClient::DefaultApi.new
 id = 'id_example' # String | 一括決済ID。\\ 詳細を取得する一括決済情報のIDを指定します。 
- = FincodeApiClient::RetrievePaymentBulkDetailListParameter.new({pay_type: FincodeApiClient::PaymentBulkPayType::CARD}) # RetrievePaymentBulkDetailListParameter | 一括決済情報の一覧取得において検索条件となるクエリパラメータ 
+query = FincodeApiClient::RetrievePaymentBulkDetailListQueryParameter.new({pay_type: FincodeApiClient::PaymentBulkPayType::CARD}) # RetrievePaymentBulkDetailListQueryParameter | 一括決済情報の一覧取得において検索条件となるクエリパラメータ 
 opts = {
   tenant_shop_id: TODO # String | <span class=\"smallText color--red-400\">※ プラットフォームのメインショップのみ指定可</span>\\ テナントショップID。\\ 指定したテナントショップを販売主とした一括決済の詳細を一覧で取得します。 
 }
 
 begin
   # 一括決済詳細 一覧取得
-  result = api_instance.retrieve_payment_bulk_detail_list(id, opts)
+  result = api_instance.retrieve_payment_bulk_detail_list(id, query, opts)
   p result
 rescue FincodeApiClient::ApiError => e
   puts "Error when calling DefaultApi->retrieve_payment_bulk_detail_list: #{e}"
@@ -3478,12 +3478,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<PaymentBulkDetailListRetrievingResponse>, Integer, Hash)> retrieve_payment_bulk_detail_list_with_http_info(id, opts)
+> <Array(<PaymentBulkDetailListRetrievingResponse>, Integer, Hash)> retrieve_payment_bulk_detail_list_with_http_info(id, query, opts)
 
 ```ruby
 begin
   # 一括決済詳細 一覧取得
-  data, status_code, headers = api_instance.retrieve_payment_bulk_detail_list_with_http_info(id, opts)
+  data, status_code, headers = api_instance.retrieve_payment_bulk_detail_list_with_http_info(id, query, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <PaymentBulkDetailListRetrievingResponse>
@@ -3497,7 +3497,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **id** | **String** | 一括決済ID。\\ 詳細を取得する一括決済情報のIDを指定します。  |  |
-| **** | [**RetrievePaymentBulkDetailListParameter**](.md) | 一括決済情報の一覧取得において検索条件となるクエリパラメータ  |  |
+| **query** | [**RetrievePaymentBulkDetailListQueryParameter**](.md) | 一括決済情報の一覧取得において検索条件となるクエリパラメータ  |  |
 | **tenant_shop_id** | [**String**](.md) | &lt;span class&#x3D;\&quot;smallText color--red-400\&quot;&gt;※ プラットフォームのメインショップのみ指定可&lt;/span&gt;\\ テナントショップID。\\ 指定したテナントショップを販売主とした一括決済の詳細を一覧で取得します。  | [optional] |
 
 ### Return type
@@ -3540,7 +3540,7 @@ end
 api_instance = FincodeApiClient::DefaultApi.new
 opts = {
   tenant_shop_id: TODO, # String | <span class=\"smallText color--red-400\">※ プラットフォームのメインショップのみ指定可</span>\\ テナントショップID。\\ 指定したテナントショップを販売主とした一括決済情報を一覧で取得します。 
-  : FincodeApiClient::RetrievePaymentBulkListParameter.new # RetrievePaymentBulkListParameter | 一括決済情報の一覧取得において検索条件となるクエリパラメータ 
+  query: FincodeApiClient::RetrievePaymentBulkListQueryParameter.new # RetrievePaymentBulkListQueryParameter | 一括決済情報の一覧取得において検索条件となるクエリパラメータ 
 }
 
 begin
@@ -3575,7 +3575,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **tenant_shop_id** | [**String**](.md) | &lt;span class&#x3D;\&quot;smallText color--red-400\&quot;&gt;※ プラットフォームのメインショップのみ指定可&lt;/span&gt;\\ テナントショップID。\\ 指定したテナントショップを販売主とした一括決済情報を一覧で取得します。  | [optional] |
-| **** | [**RetrievePaymentBulkListParameter**](.md) | 一括決済情報の一覧取得において検索条件となるクエリパラメータ  | [optional] |
+| **query** | [**RetrievePaymentBulkListQueryParameter**](.md) | 一括決済情報の一覧取得において検索条件となるクエリパラメータ  | [optional] |
 
 ### Return type
 
@@ -3593,7 +3593,7 @@ end
 
 ## retrieve_payment_list
 
-> <RetrievePaymentList200Response> retrieve_payment_list(, opts)
+> <RetrievePaymentList200Response> retrieve_payment_list(query, opts)
 
 決済 一覧取得
 
@@ -3615,14 +3615,14 @@ FincodeApiClient.configure do |config|
 end
 
 api_instance = FincodeApiClient::DefaultApi.new
- = FincodeApiClient::ApplePay.new({pay_type: FincodeApiClient::PayType::CARD}) # RetrievePaymentListParameter | 決済の一覧取得において検索条件となるクエリパラメータ 
+query = FincodeApiClient::ApplePay.new({pay_type: FincodeApiClient::PayType::CARD}) # RetrievePaymentListQueryParameter | 決済の一覧取得において検索条件となるクエリパラメータ 
 opts = {
   tenant_shop_id: TODO # String | <span class=\"smallText color--red-400\">※ プラットフォームのメインショップのみ指定可</span>\\ テナントショップID。\\ このテナントショップに紐づく決済から一覧で取得します。 
 }
 
 begin
   # 決済 一覧取得
-  result = api_instance.retrieve_payment_list(, opts)
+  result = api_instance.retrieve_payment_list(query, opts)
   p result
 rescue FincodeApiClient::ApiError => e
   puts "Error when calling DefaultApi->retrieve_payment_list: #{e}"
@@ -3633,12 +3633,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<RetrievePaymentList200Response>, Integer, Hash)> retrieve_payment_list_with_http_info(, opts)
+> <Array(<RetrievePaymentList200Response>, Integer, Hash)> retrieve_payment_list_with_http_info(query, opts)
 
 ```ruby
 begin
   # 決済 一覧取得
-  data, status_code, headers = api_instance.retrieve_payment_list_with_http_info(, opts)
+  data, status_code, headers = api_instance.retrieve_payment_list_with_http_info(query, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <RetrievePaymentList200Response>
@@ -3651,7 +3651,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **** | [**RetrievePaymentListParameter**](.md) | 決済の一覧取得において検索条件となるクエリパラメータ  |  |
+| **query** | [**RetrievePaymentListQueryParameter**](.md) | 決済の一覧取得において検索条件となるクエリパラメータ  |  |
 | **tenant_shop_id** | [**String**](.md) | &lt;span class&#x3D;\&quot;smallText color--red-400\&quot;&gt;※ プラットフォームのメインショップのみ指定可&lt;/span&gt;\\ テナントショップID。\\ このテナントショップに紐づく決済から一覧で取得します。  | [optional] |
 
 ### Return type
@@ -3766,7 +3766,7 @@ end
 
 api_instance = FincodeApiClient::DefaultApi.new
 opts = {
-  : FincodeApiClient::RetrievePlanListParameter.new # RetrievePlanListParameter | プラン情報の一覧取得において検索条件となるクエリパラメータ 
+  query: FincodeApiClient::RetrievePlanListQueryParameter.new # RetrievePlanListQueryParameter | プラン情報の一覧取得において検索条件となるクエリパラメータ 
 }
 
 begin
@@ -3800,7 +3800,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **** | [**RetrievePlanListParameter**](.md) | プラン情報の一覧取得において検索条件となるクエリパラメータ  | [optional] |
+| **query** | [**RetrievePlanListQueryParameter**](.md) | プラン情報の一覧取得において検索条件となるクエリパラメータ  | [optional] |
 
 ### Return type
 
@@ -3914,7 +3914,7 @@ end
 
 api_instance = FincodeApiClient::DefaultApi.new
 opts = {
-  : FincodeApiClient::RetrievePlatformAccountListParameter.new # RetrievePlatformAccountListParameter | プラットフォーム利用料による売上入金情報の一覧取得において検索条件となるクエリパラメータ 
+  query: FincodeApiClient::RetrievePlatformAccountListQueryParameter.new # RetrievePlatformAccountListQueryParameter | プラットフォーム利用料による売上入金情報の一覧取得において検索条件となるクエリパラメータ 
 }
 
 begin
@@ -3948,7 +3948,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **** | [**RetrievePlatformAccountListParameter**](.md) | プラットフォーム利用料による売上入金情報の一覧取得において検索条件となるクエリパラメータ  | [optional] |
+| **query** | [**RetrievePlatformAccountListQueryParameter**](.md) | プラットフォーム利用料による売上入金情報の一覧取得において検索条件となるクエリパラメータ  | [optional] |
 
 ### Return type
 
@@ -3990,7 +3990,7 @@ end
 api_instance = FincodeApiClient::DefaultApi.new
 id = TODO # String | プラットフォーム利用料収入ID
 opts = {
-  : FincodeApiClient::RetrievePlatformAccountSummaryListParameter.new # RetrievePlatformAccountSummaryListParameter | プラットフォーム利用料による売上入金情報の一覧取得において検索条件となるクエリパラメータ 
+  query: FincodeApiClient::RetrievePlatformAccountSummaryListQueryParameter.new # RetrievePlatformAccountSummaryListQueryParameter | プラットフォーム利用料による売上入金情報の一覧取得において検索条件となるクエリパラメータ 
 }
 
 begin
@@ -4025,7 +4025,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **id** | [**String**](.md) | プラットフォーム利用料収入ID |  |
-| **** | [**RetrievePlatformAccountSummaryListParameter**](.md) | プラットフォーム利用料による売上入金情報の一覧取得において検索条件となるクエリパラメータ  | [optional] |
+| **query** | [**RetrievePlatformAccountSummaryListQueryParameter**](.md) | プラットフォーム利用料による売上入金情報の一覧取得において検索条件となるクエリパラメータ  | [optional] |
 
 ### Return type
 
@@ -4130,7 +4130,7 @@ require 'fincode_api_client'
 
 api_instance = FincodeApiClient::DefaultApi.new
 opts = {
-  : FincodeApiClient::RetrievePlatformShopListParameter.new # RetrievePlatformShopListParameter | プラットフォーム情報の一覧取得において検索条件となるクエリパラメータ 
+  query: FincodeApiClient::RetrievePlatformShopListQueryParameter.new # RetrievePlatformShopListQueryParameter | プラットフォーム情報の一覧取得において検索条件となるクエリパラメータ 
 }
 
 begin
@@ -4164,7 +4164,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **** | [**RetrievePlatformShopListParameter**](.md) | プラットフォーム情報の一覧取得において検索条件となるクエリパラメータ  | [optional] |
+| **query** | [**RetrievePlatformShopListQueryParameter**](.md) | プラットフォーム情報の一覧取得において検索条件となるクエリパラメータ  | [optional] |
 
 ### Return type
 
@@ -4255,7 +4255,7 @@ end
 
 ## retrieve_subscription_list
 
-> <SubscriptionListRetrievingResponse> retrieve_subscription_list()
+> <SubscriptionListRetrievingResponse> retrieve_subscription_list(query)
 
 サブスクリプション 一覧取得
 
@@ -4277,11 +4277,11 @@ FincodeApiClient.configure do |config|
 end
 
 api_instance = FincodeApiClient::DefaultApi.new
- = FincodeApiClient::RetrieveSubscriptionListParameter.new({pay_type: FincodeApiClient::SubscriptionPayType::CARD}) # RetrieveSubscriptionListParameter | サブスクリプション情報の一覧取得において検索条件となるクエリパラメータ 
+query = FincodeApiClient::RetrieveSubscriptionListQueryParameter.new({pay_type: FincodeApiClient::SubscriptionPayType::CARD}) # RetrieveSubscriptionListQueryParameter | サブスクリプション情報の一覧取得において検索条件となるクエリパラメータ 
 
 begin
   # サブスクリプション 一覧取得
-  result = api_instance.retrieve_subscription_list()
+  result = api_instance.retrieve_subscription_list(query)
   p result
 rescue FincodeApiClient::ApiError => e
   puts "Error when calling DefaultApi->retrieve_subscription_list: #{e}"
@@ -4292,12 +4292,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<SubscriptionListRetrievingResponse>, Integer, Hash)> retrieve_subscription_list_with_http_info()
+> <Array(<SubscriptionListRetrievingResponse>, Integer, Hash)> retrieve_subscription_list_with_http_info(query)
 
 ```ruby
 begin
   # サブスクリプション 一覧取得
-  data, status_code, headers = api_instance.retrieve_subscription_list_with_http_info()
+  data, status_code, headers = api_instance.retrieve_subscription_list_with_http_info(query)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <SubscriptionListRetrievingResponse>
@@ -4310,7 +4310,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **** | [**RetrieveSubscriptionListParameter**](.md) | サブスクリプション情報の一覧取得において検索条件となるクエリパラメータ  |  |
+| **query** | [**RetrieveSubscriptionListQueryParameter**](.md) | サブスクリプション情報の一覧取得において検索条件となるクエリパラメータ  |  |
 
 ### Return type
 
@@ -4328,7 +4328,7 @@ end
 
 ## retrieve_subscription_result_list
 
-> <SubscriptionResultListRetrievingResponse> retrieve_subscription_result_list(, id)
+> <SubscriptionResultListRetrievingResponse> retrieve_subscription_result_list(query, id)
 
 サブスクリプション結果 一覧取得
 
@@ -4350,12 +4350,12 @@ FincodeApiClient.configure do |config|
 end
 
 api_instance = FincodeApiClient::DefaultApi.new
- = FincodeApiClient::RetrieveSubscriptionResultListParameter.new({pay_type: FincodeApiClient::PropertiesPayType.new}) # RetrieveSubscriptionResultListParameter | サブスクリプション結果の一覧取得において検索条件となるクエリパラメータ 
+query = FincodeApiClient::RetrieveSubscriptionResultListQueryParameter.new({pay_type: FincodeApiClient::PropertiesPayType.new}) # RetrieveSubscriptionResultListQueryParameter | サブスクリプション結果の一覧取得において検索条件となるクエリパラメータ 
 id = TODO # String | サブスクリプションID
 
 begin
   # サブスクリプション結果 一覧取得
-  result = api_instance.retrieve_subscription_result_list(, id)
+  result = api_instance.retrieve_subscription_result_list(query, id)
   p result
 rescue FincodeApiClient::ApiError => e
   puts "Error when calling DefaultApi->retrieve_subscription_result_list: #{e}"
@@ -4366,12 +4366,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<SubscriptionResultListRetrievingResponse>, Integer, Hash)> retrieve_subscription_result_list_with_http_info(, id)
+> <Array(<SubscriptionResultListRetrievingResponse>, Integer, Hash)> retrieve_subscription_result_list_with_http_info(query, id)
 
 ```ruby
 begin
   # サブスクリプション結果 一覧取得
-  data, status_code, headers = api_instance.retrieve_subscription_result_list_with_http_info(, id)
+  data, status_code, headers = api_instance.retrieve_subscription_result_list_with_http_info(query, id)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <SubscriptionResultListRetrievingResponse>
@@ -4384,7 +4384,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **** | [**RetrieveSubscriptionResultListParameter**](.md) | サブスクリプション結果の一覧取得において検索条件となるクエリパラメータ  |  |
+| **query** | [**RetrieveSubscriptionResultListQueryParameter**](.md) | サブスクリプション結果の一覧取得において検索条件となるクエリパラメータ  |  |
 | **id** | [**String**](.md) | サブスクリプションID |  |
 
 ### Return type
@@ -4706,7 +4706,7 @@ require 'fincode_api_client'
 
 api_instance = FincodeApiClient::DefaultApi.new
 opts = {
-  : FincodeApiClient::RetrieveTenantShopListParameter.new # RetrieveTenantShopListParameter | テナント情報の一覧取得において検索条件となるクエリパラメータ 
+  query: FincodeApiClient::RetrieveTenantShopListQueryParameter.new # RetrieveTenantShopListQueryParameter | テナント情報の一覧取得において検索条件となるクエリパラメータ 
 }
 
 begin
@@ -4740,7 +4740,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **** | [**RetrieveTenantShopListParameter**](.md) | テナント情報の一覧取得において検索条件となるクエリパラメータ  | [optional] |
+| **query** | [**RetrieveTenantShopListQueryParameter**](.md) | テナント情報の一覧取得において検索条件となるクエリパラメータ  | [optional] |
 
 ### Return type
 

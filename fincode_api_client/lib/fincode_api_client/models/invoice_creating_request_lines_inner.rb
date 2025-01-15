@@ -15,16 +15,16 @@ require 'time'
 
 module FincodeApiClient
   class InvoiceCreatingRequestLinesInner
-    # 日付   yyyy/MM/dd   
+    # 日付   yyyy/MM/dd 
     attr_accessor :date
 
     # 品目
     attr_accessor :name
 
-    # 単価   
+    # 単価 
     attr_accessor :unit_price
 
-    # 数量   
+    # 数量 
     attr_accessor :quantity
 
     # 適用税率（%）

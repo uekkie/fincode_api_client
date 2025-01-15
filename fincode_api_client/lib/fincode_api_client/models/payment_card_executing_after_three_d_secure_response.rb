@@ -102,10 +102,10 @@ module FincodeApiClient
     # 3Dセキュア認証における戻りURL   3Dセキュア認証に必要なAPIの呼び出しやコールバック処理をすべて加盟店で実装する場合のみ使用します。   fincodeは3Dセキュア認証処理の過程において、このURLにPOSTメソッド、`Content-Type:application/x-www-form-urlencoded`で値を返します。    - `MD`: クエリパラメータとして返されます。 `access_id`と等しい値です。 - `event`: フォームデータとして返されます。この値を判定し後続の処理を分岐します。 - `param`: フォームデータとして返されます。[3Dセキュア認証API](https://docs.fincode.jp/api#tag/ThreeDSecureecure/executeThreeDSecureecureAuth)で使用します。 - `requestorTransId`: フォームデータとして返されます。（後続処理では使用しません。）  返却されるそれぞれの値についての[詳細はDocsで確認](https://docs.fincode.jp/payment/fraud_protection/3d_secure_2)できます。 
     attr_accessor :tds2_ret_url
 
-    # 加盟店戻りURL（成功時）   購入者のブラウザとfincode間で3Dセキュア認証を自動で行う場合に、 3Dセキュア認証処理後、決済に成功した際にリダイレクトされるURLです。   POSTメソッドでリダイレクトされます。  リクエストで指定しない場合はデフォルトの成功ページのURLが設定されます。   また、`tds2_ret_url`を指定していない場合のみ返却されます。   
+    # 加盟店戻りURL（成功時）   購入者のブラウザとfincode間で3Dセキュア認証を自動で行う場合に、 3Dセキュア認証処理後、決済に成功した際にリダイレクトされるURLです。   POSTメソッドでリダイレクトされます。  リクエストで指定しない場合はデフォルトの成功ページのURLが設定されます。   また、`tds2_ret_url`を指定していない場合のみ返却されます。 
     attr_accessor :return_url
 
-    # 加盟店戻りURL（失敗時）   購入者のブラウザとfincode間で3Dセキュア認証を自動で行う場合に、 3Dセキュア認証に失敗、または決済に失敗した際にリダイレクトされるURLです。   POSTメソッドでリダイレクトされます。  リクエストで指定しない場合はデフォルトの失敗ページのURLが設定されます。   また、`tds2_ret_url`を指定していない場合のみ返却されます。   
+    # 加盟店戻りURL（失敗時）   購入者のブラウザとfincode間で3Dセキュア認証を自動で行う場合に、 3Dセキュア認証に失敗、または決済に失敗した際にリダイレクトされるURLです。   POSTメソッドでリダイレクトされます。  リクエストで指定しない場合はデフォルトの失敗ページのURLが設定されます。   また、`tds2_ret_url`を指定していない場合のみ返却されます。 
     attr_accessor :return_url_on_failure
 
     attr_accessor :tds2_status

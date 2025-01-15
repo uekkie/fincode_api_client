@@ -4,11 +4,11 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **virtual_account_id** | **String** | バーチャル口座ID    | [optional] |
-| **branch_name** | **String** | 支店名    | [optional] |
-| **branch_code** | **String** | 支店コード    | [optional] |
-| **account_number** | **String** | 口座番号    | [optional] |
-| **account_name** | **String** | 口座名義    | [optional] |
+| **virtual_account_id** | **String** | バーチャル口座ID  | [optional] |
+| **branch_name** | **String** | 支店名  | [optional] |
+| **branch_code** | **String** | 支店コード  | [optional] |
+| **account_number** | **String** | 口座番号  | [optional] |
+| **account_name** | **String** | 口座名義  | [optional] |
 
 ## Example
 

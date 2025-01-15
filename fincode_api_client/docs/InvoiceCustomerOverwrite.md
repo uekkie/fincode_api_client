@@ -4,15 +4,15 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **name** | **String** | 上書き顧客（請求先）宛名    | [optional] |
-| **email** | **String** | 上書き顧客（請求先）メールアドレス    | [optional] |
-| **addr_country** | **String** | 上書き顧客（請求先）住所の国コード    | [optional] |
-| **addr_state** | **String** | 上書き顧客（請求先）住所の都道府県コード    | [optional] |
-| **addr_city** | **String** | 上書き顧客（請求先）住所の市区町村    | [optional] |
-| **addr_line_1** | **String** | 上書き顧客（請求先）住所の町名・番地    | [optional] |
-| **addr_line_2** | **String** | 上書き顧客（請求先）住所の建物名・部屋番号    | [optional] |
-| **addr_line_3** | **String** | 上書き顧客（請求先）住所 その他    | [optional] |
-| **addr_post_code** | **String** | 上書き顧客（請求先）住所の郵便番号    | [optional] |
+| **name** | **String** | 上書き顧客（請求先）宛名  | [optional] |
+| **email** | **String** | 上書き顧客（請求先）メールアドレス  | [optional] |
+| **addr_country** | **String** | 上書き顧客（請求先）住所の国コード  | [optional] |
+| **addr_state** | **String** | 上書き顧客（請求先）住所の都道府県コード  | [optional] |
+| **addr_city** | **String** | 上書き顧客（請求先）住所の市区町村  | [optional] |
+| **addr_line_1** | **String** | 上書き顧客（請求先）住所の町名・番地  | [optional] |
+| **addr_line_2** | **String** | 上書き顧客（請求先）住所の建物名・部屋番号  | [optional] |
+| **addr_line_3** | **String** | 上書き顧客（請求先）住所 その他  | [optional] |
+| **addr_post_code** | **String** | 上書き顧客（請求先）住所の郵便番号  | [optional] |
 
 ## Example
 

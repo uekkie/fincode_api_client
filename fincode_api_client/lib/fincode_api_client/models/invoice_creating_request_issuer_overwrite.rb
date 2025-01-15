@@ -14,7 +14,7 @@ require 'date'
 require 'time'
 
 module FincodeApiClient
-  # 発行元事業者情報   指定しなかった場合、本番環境申請の際にご提出いただいた情報を利用します。   
+  # 発行元事業者情報   指定しなかった場合、本番環境申請の際にご提出いただいた情報を利用します。 
   class InvoiceCreatingRequestIssuerOverwrite
     # 発行元事業者住所の国コード
     attr_accessor :addr_country

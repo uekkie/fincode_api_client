@@ -18,13 +18,13 @@ module FincodeApiClient
     # 回収困難フラグ
     attr_accessor :is_uncollectible
 
-    # 請求書メール送信フラグ      - `0`: メールを送信しない（デフォルト）   - `1`: メールを送信する   
+    # 請求書メール送信フラグ      - `0`: メールを送信しない（デフォルト）   - `1`: メールを送信する 
     attr_accessor :bill_mail_send_flag
 
-    # 領収書メール送信フラグ      - `0`: メールを送信しない（デフォルト）   - `1`: メールを送信する   
+    # 領収書メール送信フラグ      - `0`: メールを送信しない（デフォルト）   - `1`: メールを送信する 
     attr_accessor :receipt_mail_send_flag
 
-    # 差額請求メール送信フラグ      - `0`: メールを送信しない（デフォルト）   - `1`: メールを送信する   
+    # 差額請求メール送信フラグ      - `0`: メールを送信しない（デフォルト）   - `1`: メールを送信する 
     attr_accessor :underpayment_mail_send_flag
 
     # 請求番号   指定しないまま請求書を開始した場合、自動採番されます。 
@@ -106,7 +106,7 @@ module FincodeApiClient
         :'lines' => :'Array<InvoiceCreatingRequestLinesInner>',
         :'pay_types' => :'Array<String>',
         :'card' => :'InvoiceCreatingRequestCard',
-        :'virtual_account' => :'InvoiceDetailUpdatingRequestVirtualAccount',
+        :'virtual_account' => :'InvoiceCreatingRequestVirtualAccount',
         :'client_field_1' => :'String',
         :'client_field_2' => :'String',
         :'client_field_3' => :'String'

@@ -5,9 +5,9 @@
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **id** | **String** | インボイスID      ショップ内で一意な値を設定してください。   未指定の場合自動生成します。  | [optional] |
-| **bill_mail_send_flag** | **String** | 請求書メール送信フラグ      - &#x60;0&#x60;: メールを送信しない（デフォルト）   - &#x60;1&#x60;: メールを送信する    | [optional] |
-| **receipt_mail_send_flag** | **String** | 領収書メール送信フラグ      - &#x60;0&#x60;: メールを送信しない（デフォルト）   - &#x60;1&#x60;: メールを送信する    | [optional] |
-| **underpayment_mail_send_flag** | **String** | 差額請求メール送信フラグ      - &#x60;0&#x60;: メールを送信しない（デフォルト）   - &#x60;1&#x60;: メールを送信する    | [optional] |
+| **bill_mail_send_flag** | **String** | 請求書メール送信フラグ      - &#x60;0&#x60;: メールを送信しない（デフォルト）   - &#x60;1&#x60;: メールを送信する  | [optional] |
+| **receipt_mail_send_flag** | **String** | 領収書メール送信フラグ      - &#x60;0&#x60;: メールを送信しない（デフォルト）   - &#x60;1&#x60;: メールを送信する  | [optional] |
+| **underpayment_mail_send_flag** | **String** | 差額請求メール送信フラグ      - &#x60;0&#x60;: メールを送信しない（デフォルト）   - &#x60;1&#x60;: メールを送信する  | [optional] |
 | **invoice_number** | **String** | 請求番号   指定しないまま請求書を開始した場合、自動採番されます。  | [optional] |
 | **customer_id** | **String** | 顧客（請求先）ID | [optional] |
 | **customer_honorific** | **String** | 顧客（請求先）敬称 | [optional] |

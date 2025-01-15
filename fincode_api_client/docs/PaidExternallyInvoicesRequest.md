@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **transaction_date** | **String** | 支払い完了日   yyyy/MM/dd形式    | [optional] |
+| **transaction_date** | **String** | 支払い完了日   yyyy/MM/dd形式  | [optional] |
 
 ## Example
 

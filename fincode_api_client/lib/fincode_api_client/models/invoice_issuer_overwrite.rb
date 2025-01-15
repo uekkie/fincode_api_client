@@ -14,30 +14,30 @@ require 'date'
 require 'time'
 
 module FincodeApiClient
-  # 上書き発行元事業者情報   
+  # 上書き発行元事業者情報 
   class InvoiceIssuerOverwrite
-    # 発行元事業者住所の都道府県コード   
+    # 発行元事業者住所の都道府県コード 
     attr_accessor :addr_state
 
-    # 発行元事業者住所の市区町村   
+    # 発行元事業者住所の市区町村 
     attr_accessor :addr_city
 
-    # 発行元事業者住所の町名・番地   
+    # 発行元事業者住所の町名・番地 
     attr_accessor :addr_line_1
 
-    # 発行元事業者住所の建物名・部屋番号   
+    # 発行元事業者住所の建物名・部屋番号 
     attr_accessor :addr_line_2
 
-    # 発行元事業者住所 その他   
+    # 発行元事業者住所 その他 
     attr_accessor :addr_line_3
 
-    # 発行元事業者住所の郵便番号   
+    # 発行元事業者住所の郵便番号 
     attr_accessor :addr_post_code
 
-    # 発行元事業者のメールアドレス   
+    # 発行元事業者のメールアドレス 
     attr_accessor :email
 
-    # 発行元事業者の電話番号   
+    # 発行元事業者の電話番号 
     attr_accessor :phone_number
 
     # Attribute mapping from ruby-style variable name to JSON key.

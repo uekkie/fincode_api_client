@@ -16,142 +16,142 @@ require 'time'
 module FincodeApiClient
   # カード決済情報 
   class InvoiceCard
-    # 処理区分   
+    # 処理区分 
     attr_accessor :job_code
 
-    # 3DS利用種別   
+    # 3DS利用種別 
     attr_accessor :tds_type
 
-    # 3DS2非対応時設定   
+    # 3DS2非対応時設定 
     attr_accessor :tds2_type
 
-    # 3Dセキュア表示店舗名   
+    # 3Dセキュア表示店舗名 
     attr_accessor :td_tenant_name
 
-    # 3DSリクエスター アカウント最終更新日   yyyyMMdd形式   
+    # 3DSリクエスター アカウント最終更新日   yyyyMMdd形式 
     attr_accessor :tds2_ch_acc_change
 
-    # 3DSリクエスター アカウント開設日   yyyyMMdd形式   
+    # 3DSリクエスター アカウント開設日   yyyyMMdd形式 
     attr_accessor :tds2_ch_acc_date
 
-    # 3DSリクエスター アカウントパスワード変更日   yyyyMMdd形式   
+    # 3DSリクエスター アカウントパスワード変更日   yyyyMMdd形式 
     attr_accessor :tds2_ch_acc_pw_change
 
-    # 過去6ヶ月間の購入回数   
+    # 過去6ヶ月間の購入回数 
     attr_accessor :tds2_nb_purchase_account
 
-    # カード登録日   yyyyMMdd形式   
+    # カード登録日   yyyyMMdd形式 
     attr_accessor :tds2_payment_acc_age
 
-    # 過去24時間のカード追加の試行回数   
+    # 過去24時間のカード追加の試行回数 
     attr_accessor :tds2_provision_attempts_day
 
-    # 出荷先住所の最初の使用日   yyyyMMdd形式   
+    # 出荷先住所の最初の使用日   yyyyMMdd形式 
     attr_accessor :tds2_ship_address_usage
 
-    # カード顧客名と出荷先名の一致/不一致情報   01 = カード顧客名と配送先名が一致   02 = カード顧客名と配送先名が不一致   
+    # カード顧客名と出荷先名の一致/不一致情報   01 = カード顧客名と配送先名が一致   02 = カード顧客名と配送先名が不一致 
     attr_accessor :tds2_ship_name_ind
 
-    # アカウントの不審行為情報   01 = 不審な行動は見られなかった   02 = 不審な行動が見られた   
+    # アカウントの不審行為情報   01 = 不審な行動は見られなかった   02 = 不審な行動が見られた 
     attr_accessor :tds2_suspicious_acc_activity
 
-    # 過去24時間の取引回数   
+    # 過去24時間の取引回数 
     attr_accessor :tds2_txn_activity_day
 
-    # 前年の取引回数   
+    # 前年の取引回数 
     attr_accessor :tds2_txn_activity_year
 
-    # ログイン証跡   ログイン方法/ログイン日時の設定が必要   
+    # ログイン証跡   ログイン方法/ログイン日時の設定が必要 
     attr_accessor :tds2_three_ds_req_auth_data
 
-    # ログイン方法   01 = 認証なし（ゲストとしてログイン）   02 = 加盟店様自身の認証情報   03 = SSO(シングルサインオン)   04 = イシュアーの認証情報   05 = サードパーティ認証   06 = FIDO認証   
+    # ログイン方法   01 = 認証なし（ゲストとしてログイン）   02 = 加盟店様自身の認証情報   03 = SSO(シングルサインオン)   04 = イシュアーの認証情報   05 = サードパーティ認証   06 = FIDO認証 
     attr_accessor :tds2_three_ds_req_auth_method
 
-    # ログイン日時   YYYYMMDDHHMM形式   
+    # ログイン日時   YYYYMMDDHHMM形式 
     attr_accessor :tds2_three_ds_req_auth_timestamp
 
-    # 請求先住所と配送先住所の一致/不一致情報      - `Y`: 一致   - `N`: 不一致   
+    # 請求先住所と配送先住所の一致/不一致情報      - `Y`: 一致   - `N`: 不一致 
     attr_accessor :tds2_addr_match
 
-    # カード顧客の請求先住所の都市   
+    # カード顧客の請求先住所の都市 
     attr_accessor :tds2_bill_addr_city
 
-    # カード顧客の請求先住所の国コード   
+    # カード顧客の請求先住所の国コード 
     attr_accessor :tds2_bill_addr_country
 
-    # カード顧客の請求先住所の区域部分の１行目   
+    # カード顧客の請求先住所の区域部分の１行目 
     attr_accessor :tds2_bill_addr_line_1
 
-    # カード顧客の請求先住所の区域部分の２行目   
+    # カード顧客の請求先住所の区域部分の２行目 
     attr_accessor :tds2_bill_addr_line_2
 
-    # カード顧客の請求先住所の区域部分の３行目   
+    # カード顧客の請求先住所の区域部分の３行目 
     attr_accessor :tds2_bill_addr_line_3
 
-    # カード顧客の請求先住所の郵便番号   
+    # カード顧客の請求先住所の郵便番号 
     attr_accessor :tds2_bill_addr_post_code
 
-    # カード顧客の請求先住所の州または都道府県コード   
+    # カード顧客の請求先住所の州または都道府県コード 
     attr_accessor :tds2_bill_addr_state
 
-    # カード顧客のメールアドレス   
+    # カード顧客のメールアドレス 
     attr_accessor :tds2_email
 
-    # 自宅電話の国コード   
+    # 自宅電話の国コード 
     attr_accessor :tds2_home_phone_cc
 
-    # 自宅電話番号   ハイフン（-）なし、数字のみ   
+    # 自宅電話番号   ハイフン（-）なし、数字のみ 
     attr_accessor :tds2_home_phone_no
 
-    # 携帯電話の国コード   
+    # 携帯電話の国コード 
     attr_accessor :tds2_mobile_phone_cc
 
-    # 携帯電話番号   ハイフン（-）なし、数字のみ   
+    # 携帯電話番号   ハイフン（-）なし、数字のみ 
     attr_accessor :tds2_mobile_phone_no
 
-    # 職場電話の国コード   
+    # 職場電話の国コード 
     attr_accessor :tds2_work_phone_cc
 
-    # 職場電話番号   ハイフン（-）なし、数字のみ   
+    # 職場電話番号   ハイフン（-）なし、数字のみ 
     attr_accessor :tds2_work_phone_no
 
-    # 出荷先住所の都市   
+    # 出荷先住所の都市 
     attr_accessor :tds2_ship_addr_city
 
-    # 出荷先住所の国コード   
+    # 出荷先住所の国コード 
     attr_accessor :tds2_ship_addr_country
 
-    # 出荷先住所の区域部分の１行目   
+    # 出荷先住所の区域部分の１行目 
     attr_accessor :tds2_ship_addr_line_1
 
-    # 出荷先住所の区域部分の２行目   
+    # 出荷先住所の区域部分の２行目 
     attr_accessor :tds2_ship_addr_line_2
 
-    # 出荷先住所の区域部分の３行目   
+    # 出荷先住所の区域部分の３行目 
     attr_accessor :tds2_ship_addr_line_3
 
-    # 出荷先住所の郵便番号   
+    # 出荷先住所の郵便番号 
     attr_accessor :tds2_ship_addr_post_code
 
-    # 出荷先住所の州または都道府県コード   
+    # 出荷先住所の州または都道府県コード 
     attr_accessor :tds2_ship_addr_state
 
-    # 出荷先住所のメールアドレス   
+    # 出荷先住所のメールアドレス 
     attr_accessor :tds2_delivery_email_address
 
     # 商品納品時間枠      - `01`: 電子デリバリー - `02`: 当日出荷 - `03`: 翌日出荷 - `04`: 2日目以降の出荷 
     attr_accessor :tds2_delivery_timeframe
 
-    # プリペイドカードまたはギフトカードの総購入金額   
+    # プリペイドカードまたはギフトカードの総購入金額 
     attr_accessor :tds2_gift_card_amount
 
-    # 購入されたプリペイドカードまたはギフトカード / コードの総数   
+    # 購入されたプリペイドカードまたはギフトカード / コードの総数 
     attr_accessor :tds2_gift_card_count
 
-    # 通貨コード   
+    # 通貨コード 
     attr_accessor :tds2_gift_card_curr
 
-    # 商品の発売予定日   YYYYMMDD形式   
+    # 商品の発売予定日   YYYYMMDD形式 
     attr_accessor :tds2_pre_order_date
 
     # 商品の販売時期情報      - `01`: 発売済み商品 - `02`: 先行予約商品 
@@ -160,13 +160,13 @@ module FincodeApiClient
     # 商品の注文情報      - `01`: 初回注文   - `02`: 再注文 
     attr_accessor :tds2_reorder_items_ind
 
-    # 取引の出荷方法      - `01`: カード顧客の請求先住所に配送する   - `02`: 加盟店様が保持している別の、確認済み住所に配送する   - `03`: カード顧客の請求先住所と異なる住所に配送する   - `04`: 店舗へ配送 / 近所の店舗での受け取り（店舗の住所は配送先住所で指定する）   - `05`: デジタル商品（オンラインサービス、電子ギフトカードおよび償還コードを含む）   - `06`: 配送なし（旅行およびイベントのチケット）   - `07`: その他（ゲーム、配送されないデジタルサービス、電子メディアの購読料など）   
+    # 取引の出荷方法      - `01`: カード顧客の請求先住所に配送する   - `02`: 加盟店様が保持している別の、確認済み住所に配送する   - `03`: カード顧客の請求先住所と異なる住所に配送する   - `04`: 店舗へ配送 / 近所の店舗での受け取り（店舗の住所は配送先住所で指定する）   - `05`: デジタル商品（オンラインサービス、電子ギフトカードおよび償還コードを含む）   - `06`: 配送なし（旅行およびイベントのチケット）   - `07`: その他（ゲーム、配送されないデジタルサービス、電子メディアの購読料など） 
     attr_accessor :tds2_ship_ind
 
-    # 継続課金の期限   YYYYMMDD形式   
+    # 継続課金の期限   YYYYMMDD形式 
     attr_accessor :tds2_recurring_expiry
 
-    # 継続課金の課金最小間隔日数   
+    # 継続課金の課金最小間隔日数 
     attr_accessor :tds2_recurring_frequency
 
     # Attribute mapping from ruby-style variable name to JSON key.

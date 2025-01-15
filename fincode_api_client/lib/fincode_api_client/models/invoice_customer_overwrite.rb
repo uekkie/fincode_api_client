@@ -14,33 +14,33 @@ require 'date'
 require 'time'
 
 module FincodeApiClient
-  # 上書き顧客（請求先）情報   
+  # 上書き顧客（請求先）情報 
   class InvoiceCustomerOverwrite
-    # 上書き顧客（請求先）宛名   
+    # 上書き顧客（請求先）宛名 
     attr_accessor :name
 
-    # 上書き顧客（請求先）メールアドレス   
+    # 上書き顧客（請求先）メールアドレス 
     attr_accessor :email
 
-    # 上書き顧客（請求先）住所の国コード   
+    # 上書き顧客（請求先）住所の国コード 
     attr_accessor :addr_country
 
-    # 上書き顧客（請求先）住所の都道府県コード   
+    # 上書き顧客（請求先）住所の都道府県コード 
     attr_accessor :addr_state
 
-    # 上書き顧客（請求先）住所の市区町村   
+    # 上書き顧客（請求先）住所の市区町村 
     attr_accessor :addr_city
 
-    # 上書き顧客（請求先）住所の町名・番地   
+    # 上書き顧客（請求先）住所の町名・番地 
     attr_accessor :addr_line_1
 
-    # 上書き顧客（請求先）住所の建物名・部屋番号   
+    # 上書き顧客（請求先）住所の建物名・部屋番号 
     attr_accessor :addr_line_2
 
-    # 上書き顧客（請求先）住所 その他   
+    # 上書き顧客（請求先）住所 その他 
     attr_accessor :addr_line_3
 
-    # 上書き顧客（請求先）住所の郵便番号   
+    # 上書き顧客（請求先）住所の郵便番号 
     attr_accessor :addr_post_code
 
     # Attribute mapping from ruby-style variable name to JSON key.

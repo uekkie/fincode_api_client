@@ -16,151 +16,151 @@ require 'time'
 module FincodeApiClient
   # カード決済情報
   class InvoiceCreatingRequestCard
-    # 処理区分   以下のいずれかを指定してください。    - `AUTH`: 仮売上   - `CAPTURE`: 即時売上   
+    # 処理区分   以下のいずれかを指定してください。    - `AUTH`: 仮売上   - `CAPTURE`: 即時売上 
     attr_accessor :job_code
 
-    # 3DS利用種別   3DSを使用して決済を行うかを設定します。   - `0`: 行わない（デフォルト）   - `2`: 行う（3DS2.0を利用）   
+    # 3DS利用種別   3DSを使用して決済を行うかを設定します。   - `0`: 行わない（デフォルト）   - `2`: 行う（3DS2.0を利用） 
     attr_accessor :tds_type
 
     # 3DS2非対応時設定   仕向先カード会社が3DS2.0に未対応な場合の、後続処理を設定します。   - `1`: 3DS1.0での認証を実施   - `2`: エラーとして処理終了（デフォルト）   - `3`: 通常オーソリを実施 
     attr_accessor :tds2_type
 
-    # <span class=\"smallText color--blue-400\">[3Dセキュア認証パラメータ]</span>   3Dセキュア表示店舗名   
+    # <span class=\"smallText color--blue-400\">[3Dセキュア認証パラメータ]</span>   3Dセキュア表示店舗名 
     attr_accessor :tds2_tenant_name
 
-    # <span class=\"smallText color--blue-400\">[3Dセキュア認証パラメータ]</span>   3DSリクエスター アカウント最終更新日   yyyyMMdd形式   
+    # <span class=\"smallText color--blue-400\">[3Dセキュア認証パラメータ]</span>   3DSリクエスター アカウント最終更新日   yyyyMMdd形式 
     attr_accessor :tds2_ch_acc_change
 
-    # <span class=\"smallText color--blue-400\">[3Dセキュア認証パラメータ]</span>   3DSリクエスター アカウント開設日   yyyyMMdd形式   
+    # <span class=\"smallText color--blue-400\">[3Dセキュア認証パラメータ]</span>   3DSリクエスター アカウント開設日   yyyyMMdd形式 
     attr_accessor :tds2_ch_acc_date
 
-    # <span class=\"smallText color--blue-400\">[3Dセキュア認証パラメータ]</span>   3DSリクエスター アカウントパスワード変更日   yyyyMMdd形式   
+    # <span class=\"smallText color--blue-400\">[3Dセキュア認証パラメータ]</span>   3DSリクエスター アカウントパスワード変更日   yyyyMMdd形式 
     attr_accessor :tds2_ch_acc_pw_change
 
-    # <span class=\"smallText color--blue-400\">[3Dセキュア認証パラメータ]</span>   過去6ヶ月間の購入回数   
+    # <span class=\"smallText color--blue-400\">[3Dセキュア認証パラメータ]</span>   過去6ヶ月間の購入回数 
     attr_accessor :tds2_nb_purchase_account
 
-    # <span class=\"smallText color--blue-400\">[3Dセキュア認証パラメータ]</span>   カード登録日   yyyyMMdd形式   
+    # <span class=\"smallText color--blue-400\">[3Dセキュア認証パラメータ]</span>   カード登録日   yyyyMMdd形式 
     attr_accessor :tds2_payment_acc_age
 
-    # <span class=\"smallText color--blue-400\">[3Dセキュア認証パラメータ]</span>   過去24時間のカード追加の試行回数   
+    # <span class=\"smallText color--blue-400\">[3Dセキュア認証パラメータ]</span>   過去24時間のカード追加の試行回数 
     attr_accessor :tds2_provision_attempts_day
 
-    # <span class=\"smallText color--blue-400\">[3Dセキュア認証パラメータ]</span>   出荷先住所の最初の使用日   yyyyMMdd形式   
+    # <span class=\"smallText color--blue-400\">[3Dセキュア認証パラメータ]</span>   出荷先住所の最初の使用日   yyyyMMdd形式 
     attr_accessor :tds2_ship_address_usage
 
-    # <span class=\"smallText color--blue-400\">[3Dセキュア認証パラメータ]</span>   カード顧客名と出荷先名の一致/不一致情報      - `01`: カード顧客名と配送先名が一致   - `02`: カード顧客名と配送先名が不一致   
+    # <span class=\"smallText color--blue-400\">[3Dセキュア認証パラメータ]</span>   カード顧客名と出荷先名の一致/不一致情報      - `01`: カード顧客名と配送先名が一致   - `02`: カード顧客名と配送先名が不一致 
     attr_accessor :tds2_ship_name_ind
 
-    # <span class=\"smallText color--blue-400\">[3Dセキュア認証パラメータ]</span>   アカウントの不審行為情報   カード顧客で、不審な行動（過去の不正行為を含む）を加盟店様が発見したかどうかを設定      - `01`: 不審な行動は見られなかった   - `02`: 不審な行動が見られた   
+    # <span class=\"smallText color--blue-400\">[3Dセキュア認証パラメータ]</span>   アカウントの不審行為情報   カード顧客で、不審な行動（過去の不正行為を含む）を加盟店様が発見したかどうかを設定      - `01`: 不審な行動は見られなかった   - `02`: 不審な行動が見られた 
     attr_accessor :tds2_suspicious_acc_activity
 
-    # <span class=\"smallText color--blue-400\">[3Dセキュア認証パラメータ]</span>   過去24時間の取引回数   
+    # <span class=\"smallText color--blue-400\">[3Dセキュア認証パラメータ]</span>   過去24時間の取引回数 
     attr_accessor :tds2_txn_activity_day
 
-    # <span class=\"smallText color--blue-400\">[3Dセキュア認証パラメータ]</span>   前年の取引回数   
+    # <span class=\"smallText color--blue-400\">[3Dセキュア認証パラメータ]</span>   前年の取引回数 
     attr_accessor :tds2_txn_activity_year
 
-    # <span class=\"smallText color--blue-400\">[3Dセキュア認証パラメータ]</span>   ログイン証跡   ログイン証跡を設定した場合   ログイン方法/ログイン日時の設定が必要  01 = 認証なし（ゲストとしてログイン）   02 = 加盟店様自身の認証情報   03 = SSO(シングルサインオン)   04 = イシュアーの認証情報   05 = サードパーティ認証   06 = FIDO認証   
+    # <span class=\"smallText color--blue-400\">[3Dセキュア認証パラメータ]</span>   ログイン証跡   ログイン証跡を設定した場合   ログイン方法/ログイン日時の設定が必要  01 = 認証なし（ゲストとしてログイン）   02 = 加盟店様自身の認証情報   03 = SSO(シングルサインオン)   04 = イシュアーの認証情報   05 = サードパーティ認証   06 = FIDO認証 
     attr_accessor :tds2_three_ds_req_auth_data
 
-    # <span class=\"smallText color--blue-400\">[3Dセキュア認証パラメータ]</span>   ログイン日時   ログイン日時を設定した場合   ログイン証跡/ログイン方法の設定が必要   YYYYMMDDHHMM形式   
+    # <span class=\"smallText color--blue-400\">[3Dセキュア認証パラメータ]</span>   ログイン日時   ログイン日時を設定した場合   ログイン証跡/ログイン方法の設定が必要   YYYYMMDDHHMM形式 
     attr_accessor :tds2_three_ds_req_auth_timestamp
 
-    # <span class=\"smallText color--blue-400\">[3Dセキュア認証パラメータ]</span>   請求先住所と配送先住所の一致/不一致情報   カード顧客の配送先住所とカード顧客の請求先住所の一致/不一致の設定が必要   Y=一致   N=不一致   
+    # <span class=\"smallText color--blue-400\">[3Dセキュア認証パラメータ]</span>   請求先住所と配送先住所の一致/不一致情報   カード顧客の配送先住所とカード顧客の請求先住所の一致/不一致の設定が必要   Y=一致   N=不一致 
     attr_accessor :tds2_addr_match
 
-    # <span class=\"smallText color--blue-400\">[3Dセキュア認証パラメータ]</span>   カード顧客の請求先住所の都市   
+    # <span class=\"smallText color--blue-400\">[3Dセキュア認証パラメータ]</span>   カード顧客の請求先住所の都市 
     attr_accessor :tds2_bill_addr_city
 
-    # <span class=\"smallText color--blue-400\">[3Dセキュア認証パラメータ]</span>   カード顧客の請求先住所の国コード   
+    # <span class=\"smallText color--blue-400\">[3Dセキュア認証パラメータ]</span>   カード顧客の請求先住所の国コード 
     attr_accessor :tds2_bill_addr_country
 
-    # <span class=\"smallText color--blue-400\">[3Dセキュア認証パラメータ]</span>   カード顧客の請求先住所の区域部分の１行目   
+    # <span class=\"smallText color--blue-400\">[3Dセキュア認証パラメータ]</span>   カード顧客の請求先住所の区域部分の１行目 
     attr_accessor :tds2_bill_addr_line_1
 
-    # <span class=\"smallText color--blue-400\">[3Dセキュア認証パラメータ]</span>   カード顧客の請求先住所の区域部分の２行目   
+    # <span class=\"smallText color--blue-400\">[3Dセキュア認証パラメータ]</span>   カード顧客の請求先住所の区域部分の２行目 
     attr_accessor :tds2_bill_addr_line_2
 
-    # <span class=\"smallText color--blue-400\">[3Dセキュア認証パラメータ]</span>   カード顧客の請求先住所の区域部分の３行目   
+    # <span class=\"smallText color--blue-400\">[3Dセキュア認証パラメータ]</span>   カード顧客の請求先住所の区域部分の３行目 
     attr_accessor :tds2_bill_addr_line_3
 
-    # <span class=\"smallText color--blue-400\">[3Dセキュア認証パラメータ]</span>   カード顧客の請求先住所の郵便番号   
+    # <span class=\"smallText color--blue-400\">[3Dセキュア認証パラメータ]</span>   カード顧客の請求先住所の郵便番号 
     attr_accessor :tds2_bill_addr_post_code
 
-    # <span class=\"smallText color--blue-400\">[3Dセキュア認証パラメータ]</span>   カード顧客の請求先住所の州または都道府県コード   
+    # <span class=\"smallText color--blue-400\">[3Dセキュア認証パラメータ]</span>   カード顧客の請求先住所の州または都道府県コード 
     attr_accessor :tds2_bill_addr_state
 
-    # <span class=\"smallText color--blue-400\">[3Dセキュア認証パラメータ]</span>   カード顧客のメールアドレス   
+    # <span class=\"smallText color--blue-400\">[3Dセキュア認証パラメータ]</span>   カード顧客のメールアドレス 
     attr_accessor :tds2_email
 
-    # <span class=\"smallText color--blue-400\">[3Dセキュア認証パラメータ]</span>   自宅電話の国コード   自宅電話の国コードを設定した場合   自宅電話番号の設定が必要   
+    # <span class=\"smallText color--blue-400\">[3Dセキュア認証パラメータ]</span>   自宅電話の国コード   自宅電話の国コードを設定した場合   自宅電話番号の設定が必要 
     attr_accessor :tds2_home_phone_cc
 
-    # <span class=\"smallText color--blue-400\">[3Dセキュア認証パラメータ]</span>   自宅電話番号   自宅電話番号を設定した場合   自宅電話の国コードの設定が必要   ハイフン（-）なし、数字のみ   
+    # <span class=\"smallText color--blue-400\">[3Dセキュア認証パラメータ]</span>   自宅電話番号   自宅電話番号を設定した場合   自宅電話の国コードの設定が必要   ハイフン（-）なし、数字のみ 
     attr_accessor :tds2_home_phone_no
 
-    # <span class=\"smallText color--blue-400\">[3Dセキュア認証パラメータ]</span>   携帯電話の国コード   携帯電話の国コードを設定した場合   携帯電話番号の設定が必要   
+    # <span class=\"smallText color--blue-400\">[3Dセキュア認証パラメータ]</span>   携帯電話の国コード   携帯電話の国コードを設定した場合   携帯電話番号の設定が必要 
     attr_accessor :tds2_mobile_phone_cc
 
-    # <span class=\"smallText color--blue-400\">[3Dセキュア認証パラメータ]</span>   携帯電話番号   携帯電話番号の国コードを設定した場合   ハイフン（-）なし、数字のみ   
+    # <span class=\"smallText color--blue-400\">[3Dセキュア認証パラメータ]</span>   携帯電話番号   携帯電話番号の国コードを設定した場合   ハイフン（-）なし、数字のみ 
     attr_accessor :tds2_mobile_phone_no
 
-    # <span class=\"smallText color--blue-400\">[3Dセキュア認証パラメータ]</span>   職場電話の国コード   職場電話の国コードを設定した場合   職場電話番号の設定が必要   
+    # <span class=\"smallText color--blue-400\">[3Dセキュア認証パラメータ]</span>   職場電話の国コード   職場電話の国コードを設定した場合   職場電話番号の設定が必要 
     attr_accessor :tds2_work_phone_cc
 
-    # <span class=\"smallText color--blue-400\">[3Dセキュア認証パラメータ]</span>   職場電話番号   職場電話番号を設定した場合   ハイフン（-）なし、数字のみ   
+    # <span class=\"smallText color--blue-400\">[3Dセキュア認証パラメータ]</span>   職場電話番号   職場電話番号を設定した場合   ハイフン（-）なし、数字のみ 
     attr_accessor :tds2_work_phone_no
 
-    # <span class=\"smallText color--blue-400\">[3Dセキュア認証パラメータ]</span>   出荷先住所の都市   
+    # <span class=\"smallText color--blue-400\">[3Dセキュア認証パラメータ]</span>   出荷先住所の都市 
     attr_accessor :tds2_ship_addr_city
 
-    # <span class=\"smallText color--blue-400\">[3Dセキュア認証パラメータ]</span>   出荷先住所の国コード   
+    # <span class=\"smallText color--blue-400\">[3Dセキュア認証パラメータ]</span>   出荷先住所の国コード 
     attr_accessor :tds2_ship_addr_country
 
-    # <span class=\"smallText color--blue-400\">[3Dセキュア認証パラメータ]</span>   出荷先住所の区域部分の１行目   
+    # <span class=\"smallText color--blue-400\">[3Dセキュア認証パラメータ]</span>   出荷先住所の区域部分の１行目 
     attr_accessor :tds2_ship_addr_line_1
 
-    # <span class=\"smallText color--blue-400\">[3Dセキュア認証パラメータ]</span>   出荷先住所の区域部分の２行目   
+    # <span class=\"smallText color--blue-400\">[3Dセキュア認証パラメータ]</span>   出荷先住所の区域部分の２行目 
     attr_accessor :tds2_ship_addr_line_2
 
-    # <span class=\"smallText color--blue-400\">[3Dセキュア認証パラメータ]</span>   出荷先住所の区域部分の３行目   
+    # <span class=\"smallText color--blue-400\">[3Dセキュア認証パラメータ]</span>   出荷先住所の区域部分の３行目 
     attr_accessor :tds2_ship_addr_line_3
 
-    # <span class=\"smallText color--blue-400\">[3Dセキュア認証パラメータ]</span>   出荷先住所の郵便番号   
+    # <span class=\"smallText color--blue-400\">[3Dセキュア認証パラメータ]</span>   出荷先住所の郵便番号 
     attr_accessor :tds2_ship_addr_post_code
 
-    # <span class=\"smallText color--blue-400\">[3Dセキュア認証パラメータ]</span>   出荷先住所の州または都道府県コード   
+    # <span class=\"smallText color--blue-400\">[3Dセキュア認証パラメータ]</span>   出荷先住所の州または都道府県コード 
     attr_accessor :tds2_ship_addr_state
 
-    # <span class=\"smallText color--blue-400\">[3Dセキュア認証パラメータ]</span>   納品先電子メールアドレス   
+    # <span class=\"smallText color--blue-400\">[3Dセキュア認証パラメータ]</span>   納品先電子メールアドレス 
     attr_accessor :tds2_delivery_email_address
 
-    # <span class=\"smallText color--blue-400\">[3Dセキュア認証パラメータ]</span>   商品納品時間枠   01 = 電子デリバリー   02 = 当日出荷   03 = 翌日出荷   04 = 2日目以降の出荷   
+    # <span class=\"smallText color--blue-400\">[3Dセキュア認証パラメータ]</span>   商品納品時間枠   01 = 電子デリバリー   02 = 当日出荷   03 = 翌日出荷   04 = 2日目以降の出荷 
     attr_accessor :tds2_delivery_timeframe
 
-    # <span class=\"smallText color--blue-400\">[3Dセキュア認証パラメータ]</span>   プリペイドカードまたはギフトカードの総購入金額   
+    # <span class=\"smallText color--blue-400\">[3Dセキュア認証パラメータ]</span>   プリペイドカードまたはギフトカードの総購入金額 
     attr_accessor :tds2_gift_card_amount
 
-    # <span class=\"smallText color--blue-400\">[3Dセキュア認証パラメータ]</span>   購入されたプリペイドカードまたはギフトカード / コードの総数   0埋め2桁の数字   
+    # <span class=\"smallText color--blue-400\">[3Dセキュア認証パラメータ]</span>   購入されたプリペイドカードまたはギフトカード / コードの総数   0埋め2桁の数字 
     attr_accessor :tds2_gift_card_count
 
-    # <span class=\"smallText color--blue-400\">[3Dセキュア認証パラメータ]</span>   通貨コード   ※以下のコードは対象外   955, 956, 957, 958, 959, 960, 961, 962,   963, 964, 999   
+    # <span class=\"smallText color--blue-400\">[3Dセキュア認証パラメータ]</span>   通貨コード   ※以下のコードは対象外   955, 956, 957, 958, 959, 960, 961, 962,   963, 964, 999 
     attr_accessor :tds2_gift_card_curr
 
-    # <span class=\"smallText color--blue-400\">[3Dセキュア認証パラメータ]</span>   商品の発売予定日   YYYYMMDD形式   
+    # <span class=\"smallText color--blue-400\">[3Dセキュア認証パラメータ]</span>   商品の発売予定日   YYYYMMDD形式 
     attr_accessor :tds2_pre_order_date
 
-    # <span class=\"smallText color--blue-400\">[3Dセキュア認証パラメータ]</span>   商品の販売時期情報   01 = 発売済み 02 = 先行予約商品   
+    # <span class=\"smallText color--blue-400\">[3Dセキュア認証パラメータ]</span>   商品の販売時期情報   01 = 発売済み 02 = 先行予約商品 
     attr_accessor :tds2_pre_order_purchase_ind
 
-    # <span class=\"smallText color--blue-400\">[3Dセキュア認証パラメータ]</span>   商品の注文情報   01 = 初回注文   02 = 再注文   
+    # <span class=\"smallText color--blue-400\">[3Dセキュア認証パラメータ]</span>   商品の注文情報   01 = 初回注文   02 = 再注文 
     attr_accessor :tds2_reorder_items_ind
 
-    # <span class=\"smallText color--blue-400\">[3Dセキュア認証パラメータ]</span>   取引の出荷方法   01 = カード顧客の請求先住所に配送する   02 = 加盟店様が保持している別の、確認済み住所に配送する   03 = カード顧客の請求先住所と異なる住所に配送する   04 = 店舗へ配送 / 近所の店舗での受け取り（店舗の住所は配送先住所で指定する）   05 = デジタル商品（オンラインサービス、電子ギフトカードおよび償還コードを含む）   06 = 配送なし（旅行およびイベントのチケット）   07 = その他（ゲーム、配送されないデジタルサービス、電子メディアの購読料など）   
+    # <span class=\"smallText color--blue-400\">[3Dセキュア認証パラメータ]</span>   取引の出荷方法   01 = カード顧客の請求先住所に配送する   02 = 加盟店様が保持している別の、確認済み住所に配送する   03 = カード顧客の請求先住所と異なる住所に配送する   04 = 店舗へ配送 / 近所の店舗での受け取り（店舗の住所は配送先住所で指定する）   05 = デジタル商品（オンラインサービス、電子ギフトカードおよび償還コードを含む）   06 = 配送なし（旅行およびイベントのチケット）   07 = その他（ゲーム、配送されないデジタルサービス、電子メディアの購読料など） 
     attr_accessor :tds2_ship_ind
 
-    # <span class=\"smallText color--blue-400\">[3Dセキュア認証パラメータ]</span>   継続課金の期限   YYYYMMDD形式   
+    # <span class=\"smallText color--blue-400\">[3Dセキュア認証パラメータ]</span>   継続課金の期限   YYYYMMDD形式 
     attr_accessor :tds2_recurring_expiry
 
     # <span class=\"smallText color--blue-400\">[3Dセキュア認証パラメータ]</span>   継続課金の課金最小間隔日数 

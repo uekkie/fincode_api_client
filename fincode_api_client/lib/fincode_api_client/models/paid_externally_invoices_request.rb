@@ -15,7 +15,7 @@ require 'time'
 
 module FincodeApiClient
   class PaidExternallyInvoicesRequest
-    # 支払い完了日   yyyy/MM/dd形式   
+    # 支払い完了日   yyyy/MM/dd形式 
     attr_accessor :transaction_date
 
     # Attribute mapping from ruby-style variable name to JSON key.

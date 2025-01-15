@@ -15,19 +15,19 @@ require 'time'
 
 module FincodeApiClient
   class InvoiceLinesInner
-    # 日付   形式： `yyyy/MM/dd`   
+    # 日付   形式： `yyyy/MM/dd` 
     attr_accessor :date
 
-    # 品目   
+    # 品目 
     attr_accessor :name
 
-    # 単価   
+    # 単価 
     attr_accessor :unit_price
 
-    # 数量   
+    # 数量 
     attr_accessor :quantity
 
-    # 適用税率（%）   
+    # 適用税率（%） 
     attr_accessor :tax_rate
 
     # Attribute mapping from ruby-style variable name to JSON key.

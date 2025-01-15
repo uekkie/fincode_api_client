@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **reference_invoice_id** | **String** | バーチャル口座 再利用 インボイスID    | [optional] |
+| **reference_invoice_id** | **String** | バーチャル口座 再利用 インボイスID  | [optional] |
 
 ## Example
 

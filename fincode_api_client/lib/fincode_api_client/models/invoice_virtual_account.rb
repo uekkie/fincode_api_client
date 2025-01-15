@@ -14,9 +14,9 @@ require 'date'
 require 'time'
 
 module FincodeApiClient
-  # バーチャル口座情報   
+  # バーチャル口座情報 
   class InvoiceVirtualAccount
-    # バーチャル口座 再利用 インボイスID   
+    # バーチャル口座 再利用 インボイスID 
     attr_accessor :reference_invoice_id
 
     # Attribute mapping from ruby-style variable name to JSON key.

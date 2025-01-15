@@ -56,16 +56,16 @@ module FincodeApiClient
 
     attr_accessor :issuer_overwrite
 
-    # 発行年月日   形式： `yyyy/MM/dd`   
+    # 発行年月日   形式： `yyyy/MM/dd` 
     attr_accessor :issue_date
 
-    # 取引内容レコード   
+    # 取引内容レコード 
     attr_accessor :lines
 
-    # 合計金額   
+    # 合計金額 
     attr_accessor :total_amount
 
-    # 請求金額合計   
+    # 請求金額合計 
     attr_accessor :billing_total_amount
 
     # 利用可能な決済種別リスト      - `\"Virtualaccount\"`: バーチャル口座振込 - `\"Card\"`: カード決済 
@@ -77,7 +77,7 @@ module FincodeApiClient
 
     attr_accessor :embedded_virtual_account
 
-    # 内税表記有無      - `true`: 内税表記   - `false`: 外税表記   
+    # 内税表記有無      - `true`: 内税表記   - `false`: 外税表記 
     attr_accessor :is_tax_included
 
     # 支払期日   yyyy/MM/dd形式 
@@ -95,10 +95,10 @@ module FincodeApiClient
     # 加盟店自由項目3
     attr_accessor :client_field_3
 
-    # 回収困難フラグ   
+    # 回収困難フラグ 
     attr_accessor :is_uncollectible
 
-    # fincode外支払フラグ   
+    # fincode外支払フラグ 
     attr_accessor :is_paid_externally
 
     # 支払完了日

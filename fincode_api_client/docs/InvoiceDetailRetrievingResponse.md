@@ -19,22 +19,22 @@
 | **customer_overwrite** | [**InvoiceCustomerOverwrite**](InvoiceCustomerOverwrite.md) |  | [optional] |
 | **issuer** | [**InvoiceIssuer**](InvoiceIssuer.md) |  | [optional] |
 | **issuer_overwrite** | [**InvoiceIssuerOverwrite**](InvoiceIssuerOverwrite.md) |  | [optional] |
-| **issue_date** | **String** | 発行年月日   形式： &#x60;yyyy/MM/dd&#x60;    | [optional] |
-| **lines** | [**Array&lt;InvoiceLinesInner&gt;**](InvoiceLinesInner.md) | 取引内容レコード    | [optional] |
-| **total_amount** | **Float** | 合計金額    | [optional] |
-| **billing_total_amount** | **Float** | 請求金額合計    | [optional] |
+| **issue_date** | **String** | 発行年月日   形式： &#x60;yyyy/MM/dd&#x60;  | [optional] |
+| **lines** | [**Array&lt;InvoiceLinesInner&gt;**](InvoiceLinesInner.md) | 取引内容レコード  | [optional] |
+| **total_amount** | **Float** | 合計金額  | [optional] |
+| **billing_total_amount** | **Float** | 請求金額合計  | [optional] |
 | **pay_types** | **Array&lt;String&gt;** | 利用可能な決済種別リスト      - &#x60;\&quot;Virtualaccount\&quot;&#x60;: バーチャル口座振込 - &#x60;\&quot;Card\&quot;&#x60;: カード決済  | [optional] |
 | **card** | [**InvoiceCard**](InvoiceCard.md) |  | [optional] |
 | **virtual_account** | [**InvoiceVirtualAccount**](InvoiceVirtualAccount.md) |  | [optional] |
 | **embedded_virtual_account** | [**InvoiceEmbeddedVirtualAccount**](InvoiceEmbeddedVirtualAccount.md) |  | [optional] |
-| **is_tax_included** | **Boolean** | 内税表記有無      - &#x60;true&#x60;: 内税表記   - &#x60;false&#x60;: 外税表記    | [optional] |
+| **is_tax_included** | **Boolean** | 内税表記有無      - &#x60;true&#x60;: 内税表記   - &#x60;false&#x60;: 外税表記  | [optional] |
 | **due_date** | **String** | 支払期日   yyyy/MM/dd形式  | [optional] |
 | **memo** | **String** | 備考 | [optional] |
 | **client_field_1** | **String** | 加盟店自由項目1 | [optional] |
 | **client_field_2** | **String** | 加盟店自由項目2 | [optional] |
 | **client_field_3** | **String** | 加盟店自由項目3 | [optional] |
-| **is_uncollectible** | **Boolean** | 回収困難フラグ    | [optional] |
-| **is_paid_externally** | **Boolean** | fincode外支払フラグ    | [optional] |
+| **is_uncollectible** | **Boolean** | 回収困難フラグ  | [optional] |
+| **is_paid_externally** | **Boolean** | fincode外支払フラグ  | [optional] |
 | **transaction_date** | **String** | 支払完了日 | [optional] |
 | **created** | **String** | 作成日時 | [optional] |
 | **updated** | **String** | 更新日時 | [optional] |
