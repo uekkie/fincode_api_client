@@ -506,9 +506,12 @@ module FincodeApiClient
     # Custom attribute writer method with validation
     # @param [Object] td_tenant_name Value to be assigned
     def td_tenant_name=(td_tenant_name)
-      if td_tenant_name.nil?
-        fail ArgumentError, 'td_tenant_name cannot be nil'
-      end
+      # NOTE: 2024/07/18 
+      # /v1/card_sessions からのレスポンスが必ず td_tenant_name: nil で返されるためエラーになってしまう。
+      
+      # if td_tenant_name.nil?
+      #   fail ArgumentError, 'td_tenant_name cannot be nil'
+      # end
 
       if td_tenant_name.to_s.length > 25
         fail ArgumentError, 'invalid value for "td_tenant_name", the character length must be smaller than or equal to 25.'
