@@ -7,7 +7,7 @@
 | **id** | **String** | 一括決済ID  | [optional] |
 | **shop_id** | **String** | ショップID  | [optional] |
 | **pay_type** | [**PaymentBulkPayType**](PaymentBulkPayType.md) |  | [optional] |
-| **status** | [**PaymentBulkDetailStatus**](PaymentBulkDetailStatus.md) |  | [optional] |
+| **status** | [**PaymentBulkStatus**](PaymentBulkStatus.md) |  | [optional] |
 | **process_plan_date** | **String** | 一括決済 処理予定日\\ この一括決済の処理予定日です。\\ \\ 形式：&#x60;yyyy/MM/dd&#x60;  | [optional] |
 | **file_name** | **String** | 一括決済データファイル名  | [optional] |
 | **process_start_date** | **String** | 一括決済 処理開始日時\\ この一括決済の処理開始日時です。\\ \\ 形式：&#x60;yyyy/MM/dd HH:mm:ss.SSS&#x60;  | [optional] |

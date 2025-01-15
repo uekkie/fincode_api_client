@@ -17,6 +17,7 @@ FincodeApiClient::CancelPaymentRequest.openapi_one_of
 #   :'PaymentApplePayCancelingRequest',
 #   :'PaymentCardCancelingRequest',
 #   :'PaymentDirectDebitCancelingRequest',
+#   :'PaymentGooglePayCancelingRequest',
 #   :'PaymentKonbiniCancelingRequest',
 #   :'PaymentPayPayCancelingRequest',
 #   :'PaymentVirtualAccountCancelingRequest'
@@ -50,6 +51,7 @@ FincodeApiClient::CancelPaymentRequest.build(data_that_doesnt_match)
 - `PaymentApplePayCancelingRequest`
 - `PaymentCardCancelingRequest`
 - `PaymentDirectDebitCancelingRequest`
+- `PaymentGooglePayCancelingRequest`
 - `PaymentKonbiniCancelingRequest`
 - `PaymentPayPayCancelingRequest`
 - `PaymentVirtualAccountCancelingRequest`

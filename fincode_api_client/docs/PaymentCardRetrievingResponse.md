@@ -29,14 +29,16 @@
 | **holder_name** | **String** | カード名義人名。  | [optional] |
 | **card_no_hash** | **String** | カード番号をもとに生成されたハッシュ値。\\ &lt;span class&#x3D;\&quot;smallText\&quot;&gt; おなじカード番号に対しては常に同じ値が返されます。\\ カード情報非保持の原則に基づき、fincodeユーザーはマスクされていないカード番号の代わりにこの値を保持することができます。 &lt;/span&gt;  | [optional] |
 | **method** | [**CardPayMethod**](CardPayMethod.md) |  | [optional] |
-| **pay_times** | [**CardPayTimes**](CardPayTimes.md) |  | [optional] |
+| **pay_times** | [**CardPayTimesResponse**](CardPayTimesResponse.md) |  | [optional] |
 | **bulk_payment_id** | **String** | 一括決済ID\\ この決済情報が一括決済機能を用いて登録されたものである場合、このフィールドに一括決済IDが設定されます。  | [optional] |
 | **subscription_id** | **String** | サブスクリプションID\\ この決済情報がサブスクリプションにより生成されたものである場合、このフィールドにサブスクリプションIDが設定されます。  | [optional] |
 | **tds_type** | [**TdsType**](TdsType.md) |  | [optional] |
 | **tds2_type** | [**Tds2Type**](Tds2Type.md) |  | [optional] |
-| **tds2_ret_url** | **String** | 3Dセキュア認証における戻りURL\\ fincodeは3Dセキュア認証処理の過程において、このURLにPOSTメソッド、&#x60;Content-Type:application/x-www-form-urlencoded&#x60;で値を返します。  - &#x60;MD&#x60;: クエリパラメータとして返されます。 &#x60;access_id&#x60;と等しい値です。 - &#x60;event&#x60;: フォームデータとして返されます。この値を判定し後続の処理を分岐します。 - &#x60;param&#x60;: フォームデータとして返されます。[3Dセキュア認証API](https://docs.fincode.jp/api#tag/ThreeDSecureecure/executeThreeDSecureecureAuth)で使用します。 - &#x60;requestorTransId&#x60;: フォームデータとして返されます。（後続処理では使用しません。）  返却されるそれぞれの値についての[詳細はDocsで確認](https://docs.fincode.jp/payment/fraud_protection/3d_secure_2)できます。  | [optional] |
+| **tds2_ret_url** | **String** | 3Dセキュア認証における戻りURL   3Dセキュア認証に必要なAPIの呼び出しやコールバック処理をすべて加盟店で実装する場合のみ使用します。   fincodeは3Dセキュア認証処理の過程において、このURLにPOSTメソッド、&#x60;Content-Type:application/x-www-form-urlencoded&#x60;で値を返します。    - &#x60;MD&#x60;: クエリパラメータとして返されます。 &#x60;access_id&#x60;と等しい値です。 - &#x60;event&#x60;: フォームデータとして返されます。この値を判定し後続の処理を分岐します。 - &#x60;param&#x60;: フォームデータとして返されます。[3Dセキュア認証API](https://docs.fincode.jp/api#tag/ThreeDSecureecure/executeThreeDSecureecureAuth)で使用します。 - &#x60;requestorTransId&#x60;: フォームデータとして返されます。（後続処理では使用しません。）  返却されるそれぞれの値についての[詳細はDocsで確認](https://docs.fincode.jp/payment/fraud_protection/3d_secure_2)できます。  | [optional] |
+| **return_url** | **String** | 加盟店戻りURL（成功時）   購入者のブラウザとfincode間で3Dセキュア認証を自動で行う場合に、 3Dセキュア認証処理後、決済に成功した際にリダイレクトされるURLです。   POSTメソッドでリダイレクトされます。  リクエストで指定しない場合はデフォルトの成功ページのURLが設定されます。   また、&#x60;tds2_ret_url&#x60;を指定していない場合のみ返却されます。    | [optional] |
+| **return_url_on_failure** | **String** | 加盟店戻りURL（失敗時）   購入者のブラウザとfincode間で3Dセキュア認証を自動で行う場合に、 3Dセキュア認証に失敗、または決済に失敗した際にリダイレクトされるURLです。   POSTメソッドでリダイレクトされます。  リクエストで指定しない場合はデフォルトの失敗ページのURLが設定されます。   また、&#x60;tds2_ret_url&#x60;を指定していない場合のみ返却されます。    | [optional] |
 | **tds2_status** | [**ThreeDSecure2Status**](ThreeDSecure2Status.md) |  | [optional] |
-| **merchant_name** | **String** | &lt;span class&#x3D;\&quot;smallText color--blue-400\&quot;&gt;[3Dセキュア認証パラメータ]&lt;/span&gt;\\ 加盟店名。\\ 3Dセキュア認証の際に表示されるショップ名や加盟店名を指定できます。\\ 未指定の場合、 カード決済の契約時にfincodeが下記の形式に従って設定した値が自動的に使用されます。\\ \\ 形式：&#x60;{{ショップID}}-{{英数字からなる固定値}}&#x60;  | [optional] |
+| **merchant_name** | **String** | &lt;span class&#x3D;\&quot;smallText color--blue-400\&quot;&gt;[3Dセキュア認証パラメータ]&lt;/span&gt;\\ 加盟店名。\\ 3Dセキュア認証の際に表示されるショップ名や加盟店名を指定できます。\\ 使用可能な文字は以下の通りです。 - 半角英数 - 半角記号： !\&quot;#$%&amp;&#39;()*+,-./:;&lt;&#x3D;&gt;?@[\\]&#x60;^_{|}~ - 半角スペース  未指定の場合、 カード決済の契約時にfincodeが下記の形式に従って設定した値が自動的に使用されます。\\ \\ 形式：&#x60;{{ショップID}}-{{英数字からなる固定値}}&#x60;  | [optional] |
 | **forward** | **String** | 仕向け先  | [optional] |
 | **issuer** | **String** | イシュア  | [optional] |
 | **transaction_id** | **String** | トランザクションID  | [optional] |
@@ -83,6 +85,8 @@ instance = FincodeApiClient::PaymentCardRetrievingResponse.new(
   tds_type: null,
   tds2_type: null,
   tds2_ret_url: https://your-server.example.com/3ds2-return,
+  return_url: https://your-server.example.com/3ds2-return/success,
+  return_url_on_failure: https://your-server.example.com/3ds2-return/failure,
   tds2_status: null,
   merchant_name: s_***********-ab123,
   forward: 12345,

@@ -17,6 +17,7 @@ FincodeApiClient::RetrievePaymentList200Response.openapi_one_of
 #   :'PaymentApplePayListRetrievingResponse',
 #   :'PaymentCardListRetrievingResponse',
 #   :'PaymentDirectDebitListRetrievingResponse',
+#   :'PaymentGooglePayListRetrievingResponse',
 #   :'PaymentKonbiniListRetrievingResponse',
 #   :'PaymentPayPayListRetrievingResponse',
 #   :'PaymentVirtualAccountListRetrievingResponse'
@@ -50,6 +51,7 @@ FincodeApiClient::RetrievePaymentList200Response.build(data_that_doesnt_match)
 - `PaymentApplePayListRetrievingResponse`
 - `PaymentCardListRetrievingResponse`
 - `PaymentDirectDebitListRetrievingResponse`
+- `PaymentGooglePayListRetrievingResponse`
 - `PaymentKonbiniListRetrievingResponse`
 - `PaymentPayPayListRetrievingResponse`
 - `PaymentVirtualAccountListRetrievingResponse`

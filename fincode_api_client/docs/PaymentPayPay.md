@@ -9,7 +9,7 @@
 | **status** | [**PaymentStatus**](PaymentStatus.md) | 決済ステータス  - &#x60;UNPROCESSED&#x60;: 未処理&lt;br /&gt;&lt;span class&#x3D;\&quot;smallText\&quot;&gt;請求はまだ実行されていません。&lt;/span&gt; - &#x60;AWAITING_CUSTOMER_PAYMENT&#x60;: 購入者の支払い待ち&lt;br /&gt;&lt;span class&#x3D;\&quot;smallText\&quot;&gt;購入者によるPayPay上での取引承認を待っている状態。&lt;/span&gt; - &#x60;AUTHORIZED&#x60;: 仮売上&lt;br /&gt;&lt;span class&#x3D;\&quot;smallText\&quot;&gt;仮売上としてPayPay残高の確保が完了しており、売上確定により請求を完了できます。&lt;/span&gt; - &#x60;CAPTURED&#x60;: 売上確定&lt;br /&gt;&lt;span class&#x3D;\&quot;smallText\&quot;&gt;請求が完了し、売上が確定しています。&lt;/span&gt; - &#x60;CANCELED&#x60;: キャンセル&lt;br /&gt;&lt;span class&#x3D;\&quot;smallText\&quot;&gt;この決済はキャンセルされました。&lt;/span&gt; - &#x60;EXPIRED&#x60;: 決済の期限切れ&lt;br /&gt;&lt;span class&#x3D;\&quot;smallText\&quot;&gt;この決済は期限が切れています。&lt;/span&gt;  | [optional] |
 | **code_url** | **String** | PayPay支払いURL\\ 購入者をこのURLにリダイレクトすることでPayPay上での取引を開始します。  | [optional] |
 | **code_expiry_date** | **String** | 支払期限\\ 形式： &#x60;yyyy/MM/dd HH:mm:ss.SSS&#x60;  | [optional] |
-| **redirect_url** | **String** | リダイレクトURL\\ 決済が完了した際にPayPayからリダイレクト先URL。  | [optional] |
+| **redirect_url** | **String** | リダイレクトURL\\ 決済が完了した際のPayPayからのリダイレクト先URL。  | [optional] |
 | **redirect_type** | **String** | リダイレクト先種別\\ &#x60;redirect_url&#x60;の種別  - &#x60;1&#x60;： Webページ／Webアプリケーション - &#x60;2&#x60;： ネイティブアプリ  | [optional] |
 | **auth_max_date** | **String** | 仮売上期限\\ 形式： &#x60;yyyy/MM/dd&#x60;  | [optional] |
 | **order_description** | **String** | 注文内容の説明\\ 購入者のPayPayアプリ上で表示される注文内容の説明。  | [optional] |

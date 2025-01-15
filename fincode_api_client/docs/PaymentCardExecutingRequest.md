@@ -11,7 +11,9 @@
 | **card_id** | **String** | カードID\\ この決済に使用するカードのIDです。指定しない場合、デフォルトカードが使用されます。  | [optional] |
 | **method** | [**CardPayMethod**](CardPayMethod.md) | 支払方法\\ この決済の&#x60;job_code&#x60;（処理区分）が&#x60;AUTH&#x60;または&#x60;CAPTURE&#x60;であるとき、このフィールドを指定する必要があります。  - &#x60;1&#x60;: 一括払い - &#x60;2&#x60;: 分割払い - &#x60;5&#x60;: リボ払い  | [optional] |
 | **pay_times** | [**CardPayTimes**](CardPayTimes.md) |  | [optional] |
-| **tds2_ret_url** | **String** | 3Dセキュア認証における戻りURL\\ fincodeは3Dセキュア認証処理の過程において、このURLにPOSTメソッド、&#x60;Content-Type:application/x-www-form-urlencoded&#x60;で値を返します。  - &#x60;MD&#x60;: クエリパラメータとして返されます。 &#x60;access_id&#x60;と等しい値です。 - &#x60;event&#x60;: フォームデータとして返されます。この値を判定し後続の処理を分岐します。 - &#x60;param&#x60;: フォームデータとして返されます。[3Dセキュア認証API](https://docs.fincode.jp/api#tag/ThreeDSecureecure/executeThreeDSecureecureAuth)で使用します。 - &#x60;requestorTransId&#x60;: フォームデータとして返されます。（後続処理では使用しません。）  返却されるそれぞれの値についての[詳細はDocsで確認](https://docs.fincode.jp/payment/fraud_protection/3d_secure_2)できます。  | [optional] |
+| **tds2_ret_url** | **String** | 3Dセキュア認証における戻りURL   3Dセキュア認証処理に使用するURLを指定してください。   このURLに後続処理のためのデータがPOSTメソッドで送信されます。     ※ 指定した場合、3Dセキュア認証に必要なAPIの呼び出しやコールバック処理をすべて加盟店で実装する必要があります。 お客様のブラウザとfincode間で3Dセキュア認証を自動で行う場合はこのパラメータを未指定としてください。  詳細はDocs [3Dセキュア2.0認証を使用する](/payment/fraud_protection/3d_secure_2)を確認してください。  | [optional] |
+| **return_url** | **String** | 加盟店戻りURL（成功時）   購入者のブラウザとfincode間で3Dセキュア認証を自動で行う場合に、 3Dセキュア認証処理後、決済に成功した際にリダイレクトされるURLです。   POSTメソッドでリダイレクトされます。  指定しない場合はデフォルトの成功ページのURLが設定されます。   また、&#x60;tds2_ret_url&#x60;を指定した場合は無視されます。    | [optional] |
+| **return_url_on_failure** | **String** | 加盟店戻りURL（失敗時）   購入者のブラウザとfincode間で3Dセキュア認証を自動で行う場合に、 3Dセキュア認証に失敗、または決済に失敗した際にリダイレクトされるURLです。   POSTメソッドでリダイレクトされます。  指定しない場合はデフォルトの失敗ページのURLが設定されます。   また、&#x60;tds2_ret_url&#x60;を指定した場合は無視されます。    | [optional] |
 | **tds2_ch_acc_change** | **String** | &lt;span class&#x3D;\&quot;smallText color--blue-400\&quot;&gt;[3Dセキュア認証パラメータ]&lt;/span&gt;\\ 購入者ユーザーアカウント 最終更新日\\ 形式：&#x60;YYYYMMDD&#x60;\\ \\ 加盟店アプリケーションにおけるユーザーアカウントの情報が最後に更新された日付を設定します。  | [optional] |
 | **tds2_ch_acc_date** | **String** | &lt;span class&#x3D;\&quot;smallText color--blue-400\&quot;&gt;[3Dセキュア認証パラメータ]&lt;/span&gt;\\ 購入者ユーザーアカウント 開設日\\ 形式：&#x60;YYYYMMDD&#x60;\\ \\ 加盟店アプリケーションにおけるユーザーアカウントの開設日を設定します。  | [optional] |
 | **tds2_ch_acc_pw_change** | **String** | &lt;span class&#x3D;\&quot;smallText color--blue-400\&quot;&gt;[3Dセキュア認証パラメータ]&lt;/span&gt;\\ 購入者ユーザーアカウント パスワード最終更新日\\ 形式：&#x60;YYYYMMDD&#x60;\\ \\ 加盟店アプリケーションにおけるユーザーアカウントのパスワードが最後に更新された日付を設定します。  | [optional] |
@@ -74,6 +76,8 @@ instance = FincodeApiClient::PaymentCardExecutingRequest.new(
   method: null,
   pay_times: null,
   tds2_ret_url: https://your-server.example.com/3ds2-return,
+  return_url: https://your-server.example.com/3ds2-return/success,
+  return_url_on_failure: https://your-server.example.com/3ds2-return/failure,
   tds2_ch_acc_change: 20240101,
   tds2_ch_acc_date: 20220101,
   tds2_ch_acc_pw_change: 20230101,

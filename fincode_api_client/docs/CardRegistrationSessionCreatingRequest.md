@@ -6,7 +6,7 @@
 | ---- | ---- | ----------- | ----- |
 | **success_url** | **String** | 成功時リダイレクトURL\\ &#x60;link_url&#x60;上でカード登録に成功すると、fincodeはこのURLにPOSTメソッドでリダイレクトします。  | [optional] |
 | **cancel_url** | **String** | キャンセル時リダイレクトURL\\ &#x60;link_url&#x60;上でカード登録がキャンセルされると、fincodeはこのURLにPOSTメソッドでリダイレクトします。  | [optional] |
-| **expire** | **String** | リダイレクト型カード登録URL 有効期限\\ 形式： &#x60;yyyy/MM/dd HH:mm:ss.SSS&#x60;  | [optional] |
+| **expire** | **String** | リダイレクト型カード登録URL 有効期限\\ 形式： &#x60;yyyy/MM/dd HH:mm:ss&#x60;  | [optional] |
 | **shop_service_name** | **String** | ショップ／サービス名\\ カード登録URL上で表示されるショップおよびサービスの名称です。\\ \\ デフォルトでは本番環境申請時に登録した「明細書表記」の値が設定されます。  | [optional] |
 | **receiver_mail** | **String** | カード登録メール 送信先メールアドレス\\ リダイレクト型カード登録URLをfincodeからのメール送信機能で送信する場合の送信先メールアドレスです。  | [optional] |
 | **mail_customer_name** | **String** | カード登録メール カード登録をするユーザーの名前\\ リダイレクト型決済URLをfincodeからのメール送信機能で送信する場合のメール中で用いられるユーザーの名前です。\\ \\ fincodeが提供するデフォルトのメールテンプレートでは敬称がテンプレート側に含まれています。  | [optional] |
@@ -15,7 +15,7 @@
 | **shop_mail_template_id** | **String** | メールテンプレートID\\ メールテンプレートIDが設定されている場合、リダイレクト型カード登録URLの送信先メールアドレスに送信されるメールのテンプレートが変更されます。\\ \\ fincodeが提供するデフォルトのメールテンプレートを使用する場合は&#x60;null&#x60;を設定します。  | [optional] |
 | **customer_id** | **Object** |  | [optional] |
 | **customer_name** | **String** | 顧客名  | [optional] |
-| **td_tenant_name** | **String** | &lt;span class&#x3D;\&quot;smallText color--blue-400\&quot;&gt;[3Dセキュア認証パラメータ]&lt;/span&gt;\\ 加盟店名。\\ 3Dセキュア認証の際に表示されるショップ名や加盟店名を指定できます。\\ 未指定の場合、 カード決済の契約時にfincodeが下記の形式に従って設定した値が自動的に使用されます。\\ \\ 形式：&#x60;{{ショップID}}-{{英数字からなる固定値}}&#x60;  | [optional] |
+| **td_tenant_name** | **String** | &lt;span class&#x3D;\&quot;smallText color--blue-400\&quot;&gt;[3Dセキュア認証パラメータ]&lt;/span&gt;\\ 加盟店名。\\ 3Dセキュア認証の際に表示されるショップ名や加盟店名を指定できます。\\ 使用可能な文字は以下の通りです。 - 半角英数 - 半角記号： !\&quot;#$%&amp;&#39;()*+,-./:;&lt;&#x3D;&gt;?@[\\]&#x60;^_{|}~ - 半角スペース  未指定の場合、 カード決済の契約時にfincodeが下記の形式に従って設定した値が自動的に使用されます。\\ \\ 形式：&#x60;{{ショップID}}-{{英数字からなる固定値}}&#x60;  | [optional] |
 | **tds_type** | [**TdsType**](TdsType.md) |  | [optional] |
 | **tds2_type** | [**Tds2Type**](Tds2Type.md) |  | [optional] |
 | **tds2_ch_acc_change** | **String** | &lt;span class&#x3D;\&quot;smallText color--blue-400\&quot;&gt;[3Dセキュア認証パラメータ]&lt;/span&gt;\\ 購入者ユーザーアカウント 最終更新日\\ 形式：&#x60;YYYYMMDD&#x60;\\ \\ 加盟店アプリケーションにおけるユーザーアカウントの情報が最後に更新された日付を設定します。  | [optional] |

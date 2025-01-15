@@ -11,6 +11,7 @@
 | **status** | [**PaymentStatus**](PaymentStatus.md) | 決済ステータス  - &#x60;UNPROCESSED&#x60;: 未処理&lt;br /&gt;&lt;span class&#x3D;\&quot;smallText\&quot;&gt;請求はまだ実行されていません。&lt;/span&gt; - &#x60;CHECKED&#x60;: 有効性チェック済み&lt;br /&gt;&lt;span class&#x3D;\&quot;smallText\&quot;&gt;カードの有効性チェックが完了しています。&lt;/span&gt; - &#x60;AUTHORIZED&#x60;: 仮売上&lt;br /&gt;&lt;span class&#x3D;\&quot;smallText\&quot;&gt;仮売上として与信枠の確保が完了しており、売上確定により請求を完了できます。&lt;/span&gt; - &#x60;CAPTURED&#x60;: 売上確定&lt;br /&gt;&lt;span class&#x3D;\&quot;smallText\&quot;&gt;請求が完了し、売上が確定しています。&lt;/span&gt; - &#x60;CANCELED&#x60;: キャンセル&lt;br /&gt;&lt;span class&#x3D;\&quot;smallText\&quot;&gt;この決済はキャンセルされました。&lt;/span&gt; - &#x60;AUTHENTICATED&#x60;: 未処理（3Dセキュア認証待ち）&lt;br /&gt;&lt;span class&#x3D;\&quot;smallText\&quot;&gt;3Dセキュア認証を使用する決済を実行した直後の状態です。認証後決済実行を行うまで請求や仮売上はされません。&lt;/span&gt;  | [optional] |
 | **customer_id** | **String** | 顧客ID  | [optional] |
 | **method** | [**CardPayMethod**](CardPayMethod.md) |  | [optional] |
+| **pay_times** | [**CardPayTimes**](CardPayTimes.md) |  | [optional] |
 | **client_field_1** | **String** | 加盟店自由項目 1  | [optional] |
 | **client_field_2** | **String** | 加盟店自由項目 2  | [optional] |
 | **client_field_3** | **String** | 加盟店自由項目 3  | [optional] |
@@ -40,6 +41,7 @@ instance = FincodeApiClient::WebhookEventPaymentCard.new(
   status: null,
   customer_id: c_**********************,
   method: null,
+  pay_times: null,
   client_field_1: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore,
   client_field_2: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore,
   client_field_3: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore,

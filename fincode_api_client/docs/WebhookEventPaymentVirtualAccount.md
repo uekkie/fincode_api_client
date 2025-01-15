@@ -20,7 +20,7 @@
 | **billing_amount** | **Integer** | 振込依頼金額  | [optional] |
 | **billing_tax** | **Integer** | 振込依頼金額（税送料）  | [optional] |
 | **billing_total_amount** | **Integer** | 振込依頼金額 合計\\ 振込依頼金額と振込依頼金額（税送料）の合計金額です。  | [optional] |
-| **payment_term_day** | **Integer** | 支払期限日数\\ \\ &#x60;1&#x60;～&#x60;90&#x60;日の範囲でバーチャル口座で振り込み可能な期限日数を指定します。\\ 決済実行の翌日を起算日とし、期限日の23:59:59.999までが支払期限となります。  | [optional] |
+| **payment_term_day** | **Integer** | 支払期限日数\\ \\ 実行日から見て、支払期限日数後の翌日AMに期限切れになります。\\ 例）2024/4/1に、&#x60;支払期限日数&#x3D;2&#x60;で決済実行した場合、2024/4/4 AMに期限切れ  | [optional] |
 | **payment_term** | **String** | 支払期限\\ 形式： &#x60;yyyy/MM/dd HH:mm:ss.SSS&#x60;  | [optional] |
 | **payment_method_id** | **String** | 決済手段ID | [optional] |
 | **va_branch_code** | **String** | 支店コード\\ \\ 発行されたバーチャル口座の支店コードです。  | [optional] |

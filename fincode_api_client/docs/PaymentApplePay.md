@@ -13,7 +13,7 @@
 | **holder_name** | **String** | カード名義人名。  | [optional] |
 | **card_no_hash** | **String** | カード番号をもとに生成されたハッシュ値。\\ &lt;span class&#x3D;\&quot;smallText\&quot;&gt; おなじカード番号に対しては常に同じ値が返されます。\\ カード情報非保持の原則に基づき、fincodeユーザーはマスクされていないカード番号の代わりにこの値を保持することができます。 &lt;/span&gt;  | [optional] |
 | **method** | [**CardPayMethod**](CardPayMethod.md) |  | [optional] |
-| **pay_times** | [**CardPayTimes**](CardPayTimes.md) |  | [optional] |
+| **pay_times** | [**CardPayTimesResponse**](CardPayTimesResponse.md) |  | [optional] |
 | **forward** | **String** | 仕向け先  | [optional] |
 | **issuer** | **String** | イシュア  | [optional] |
 | **transaction_id** | **String** | トランザクションID  | [optional] |

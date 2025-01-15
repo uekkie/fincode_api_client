@@ -18,7 +18,6 @@
 | **bank_transfer_fee** | **Integer** | 振込手数料  | [optional] |
 | **total_amount** | **Integer** | この売上入金において精算の対象となった取引の総額。  | [optional] |
 | **fee_amount** | **Integer** | この売上入金において精算の対象となった取引にかかるfincodeへの手数料  | [optional] |
-| **web_registration_fee_amount** | **Integer** | この売上入金の精算期間中に発生した振替口座のWeb登録手数料\\ ※ 口座振替のみ  | [optional] |
 | **deposit_amount** | **Integer** | 売上入金 入金額  ショップに入金される（入金が予定されている）売上金額です。\\ 精算金額（&#x60;settlement_amount&#x60;）から振込手数料（&#x60;bank_transfer_fee&#x60;）を引いた金額に一致します。  | [optional] |
 | **platform_fee_amount** | **Integer** | この売上入金において精算の対象となった取引にかかるプラットフォーム利用料\\ ※ テナントのみ  | [optional] |
 | **platform_fee_tax_amount** | **Integer** | この売上入金において精算の対象となった取引にかかるプラットフォーム利用料の消費税\\ ※ テナントのみ  | [optional] |
@@ -45,7 +44,6 @@ instance = FincodeApiClient::AccountListItem.new(
   bank_transfer_fee: 0,
   total_amount: 1000,
   fee_amount: 30,
-  web_registration_fee_amount: 400,
   deposit_amount: 568,
   platform_fee_amount: 0,
   platform_fee_tax_amount: 0,

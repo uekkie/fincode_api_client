@@ -14,7 +14,7 @@
 | **contracted_at** | **String** | 本番環境申請日  形式：&#x60;yyyy/MM/dd&#x60;  | [optional] |
 | **start_charging_at** | **String** | 初回登録完了日  形式：&#x60;yyyy/MM/dd&#x60;  | [optional] |
 | **expired_at** | **String** | 解約日  形式：&#x60;yyyy/MM/dd&#x60;  | [optional] |
-| **sales_deposit_status_code** | **Integer** | 売上入金 可否ステータス  - &#x60;501&#x60;: 入金に必要な手続きが未完了 - &#x60;502&#x60;: 入金可能 - &#x60;503&#x60;: 入金保留  | [optional] |
+| **sales_deposit_status_code** | **Integer** | 本人確認手続き ステータス  入金開始に必要な本人確認手続きのステータスを表します。 - &#x60;501&#x60;: 入金に必要な手続きが未完了 - &#x60;502&#x60;: 入金可能  | [optional] |
 | **sales_deposit_status_updated_date** | **String** | 売上入金 可否ステータス 更新日  形式：&#x60;yyyy/MM/dd&#x60;  | [optional] |
 | **denied_at** | **String** | 契約不成立日  形式：&#x60;yyyy/MM/dd&#x60;  | [optional] |
 | **suspended_billing** | **Boolean** | 請求停止フラグ  | [optional] |

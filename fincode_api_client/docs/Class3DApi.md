@@ -37,6 +37,7 @@ end
 api_instance = FincodeApiClient::Class3DApi.new
 access_id = TODO # String | 取引ID
 opts = {
+  pay_type: 'Card', # String | この決済で利用する決済手段です。未指定の場合、`Card`となります。  - `Card`: カード（デフォルト） - `Googlepay`: Google Pay 
   tenant_shop_id: TODO # String | <span class=\"smallText color--red-400\">※ プラットフォームのメインショップのみ指定可</span>\\ テナントショップID。\\ このテナントショップの決済情報のうち、指定した`access_id`のカード決済の3Dセキュア認証の結果を確定します。 
 }
 
@@ -72,6 +73,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **access_id** | [**String**](.md) | 取引ID |  |
+| **pay_type** | **String** | この決済で利用する決済手段です。未指定の場合、&#x60;Card&#x60;となります。  - &#x60;Card&#x60;: カード（デフォルト） - &#x60;Googlepay&#x60;: Google Pay  | [optional] |
 | **tenant_shop_id** | [**String**](.md) | &lt;span class&#x3D;\&quot;smallText color--red-400\&quot;&gt;※ プラットフォームのメインショップのみ指定可&lt;/span&gt;\\ テナントショップID。\\ このテナントショップの決済情報のうち、指定した&#x60;access_id&#x60;のカード決済の3Dセキュア認証の結果を確定します。  | [optional] |
 
 ### Return type
@@ -118,7 +120,7 @@ api_instance = FincodeApiClient::Class3DApi.new
 access_id = TODO # String | 取引ID
 opts = {
   tenant_shop_id: TODO, # String | <span class=\"smallText color--red-400\">※ プラットフォームのメインショップのみ指定可</span>\\ テナントショップID。\\ このテナントショップの決済情報のうち、指定した`access_id`のカード決済の3Dセキュア認証を開始します。 
-  three_d_secure_authorizing_request: FincodeApiClient::ThreeDSecureAuthorizingRequest.new # ThreeDSecureAuthorizingRequest | 
+  three_d_secure_authorizing_request: FincodeApiClient::ThreeDSecureAuthorizingRequest.new({param: 'ew0KICAgICJicm93c2VyQWNjZXB0SGVhZGVyIjogInRleHQvaHRtbCxhcHBsaWNhdGlvbi94aHRtbCt4bWwsYXBwbGljYXRpb24veG1sO3E9MC45LGltYWdlL2F2aWYsaW1hZ2Uvd2VicCxpbWFnZS9hcG5nLCovKjtxPTAuOCxhcHBsaWNhdGlvbi9zaWduZWQtZXhjaGFuZ2U7dj1iMztxPTAuNyIsDQogICAgImJyb3dzZXJJUCI6ICIxOTIuMTY4LngueCIsDQogICAgImJyb3dzZXJKYXZhRW5hYmxlZCI6IGZhbHNlLA0KICAgICJicm93c2VyTGFuZ3VhZ2UiOiAiamEtSlAiLA0KICAgICJicm93c2VySmF2YXNjcmlwdEVuYWJsZWQiOiB0cnVlLA0KICAgICJicm93c2VyQ29sb3JEZXB0aCI6ICJ7e0NvbG9yIGRlcHRofX0iLA0KICAgICJicm93c2VyU2NyZWVuSGVpZ2h0IjogInt7U2NyZWVuIGhlaWdodH19IiwNCiAgICAiYnJvd3NlclNjcmVlbldpZHRoIjogInt7U2NyZWVuIHdpZHRofX0iLA0KICAgICJicm93c2VyVFoiOiAiLTU0MCIsDQogICAgImJyb3dzZXJVc2VyQWdlbnQiOiAiTW96aWxsYS81LjAgKE1hY2ludG9zaDsgSW50ZWwgTWFjIE9TIFggMTBfMTVfNykgQXBwbGVXZWJLaXQvNTM3LjM2IChLSFRNTCwgbGlrZSBHZWNrbykgQ2hyb21lLzEyMi4wLjAuMCBTYWZhcmkvNTM3LjM2Ig0KfQ0K'}) # ThreeDSecureAuthorizingRequest | 
 }
 
 begin
