@@ -92,8 +92,9 @@ module FincodeApiClient
               model = const.build(data)
               return model if model
             else
-              # raise if data contains keys that are not known to the model
-              raise if const.respond_to?(:acceptable_attributes) && !(data.keys - const.acceptable_attributes).empty?
+              # 2024/09/20
+              # APIの差異によりkeyが増減したときに例外がでてAPIのresponse.bodyが常にnilになるためコメントアウトで回避
+              # raise if const.respond_to?(:acceptable_attributes) && !(data.keys - const.acceptable_attributes).empty?
               model = const.build_from_hash(data)
               return model if model
             end
