@@ -19,13 +19,13 @@ module FincodeApiClient
       # List of class defined in oneOf (OpenAPI v3)
       def openapi_one_of
         [
-          :PaymentCardCreatingResponse,
-          # :'PaymentApplePayCreatingResponse',
-          # :'PaymentDirectDebitCreatingResponse',
-          # :'PaymentGooglePayCreatingResponse',
-          # :'PaymentKonbiniCreatingResponse',
-          # :'PaymentPayPayCreatingResponse',
-          # :'PaymentVirtualAccountCreatingResponse'
+          :'PaymentApplePayCreatingResponse',
+          :'PaymentCardCreatingResponse',
+          :'PaymentDirectDebitCreatingResponse',
+          :'PaymentGooglePayCreatingResponse',
+          :'PaymentKonbiniCreatingResponse',
+          :'PaymentPayPayCreatingResponse',
+          :'PaymentVirtualAccountCreatingResponse'
         ]
       end
 
@@ -41,17 +41,9 @@ module FincodeApiClient
         # - TODO: scalar values are de facto behaving as if they were nullable.
         # - TODO: logging when debugging is set.
         openapi_one_of.each do |klass|
-          config.logger.debug '*****'
-          config.logger.debug klass
-          config.logger.debug 'klass'
-          config.logger.debug '*****'
           begin
             next if klass == :AnyType # "nullable: true"
             typed_data = find_and_cast_into_type(klass, data)
-            config.logger.debug '*****'
-            config.logger.debug typed_data
-            config.logger.debug 'typed_data'
-            config.logger.debug '*****'
             return typed_data if typed_data
           rescue # rescue all errors so we keep iterating even if the current item lookup raises
           end
@@ -100,6 +92,7 @@ module FincodeApiClient
               model = const.build(data)
               return model if model
             else
+              # raise if data contains keys that are not known to the model
               raise if const.respond_to?(:acceptable_attributes) && !(data.keys - const.acceptable_attributes).empty?
               model = const.build_from_hash(data)
               return model if model
