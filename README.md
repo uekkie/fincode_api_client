@@ -21,3 +21,11 @@ openapi-generator generate -i ./fincode-openapi.yml -g ruby -o ./fincode_api_cli
 ```shell
 gem build ./fincode_api_client/fincode_api_client.gemspec
 ```
+
+
+### rspec
+
+```
+cd fincode_api_client
+rspec
+```

@@ -27,6 +27,21 @@ describe FincodeApiClient::CreatePayment200Response do
   describe '.build' do
     it 'returns the correct model' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+      openapi_one_of = 
+        [
+          :'PaymentApplePayCreatingResponse',
+          :'PaymentCardCreatingResponse',
+          :'PaymentDirectDebitCreatingResponse',
+          :'PaymentGooglePayCreatingResponse',
+          :'PaymentKonbiniCreatingResponse',
+          :'PaymentPayPayCreatingResponse',
+          :'PaymentVirtualAccountCreatingResponse'
+        ]
+      klass = FincodeApiClient.const_get('CreatePayment200Response')
+
+      # res = FincodeApiClient.deserialize(body, 'CreatePayment200Response')
+      expect(klass).to eq FincodeApiClient::CreatePayment200Response
+      expect(klass.respond_to?(:openapi_one_of)).to eq true
     end
   end
 end

@@ -323,6 +323,10 @@ module FincodeApiClient
         end
       else
         # models (e.g. Pet) or oneOf
+        
+        # return_type == CreatePayment200Response
+        # CreatePayment200Response.build(data)
+
         klass = FincodeApiClient.const_get(return_type)
         klass.respond_to?(:openapi_one_of) ? klass.build(data) : klass.build_from_hash(data)
       end
