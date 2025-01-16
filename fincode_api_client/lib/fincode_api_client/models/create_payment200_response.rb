@@ -41,17 +41,17 @@ module FincodeApiClient
         # - TODO: scalar values are de facto behaving as if they were nullable.
         # - TODO: logging when debugging is set.
         openapi_one_of.each do |klass|
-          p '*****'
-          p klass
-          p 'klass'
-          p '*****'
+          config.logger.debug '*****'
+          config.logger.debug klass
+          config.logger.debug 'klass'
+          config.logger.debug '*****'
           begin
             next if klass == :AnyType # "nullable: true"
             typed_data = find_and_cast_into_type(klass, data)
-            p '*****'
-            p typed_data
-            p 'typed_data'
-            p '*****'
+            config.logger.debug '*****'
+            config.logger.debug typed_data
+            config.logger.debug 'typed_data'
+            config.logger.debug '*****'
             return typed_data if typed_data
           rescue # rescue all errors so we keep iterating even if the current item lookup raises
           end
