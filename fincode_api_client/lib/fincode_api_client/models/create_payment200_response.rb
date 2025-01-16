@@ -20,12 +20,12 @@ module FincodeApiClient
       def openapi_one_of
         [
           :'PaymentCardCreatingResponse',
-          :'PaymentApplePayCreatingResponse',
-          :'PaymentDirectDebitCreatingResponse',
-          :'PaymentGooglePayCreatingResponse',
-          :'PaymentKonbiniCreatingResponse',
-          :'PaymentPayPayCreatingResponse',
-          :'PaymentVirtualAccountCreatingResponse'
+          # :'PaymentApplePayCreatingResponse',
+          # :'PaymentDirectDebitCreatingResponse',
+          # :'PaymentGooglePayCreatingResponse',
+          # :'PaymentKonbiniCreatingResponse',
+          # :'PaymentPayPayCreatingResponse',
+          # :'PaymentVirtualAccountCreatingResponse'
         ]
       end
 
