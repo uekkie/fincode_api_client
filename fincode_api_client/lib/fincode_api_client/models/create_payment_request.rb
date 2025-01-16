@@ -19,8 +19,8 @@ module FincodeApiClient
       # List of class defined in oneOf (OpenAPI v3)
       def openapi_one_of
         [
-          :'PaymentApplePayCreatingRequest',
           :'PaymentCardCreatingRequest',
+          :'PaymentApplePayCreatingRequest',
           :'PaymentDirectDebitCreatingRequest',
           :'PaymentGooglePayCreatingRequest',
           :'PaymentKonbiniCreatingRequest',
