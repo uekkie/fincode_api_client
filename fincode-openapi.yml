@@ -498,7 +498,7 @@ paths:
         顧客情報を一覧で取得します。クエリパラメータを指定して取得する条件を絞り込めます。
       parameters:
         - in: query
-          name: クエリ
+          name: query
           description: |
             顧客情報の一覧取得において検索条件となるクエリパラメータ
           required: false
@@ -2455,7 +2455,7 @@ paths:
             allOf:
               - $ref: '#/components/schemas/CustomerId_schema'
           required: true
-        - name: クエリ
+        - name: query
           in: query
           required: true
           schema:
@@ -2668,7 +2668,7 @@ paths:
             <span class="smallText color--red-400">※ 顧客情報を共有しないプラットフォームのメインショップのみ指定可</span>\
             テナントショップID。\
             このテナントショップに紐づく顧客のうち、指定したIDの顧客に紐づく決済手段からIDで指定した決済手段を取得します。
-        - name: クエリ
+        - name: query
           in: query
           required: true
           schema:
@@ -3074,7 +3074,7 @@ paths:
             <span class="smallText color--red-400">※ プラットフォームのメインショップのみ指定可</span>\
             テナントショップID。\
             このテナントショップに紐づく決済から一覧で取得します。
-        - name: クエリ
+        - name: query
           in: query
           required: true
           schema:
@@ -3829,7 +3829,7 @@ paths:
             allOf:
               - $ref: '#/components/schemas/OrderId_schema'
           required: true
-        - name: クエリ
+        - name: query
           in: query
           required: true
           schema:
@@ -6499,7 +6499,7 @@ paths:
         プラン情報を一覧で取得します。クエリパラメータを指定して取得する条件を絞り込めます。
       parameters:
         - in: query
-          name: クエリ
+          name: query
           description: |
             プラン情報の一覧取得において検索条件となるクエリパラメータ
           required: false
@@ -7394,7 +7394,7 @@ paths:
         サブスクリプション情報を一覧で取得します。クエリパラメータを指定して取得する条件を絞り込めます。
       parameters:
         - in: query
-          name: クエリ
+          name: query
           description: |
             サブスクリプション情報の一覧取得において検索条件となるクエリパラメータ
           required: true
@@ -8116,7 +8116,7 @@ paths:
         サブスクリプションにより発生した課金の結果を一覧で取得します。クエリパラメータを指定して取得する条件を絞り込めます。
       parameters:
         - in: query
-          name: クエリ
+          name: query
           description: |
             サブスクリプション結果の一覧取得において検索条件となるクエリパラメータ
           required: true
@@ -8318,7 +8318,7 @@ paths:
             テナントショップID。\
             指定したテナントショップを販売主とした一括決済情報を一覧で取得します。
         - in: query
-          name: クエリ
+          name: query
           description: |
             一括決済情報の一覧取得において検索条件となるクエリパラメータ
           required: false
@@ -8761,7 +8761,7 @@ paths:
             テナントショップID。\
             指定したテナントショップを販売主とした一括決済の詳細を一覧で取得します。
         - in: query
-          name: クエリ
+          name: query
           description: |
             一括決済情報の一覧取得において検索条件となるクエリパラメータ
           required: true
@@ -9120,7 +9120,7 @@ paths:
         - インボイス機能
       summary: インボイス 一覧取得
       description: |
-        インボイス情報を一覧で取得します。クエリパラメータを指定して取得する条件を絞り込めます。 
+        インボイス情報を一覧で取得します。クエリパラメータを指定して取得する条件を絞り込めます。
       parameters:
         - in: header
           name: Tenant-Shop-Id
@@ -9133,7 +9133,7 @@ paths:
             テナントショップID。\
             指定したテナントショップを請求元とした請求書情報を一覧で取得します。
         - in: query
-          name: クエリ
+          name: query
           description: |
             検索条件クエリパラメータ
           required: false
@@ -9474,7 +9474,7 @@ paths:
           schema:
             type: string
           description: |
-            インボイスID  
+            インボイスID
         - in: header
           name: Tenant-Shop-Id
           required: false
@@ -10699,7 +10699,7 @@ paths:
                   maxLength: 10
                   description: |
                     支払い完了日  
-                    yyyy/MM/dd形式  
+                    yyyy/MM/dd形式
       responses:
         '200':
           description: リクエストに成功
@@ -11071,7 +11071,7 @@ paths:
             <span class="smallText color--red-400">※ プラットフォームのメインショップのみ指定可</span>\
             テナントショップID。\
             このテナントショップの売上入金情報から一覧で取得します。
-        - name: クエリ
+        - name: query
           in: query
           description: |
             売上入金情報の一覧取得において検索条件となるクエリパラメータ
@@ -11430,7 +11430,7 @@ paths:
             このテナントショップの売上入金情報のうち、指定したIDの売上入金情報の売上入金詳細を取得します。
           required: false
         - in: query
-          name: クエリ
+          name: query
           description: |
             売上入金詳細の一覧取得において検索条件となるクエリパラメータ
           schema:
@@ -11598,7 +11598,7 @@ paths:
       description: |
         プラットフォーム利用料による売上入金情報を一覧で取得します。クエリパラメータを指定して取得する条件を絞り込めます。
       parameters:
-        - name: クエリ
+        - name: query
           in: query
           description: |
             プラットフォーム利用料による売上入金情報の一覧取得において検索条件となるクエリパラメータ
@@ -11944,7 +11944,7 @@ paths:
             allOf:
               - $ref: '#/components/schemas/PlatformAccountId_schema'
           required: true
-        - name: クエリ
+        - name: query
           in: query
           description: |
             プラットフォーム利用料による売上入金情報の一覧取得において検索条件となるクエリパラメータ
@@ -12119,7 +12119,7 @@ paths:
         プラットフォームショップ（メインショップ・サブショップ）を一覧で取得します。\
         クエリパラメータを指定して取得する条件を絞り込めます。
       parameters:
-        - name: クエリ
+        - name: query
           in: query
           description: |
             プラットフォーム情報の一覧取得において検索条件となるクエリパラメータ
@@ -12645,7 +12645,7 @@ paths:
         テナントショップを一覧で取得します。\
         クエリパラメータを指定して取得する条件を絞り込めます。
       parameters:
-        - name: クエリ
+        - name: query
           in: query
           description: |
             テナント情報の一覧取得において検索条件となるクエリパラメータ
@@ -20975,7 +20975,7 @@ components:
         - 20
         - 24
       description: |
-        （分割払いの場合）支払回数  
+        （分割払いの場合）支払回数
     PaymentBulk_properties-id:
       type: string
       minLength: 25
@@ -21017,7 +21017,7 @@ components:
         POSTメソッドでリダイレクトされます。
 
         リクエストで指定しない場合はデフォルトの成功ページのURLが設定されます。  
-        また、`tds2_ret_url`を指定していない場合のみ返却されます。  
+        また、`tds2_ret_url`を指定していない場合のみ返却されます。
     x-req-properties-return_url_on_failure:
       type: string
       example: https://your-server.example.com/3ds2-return/failure
@@ -21030,7 +21030,7 @@ components:
         POSTメソッドでリダイレクトされます。
 
         リクエストで指定しない場合はデフォルトの失敗ページのURLが設定されます。  
-        また、`tds2_ret_url`を指定していない場合のみ返却されます。  
+        また、`tds2_ret_url`を指定していない場合のみ返却されます。
     Payment.Card:
       type: object
       properties:
@@ -23074,7 +23074,7 @@ components:
             POSTメソッドでリダイレクトされます。
 
             指定しない場合はデフォルトの成功ページのURLが設定されます。  
-            また、`tds2_ret_url`を指定した場合は無視されます。  
+            また、`tds2_ret_url`を指定した場合は無視されます。
         return_url_on_failure:
           nullable: true
           allOf:
@@ -23086,7 +23086,7 @@ components:
             POSTメソッドでリダイレクトされます。
 
             指定しない場合はデフォルトの失敗ページのURLが設定されます。  
-            また、`tds2_ret_url`を指定した場合は無視されます。  
+            また、`tds2_ret_url`を指定した場合は無視されます。
         tds2_ch_acc_change:
           nullable: true
           allOf:
@@ -28564,233 +28564,233 @@ components:
             addr_country:
               type: string
               description: |
-                顧客（請求先）住所の国コード  
+                顧客（請求先）住所の国コード
               minLength: 1
               maxLength: 3
             addr_state:
               type: string
               description: |
-                顧客（請求先）住所の都道府県コード  
+                顧客（請求先）住所の都道府県コード
               minLength: 1
               maxLength: 3
             addr_city:
               type: string
               description: |
-                顧客（請求先）住所の市区町村  
+                顧客（請求先）住所の市区町村
               minLength: 1
               maxLength: 50
             addr_line_1:
               type: string
               description: |
-                顧客（請求先）住所の町名・番地  
+                顧客（請求先）住所の町名・番地
               minLength: 1
               maxLength: 50
             addr_line_2:
               type: string
               description: |
-                顧客（請求先）住所の建物名・部屋番号  
+                顧客（請求先）住所の建物名・部屋番号
               minLength: 1
               maxLength: 50
             addr_line_3:
               type: string
               description: |
-                顧客（請求先）住所 その他  
+                顧客（請求先）住所 その他
               minLength: 1
               maxLength: 50
             addr_post_code:
               type: string
               description: |
-                顧客（請求先）住所の郵便番号  
+                顧客（請求先）住所の郵便番号
               minLength: 1
               maxLength: 16
         customer_overwrite:
           type: object
           description: |
-            上書き顧客（請求先）情報  
+            上書き顧客（請求先）情報
           properties:
             name:
               type: string
               description: |
-                上書き顧客（請求先）宛名  
+                上書き顧客（請求先）宛名
               minLength: 1
               maxLength: 384
             email:
               type: string
               description: |
-                上書き顧客（請求先）メールアドレス  
+                上書き顧客（請求先）メールアドレス
               minLength: 1
               maxLength: 254
             addr_country:
               type: string
               description: |
-                上書き顧客（請求先）住所の国コード  
+                上書き顧客（請求先）住所の国コード
               minLength: 1
               maxLength: 3
             addr_state:
               type: string
               description: |
-                上書き顧客（請求先）住所の都道府県コード  
+                上書き顧客（請求先）住所の都道府県コード
               minLength: 1
               maxLength: 3
             addr_city:
               type: string
               description: |
-                上書き顧客（請求先）住所の市区町村  
+                上書き顧客（請求先）住所の市区町村
               minLength: 1
               maxLength: 50
             addr_line_1:
               type: string
               description: |
-                上書き顧客（請求先）住所の町名・番地  
+                上書き顧客（請求先）住所の町名・番地
               minLength: 1
               maxLength: 50
             addr_line_2:
               type: string
               description: |
-                上書き顧客（請求先）住所の建物名・部屋番号  
+                上書き顧客（請求先）住所の建物名・部屋番号
               minLength: 1
               maxLength: 50
             addr_line_3:
               type: string
               description: |
-                上書き顧客（請求先）住所 その他  
+                上書き顧客（請求先）住所 その他
               minLength: 1
               maxLength: 50
             addr_post_code:
               type: string
               description: |
-                上書き顧客（請求先）住所の郵便番号  
+                上書き顧客（請求先）住所の郵便番号
               minLength: 1
               maxLength: 16
         issuer:
           type: object
           description: |
-            発行元事業者情報  
+            発行元事業者情報
           properties:
             name:
               type: string
               description: |
-                発行元事業者名  
+                発行元事業者名
               minLength: 1
               maxLength: 150
             invoice_registration_number:
               type: string
               description: |
-                適格請求書発行事業者登録番号  
+                適格請求書発行事業者登録番号
               minLength: 1
               maxLength: 14
             addr_state:
               type: string
               description: |
-                発行元事業者住所の都道府県コード  
+                発行元事業者住所の都道府県コード
               minLength: 1
               maxLength: 3
             addr_city:
               type: string
               description: |
-                発行元事業者住所の市区町村  
+                発行元事業者住所の市区町村
               minLength: 1
               maxLength: 50
             addr_line_1:
               type: string
               description: |
-                発行元事業者住所の町名・番地  
+                発行元事業者住所の町名・番地
               minLength: 1
               maxLength: 100
             addr_line_2:
               type: string
               description: |
-                発行元事業者住所の建物名・部屋番号  
+                発行元事業者住所の建物名・部屋番号
               minLength: 1
               maxLength: 100
             addr_line_3:
               type: string
               description: |
-                発行元事業者住所 その他  
+                発行元事業者住所 その他
               minLength: 1
               maxLength: 50
             addr_post_code:
               type: string
               description: |
-                発行元事業者住所の郵便番号  
+                発行元事業者住所の郵便番号
               minLength: 1
               maxLength: 8
             email:
               type: string
               description: |
-                発行元事業者のメールアドレス  
+                発行元事業者のメールアドレス
               minLength: 3
               maxLength: 254
             phone_number:
               type: string
               description: |
-                発行元事業者の電話番号  
+                発行元事業者の電話番号
               minLength: 1
               maxLength: 15
         issuer_overwrite:
           type: object
           description: |
-            上書き発行元事業者情報  
+            上書き発行元事業者情報
           properties:
             addr_state:
               type: string
               description: |
-                発行元事業者住所の都道府県コード  
+                発行元事業者住所の都道府県コード
               minLength: 1
               maxLength: 3
             addr_city:
               type: string
               description: |
-                発行元事業者住所の市区町村  
+                発行元事業者住所の市区町村
               minLength: 1
               maxLength: 50
             addr_line_1:
               type: string
               description: |
-                発行元事業者住所の町名・番地  
+                発行元事業者住所の町名・番地
               minLength: 1
               maxLength: 100
             addr_line_2:
               type: string
               description: |
-                発行元事業者住所の建物名・部屋番号  
+                発行元事業者住所の建物名・部屋番号
               minLength: 1
               maxLength: 100
             addr_line_3:
               type: string
               description: |
-                発行元事業者住所 その他  
+                発行元事業者住所 その他
               minLength: 1
               maxLength: 50
             addr_post_code:
               type: string
               description: |
-                発行元事業者住所の郵便番号  
+                発行元事業者住所の郵便番号
               minLength: 1
               maxLength: 8
             email:
               type: string
               description: |
-                発行元事業者のメールアドレス  
+                発行元事業者のメールアドレス
               minLength: 3
               maxLength: 254
             phone_number:
               type: string
               description: |
-                発行元事業者の電話番号  
+                発行元事業者の電話番号
               minLength: 1
               maxLength: 15
         issue_date:
           type: string
           description: |
             発行年月日  
-            形式： `yyyy/MM/dd`  
+            形式： `yyyy/MM/dd`
           minLength: 1
           maxLength: 10
         lines:
           type: array
           description: |
-            取引内容レコード  
+            取引内容レコード
           items:
             type: object
             properties:
@@ -28798,41 +28798,41 @@ components:
                 type: string
                 description: |
                   日付  
-                  形式： `yyyy/MM/dd`  
+                  形式： `yyyy/MM/dd`
                 minLength: 1
                 maxLength: 10
               name:
                 type: string
                 description: |
-                  品目  
+                  品目
                 minLength: 1
                 maxLength: 200
               unit_price:
                 type: number
                 description: |
-                  単価  
+                  単価
                 minimum: 0
                 maximum: 99999999999
               quantity:
                 type: integer
                 description: |
-                  数量  
+                  数量
                 minimum: 1
                 maximum: 2147483647
               tax_rate:
                 type: number
                 description: |
-                  適用税率（%）  
+                  適用税率（%）
         total_amount:
           type: number
           description: |
-            合計金額  
+            合計金額
           minimum: 0
           maximum: 99999999999999
         billing_total_amount:
           type: number
           description: |
-            請求金額合計  
+            請求金額合計
           minimum: 0
           maximum: 99999999999999
         pay_types:
@@ -28852,72 +28852,72 @@ components:
             job_code:
               type: string
               description: |
-                処理区分  
+                処理区分
               minLength: 1
               maxLength: 7
             tds_type:
               type: string
               description: |
-                3DS利用種別  
+                3DS利用種別
               minLength: 1
               maxLength: 1
             tds2_type:
               type: string
               description: |
-                3DS2非対応時設定  
+                3DS2非対応時設定
               minLength: 1
               maxLength: 1
             td_tenant_name:
               type: string
               description: |
-                3Dセキュア表示店舗名  
+                3Dセキュア表示店舗名
               minLength: 1
               maxLength: 25
             tds2_ch_acc_change:
               type: string
               description: |
                 3DSリクエスター アカウント最終更新日  
-                yyyyMMdd形式  
+                yyyyMMdd形式
               minLength: 8
               maxLength: 8
             tds2_ch_acc_date:
               type: string
               description: |
                 3DSリクエスター アカウント開設日  
-                yyyyMMdd形式  
+                yyyyMMdd形式
               minLength: 8
               maxLength: 8
             tds2_ch_acc_pw_change:
               type: string
               description: |
                 3DSリクエスター アカウントパスワード変更日  
-                yyyyMMdd形式  
+                yyyyMMdd形式
               minLength: 8
               maxLength: 8
             tds2_nb_purchase_account:
               type: string
               description: |
-                過去6ヶ月間の購入回数  
+                過去6ヶ月間の購入回数
               minLength: 1
               maxLength: 4
             tds2_payment_acc_age:
               type: string
               description: |
                 カード登録日  
-                yyyyMMdd形式  
+                yyyyMMdd形式
               minLength: 8
               maxLength: 8
             tds2_provision_attempts_day:
               type: string
               description: |
-                過去24時間のカード追加の試行回数  
+                過去24時間のカード追加の試行回数
               minLength: 1
               maxLength: 3
             tds2_ship_address_usage:
               type: string
               description: |
                 出荷先住所の最初の使用日  
-                yyyyMMdd形式  
+                yyyyMMdd形式
               minLength: 8
               maxLength: 8
             tds2_ship_name_ind:
@@ -28925,7 +28925,7 @@ components:
               description: |
                 カード顧客名と出荷先名の一致/不一致情報  
                 01 = カード顧客名と配送先名が一致  
-                02 = カード顧客名と配送先名が不一致  
+                02 = カード顧客名と配送先名が不一致
               minLength: 2
               maxLength: 2
             tds2_suspicious_acc_activity:
@@ -28933,26 +28933,26 @@ components:
               description: |
                 アカウントの不審行為情報  
                 01 = 不審な行動は見られなかった  
-                02 = 不審な行動が見られた  
+                02 = 不審な行動が見られた
               minLength: 2
               maxLength: 2
             tds2_txn_activity_day:
               type: string
               description: |
-                過去24時間の取引回数  
+                過去24時間の取引回数
               minLength: 1
               maxLength: 3
             tds2_txn_activity_year:
               type: string
               description: |
-                前年の取引回数  
+                前年の取引回数
               minLength: 1
               maxLength: 3
             tds2_three_ds_req_auth_data:
               type: string
               description: |
                 ログイン証跡  
-                ログイン方法/ログイン日時の設定が必要  
+                ログイン方法/ログイン日時の設定が必要
               minLength: 1
               maxLength: 2048
             tds2_three_ds_req_auth_method:
@@ -28964,14 +28964,14 @@ components:
                 03 = SSO(シングルサインオン)  
                 04 = イシュアーの認証情報  
                 05 = サードパーティ認証  
-                06 = FIDO認証  
+                06 = FIDO認証
               minLength: 2
               maxLength: 2
             tds2_three_ds_req_auth_timestamp:
               type: string
               description: |
                 ログイン日時  
-                YYYYMMDDHHMM形式  
+                YYYYMMDDHHMM形式
               minLength: 12
               maxLength: 12
             tds2_addr_match:
@@ -28980,142 +28980,142 @@ components:
                 請求先住所と配送先住所の一致/不一致情報  
                   
                 - `Y`: 一致  
-                - `N`: 不一致  
+                - `N`: 不一致
               minLength: 1
               maxLength: 1
             tds2_bill_addr_city:
               type: string
               description: |
-                カード顧客の請求先住所の都市  
+                カード顧客の請求先住所の都市
               minLength: 1
               maxLength: 50
             tds2_bill_addr_country:
               type: string
               description: |
-                カード顧客の請求先住所の国コード  
+                カード顧客の請求先住所の国コード
               minLength: 1
               maxLength: 3
             tds2_bill_addr_line_1:
               type: string
               description: |
-                カード顧客の請求先住所の区域部分の１行目  
+                カード顧客の請求先住所の区域部分の１行目
               minLength: 1
               maxLength: 50
             tds2_bill_addr_line_2:
               type: string
               description: |
-                カード顧客の請求先住所の区域部分の２行目  
+                カード顧客の請求先住所の区域部分の２行目
               minLength: 1
               maxLength: 50
             tds2_bill_addr_line_3:
               type: string
               description: |
-                カード顧客の請求先住所の区域部分の３行目  
+                カード顧客の請求先住所の区域部分の３行目
               minLength: 1
               maxLength: 50
             tds2_bill_addr_post_code:
               type: string
               description: |
-                カード顧客の請求先住所の郵便番号  
+                カード顧客の請求先住所の郵便番号
               minLength: 1
               maxLength: 16
             tds2_bill_addr_state:
               type: string
               description: |
-                カード顧客の請求先住所の州または都道府県コード  
+                カード顧客の請求先住所の州または都道府県コード
               minLength: 1
               maxLength: 3
             tds2_email:
               type: string
               description: |
-                カード顧客のメールアドレス  
+                カード顧客のメールアドレス
               minLength: 1
               maxLength: 254
             tds2_home_phone_cc:
               type: string
               description: |
-                自宅電話の国コード  
+                自宅電話の国コード
               minLength: 1
               maxLength: 3
             tds2_home_phone_no:
               type: string
               description: |
                 自宅電話番号  
-                ハイフン（-）なし、数字のみ  
+                ハイフン（-）なし、数字のみ
               minLength: 1
               maxLength: 15
             tds2_mobile_phone_cc:
               type: string
               description: |
-                携帯電話の国コード  
+                携帯電話の国コード
               minLength: 1
               maxLength: 3
             tds2_mobile_phone_no:
               type: string
               description: |
                 携帯電話番号  
-                ハイフン（-）なし、数字のみ  
+                ハイフン（-）なし、数字のみ
               minLength: 1
               maxLength: 15
             tds2_work_phone_cc:
               type: string
               description: |
-                職場電話の国コード  
+                職場電話の国コード
               minLength: 1
               maxLength: 3
             tds2_work_phone_no:
               type: string
               description: |
                 職場電話番号  
-                ハイフン（-）なし、数字のみ  
+                ハイフン（-）なし、数字のみ
               minLength: 1
               maxLength: 15
             tds2_ship_addr_city:
               type: string
               description: |
-                出荷先住所の都市  
+                出荷先住所の都市
               minLength: 1
               maxLength: 50
             tds2_ship_addr_country:
               type: string
               description: |
-                出荷先住所の国コード  
+                出荷先住所の国コード
               minLength: 1
               maxLength: 3
             tds2_ship_addr_line_1:
               type: string
               description: |
-                出荷先住所の区域部分の１行目  
+                出荷先住所の区域部分の１行目
               minLength: 1
               maxLength: 50
             tds2_ship_addr_line_2:
               type: string
               description: |
-                出荷先住所の区域部分の２行目  
+                出荷先住所の区域部分の２行目
               minLength: 1
               maxLength: 50
             tds2_ship_addr_line_3:
               type: string
               description: |
-                出荷先住所の区域部分の３行目  
+                出荷先住所の区域部分の３行目
               minLength: 1
               maxLength: 50
             tds2_ship_addr_post_code:
               type: string
               description: |
-                出荷先住所の郵便番号  
+                出荷先住所の郵便番号
               minLength: 1
               maxLength: 16
             tds2_ship_addr_state:
               type: string
               description: |
-                出荷先住所の州または都道府県コード  
+                出荷先住所の州または都道府県コード
               minLength: 1
               maxLength: 3
             tds2_delivery_email_address:
               type: string
               description: |
-                出荷先住所のメールアドレス  
+                出荷先住所のメールアドレス
               minLength: 1
               maxLength: 254
             tds2_delivery_timeframe:
@@ -29132,26 +29132,26 @@ components:
             tds2_gift_card_amount:
               type: string
               description: |
-                プリペイドカードまたはギフトカードの総購入金額  
+                プリペイドカードまたはギフトカードの総購入金額
               minLength: 1
               maxLength: 15
             tds2_gift_card_count:
               type: string
               description: |
-                購入されたプリペイドカードまたはギフトカード / コードの総数  
+                購入されたプリペイドカードまたはギフトカード / コードの総数
               minLength: 2
               maxLength: 2
             tds2_gift_card_curr:
               type: string
               description: |
-                通貨コード  
+                通貨コード
               minLength: 3
               maxLength: 3
             tds2_pre_order_date:
               type: string
               description: |
                 商品の発売予定日  
-                YYYYMMDD形式  
+                YYYYMMDD形式
               minLength: 8
               maxLength: 8
             tds2_pre_order_purchase_ind:
@@ -29183,31 +29183,31 @@ components:
                 - `04`: 店舗へ配送 / 近所の店舗での受け取り（店舗の住所は配送先住所で指定する）  
                 - `05`: デジタル商品（オンラインサービス、電子ギフトカードおよび償還コードを含む）  
                 - `06`: 配送なし（旅行およびイベントのチケット）  
-                - `07`: その他（ゲーム、配送されないデジタルサービス、電子メディアの購読料など）  
+                - `07`: その他（ゲーム、配送されないデジタルサービス、電子メディアの購読料など）
               minLength: 2
               maxLength: 2
             tds2_recurring_expiry:
               type: string
               description: |
                 継続課金の期限  
-                YYYYMMDD形式  
+                YYYYMMDD形式
               minLength: 8
               maxLength: 8
             tds2_recurring_frequency:
               type: string
               description: |
-                継続課金の課金最小間隔日数  
+                継続課金の課金最小間隔日数
               minLength: 1
               maxLength: 4
         virtual_account:
           type: object
           description: |
-            バーチャル口座情報  
+            バーチャル口座情報
           properties:
             reference_invoice_id:
               type: string
               description: |
-                バーチャル口座 再利用 インボイスID  
+                バーチャル口座 再利用 インボイスID
               minLength: 0
               maxLength: 30
         embedded_virtual_account:
@@ -29219,31 +29219,31 @@ components:
             virtual_account_id:
               type: string
               description: |
-                バーチャル口座ID  
+                バーチャル口座ID
               minLength: 1
               maxLength: 25
             branch_name:
               type: string
               description: |
-                支店名  
+                支店名
               minLength: 1
               maxLength: 15
             branch_code:
               type: string
               description: |
-                支店コード  
+                支店コード
               minLength: 1
               maxLength: 3
             account_number:
               type: string
               description: |
-                口座番号  
+                口座番号
               minLength: 7
               maxLength: 7
             account_name:
               type: string
               description: |
-                口座名義  
+                口座名義
               minLength: 1
               maxLength: 40
         is_tax_included:
@@ -29252,7 +29252,7 @@ components:
             内税表記有無  
               
             - `true`: 内税表記  
-            - `false`: 外税表記  
+            - `false`: 外税表記
         due_date:
           type: string
           maxLength: 10
@@ -29277,11 +29277,11 @@ components:
         is_uncollectible:
           type: boolean
           description: |
-            回収困難フラグ  
+            回収困難フラグ
         is_paid_externally:
           type: boolean
           description: |
-            fincode外支払フラグ  
+            fincode外支払フラグ
         transaction_date:
           type: string
           description: 支払完了日
@@ -29319,21 +29319,21 @@ components:
             請求書メール送信フラグ  
               
             - `0`: メールを送信しない（デフォルト）  
-            - `1`: メールを送信する  
+            - `1`: メールを送信する
         receipt_mail_send_flag:
           type: string
           description: |
             領収書メール送信フラグ  
               
             - `0`: メールを送信しない（デフォルト）  
-            - `1`: メールを送信する  
+            - `1`: メールを送信する
         underpayment_mail_send_flag:
           type: string
           description: |
             差額請求メール送信フラグ  
               
             - `0`: メールを送信しない（デフォルト）  
-            - `1`: メールを送信する  
+            - `1`: メールを送信する
         invoice_number:
           type: string
           minLength: 1
@@ -29396,7 +29396,7 @@ components:
           type: object
           description: |
             発行元事業者情報  
-            指定しなかった場合、本番環境申請の際にご提出いただいた情報を利用します。  
+            指定しなかった場合、本番環境申請の際にご提出いただいた情報を利用します。
           properties:
             addr_country:
               type: string
@@ -29446,7 +29446,7 @@ components:
                 maxLength: 10
                 description: |
                   日付  
-                  yyyy/MM/dd  
+                  yyyy/MM/dd
               name:
                 type: string
                 minLength: 1
@@ -29457,13 +29457,13 @@ components:
                 minLength: 1
                 maxLength: 11
                 description: |
-                  単価  
+                  単価
               quantity:
                 type: number
                 minimum: 0
                 maximum: 2147483647
                 description: |
-                  数量  
+                  数量
               tax_rate:
                 type: number
                 minLength: 1
@@ -29493,7 +29493,7 @@ components:
                 以下のいずれかを指定してください。  
 
                 - `AUTH`: 仮売上  
-                - `CAPTURE`: 即時売上  
+                - `CAPTURE`: 即時売上
             tds_type:
               type: string
               minLength: 1
@@ -29502,7 +29502,7 @@ components:
                 3DS利用種別  
                 3DSを使用して決済を行うかを設定します。  
                 - `0`: 行わない（デフォルト）  
-                - `2`: 行う（3DS2.0を利用）  
+                - `2`: 行う（3DS2.0を利用）
             tds2_type:
               type: string
               minLength: 1
@@ -29519,7 +29519,7 @@ components:
               maxLength: 25
               description: |
                 <span class="smallText color--blue-400">[3Dセキュア認証パラメータ]</span>  
-                3Dセキュア表示店舗名  
+                3Dセキュア表示店舗名
             tds2_ch_acc_change:
               type: string
               minLength: 8
@@ -29527,7 +29527,7 @@ components:
               description: |
                 <span class="smallText color--blue-400">[3Dセキュア認証パラメータ]</span>  
                 3DSリクエスター アカウント最終更新日  
-                yyyyMMdd形式  
+                yyyyMMdd形式
             tds2_ch_acc_date:
               type: string
               minLength: 8
@@ -29535,7 +29535,7 @@ components:
               description: |
                 <span class="smallText color--blue-400">[3Dセキュア認証パラメータ]</span>  
                 3DSリクエスター アカウント開設日  
-                yyyyMMdd形式  
+                yyyyMMdd形式
             tds2_ch_acc_pw_change:
               type: string
               minLength: 8
@@ -29543,14 +29543,14 @@ components:
               description: |
                 <span class="smallText color--blue-400">[3Dセキュア認証パラメータ]</span>  
                 3DSリクエスター アカウントパスワード変更日  
-                yyyyMMdd形式  
+                yyyyMMdd形式
             tds2_nb_purchase_account:
               type: string
               minLength: 1
               maxLength: 4
               description: |
                 <span class="smallText color--blue-400">[3Dセキュア認証パラメータ]</span>  
-                過去6ヶ月間の購入回数  
+                過去6ヶ月間の購入回数
             tds2_payment_acc_age:
               type: string
               minLength: 8
@@ -29558,14 +29558,14 @@ components:
               description: |
                 <span class="smallText color--blue-400">[3Dセキュア認証パラメータ]</span>  
                 カード登録日  
-                yyyyMMdd形式  
+                yyyyMMdd形式
             tds2_provision_attempts_day:
               type: string
               minLength: 1
               maxLength: 3
               description: |
                 <span class="smallText color--blue-400">[3Dセキュア認証パラメータ]</span>  
-                過去24時間のカード追加の試行回数  
+                過去24時間のカード追加の試行回数
             tds2_ship_address_usage:
               type: string
               minLength: 8
@@ -29573,7 +29573,7 @@ components:
               description: |
                 <span class="smallText color--blue-400">[3Dセキュア認証パラメータ]</span>  
                 出荷先住所の最初の使用日  
-                yyyyMMdd形式  
+                yyyyMMdd形式
             tds2_ship_name_ind:
               type: string
               minLength: 2
@@ -29583,7 +29583,7 @@ components:
                 カード顧客名と出荷先名の一致/不一致情報  
                   
                 - `01`: カード顧客名と配送先名が一致  
-                - `02`: カード顧客名と配送先名が不一致  
+                - `02`: カード顧客名と配送先名が不一致
             tds2_suspicious_acc_activity:
               type: string
               minLength: 2
@@ -29594,21 +29594,21 @@ components:
                 カード顧客で、不審な行動（過去の不正行為を含む）を加盟店様が発見したかどうかを設定  
                   
                 - `01`: 不審な行動は見られなかった  
-                - `02`: 不審な行動が見られた  
+                - `02`: 不審な行動が見られた
             tds2_txn_activity_day:
               type: string
               minLength: 1
               maxLength: 3
               description: |
                 <span class="smallText color--blue-400">[3Dセキュア認証パラメータ]</span>  
-                過去24時間の取引回数  
+                過去24時間の取引回数
             tds2_txn_activity_year:
               type: string
               minLength: 1
               maxLength: 3
               description: |
                 <span class="smallText color--blue-400">[3Dセキュア認証パラメータ]</span>  
-                前年の取引回数  
+                前年の取引回数
             tds2_three_ds_req_auth_data:
               type: string
               minLength: 1
@@ -29623,7 +29623,7 @@ components:
                 03 = SSO(シングルサインオン)  
                 04 = イシュアーの認証情報  
                 05 = サードパーティ認証  
-                06 = FIDO認証  
+                06 = FIDO認証
             tds2_three_ds_req_auth_timestamp:
               type: string
               minLength: 12
@@ -29633,7 +29633,7 @@ components:
                 ログイン日時  
                 ログイン日時を設定した場合  
                 ログイン証跡/ログイン方法の設定が必要  
-                YYYYMMDDHHMM形式  
+                YYYYMMDDHHMM形式
             tds2_addr_match:
               type: string
               minLength: 1
@@ -29643,63 +29643,63 @@ components:
                 請求先住所と配送先住所の一致/不一致情報  
                 カード顧客の配送先住所とカード顧客の請求先住所の一致/不一致の設定が必要  
                 Y=一致  
-                N=不一致  
+                N=不一致
             tds2_bill_addr_city:
               type: string
               minLength: 1
               maxLength: 50
               description: |
                 <span class="smallText color--blue-400">[3Dセキュア認証パラメータ]</span>  
-                カード顧客の請求先住所の都市  
+                カード顧客の請求先住所の都市
             tds2_bill_addr_country:
               type: string
               minLength: 1
               maxLength: 3
               description: |
                 <span class="smallText color--blue-400">[3Dセキュア認証パラメータ]</span>  
-                カード顧客の請求先住所の国コード  
+                カード顧客の請求先住所の国コード
             tds2_bill_addr_line_1:
               type: string
               minLength: 1
               maxLength: 50
               description: |
                 <span class="smallText color--blue-400">[3Dセキュア認証パラメータ]</span>  
-                カード顧客の請求先住所の区域部分の１行目  
+                カード顧客の請求先住所の区域部分の１行目
             tds2_bill_addr_line_2:
               type: string
               minLength: 1
               maxLength: 50
               description: |
                 <span class="smallText color--blue-400">[3Dセキュア認証パラメータ]</span>  
-                カード顧客の請求先住所の区域部分の２行目  
+                カード顧客の請求先住所の区域部分の２行目
             tds2_bill_addr_line_3:
               type: string
               minLength: 1
               maxLength: 50
               description: |
                 <span class="smallText color--blue-400">[3Dセキュア認証パラメータ]</span>  
-                カード顧客の請求先住所の区域部分の３行目  
+                カード顧客の請求先住所の区域部分の３行目
             tds2_bill_addr_post_code:
               type: string
               minLength: 1
               maxLength: 16
               description: |
                 <span class="smallText color--blue-400">[3Dセキュア認証パラメータ]</span>  
-                カード顧客の請求先住所の郵便番号  
+                カード顧客の請求先住所の郵便番号
             tds2_bill_addr_state:
               type: string
               minLength: 1
               maxLength: 3
               description: |
                 <span class="smallText color--blue-400">[3Dセキュア認証パラメータ]</span>  
-                カード顧客の請求先住所の州または都道府県コード  
+                カード顧客の請求先住所の州または都道府県コード
             tds2_email:
               type: string
               minLength: 1
               maxLength: 254
               description: |
                 <span class="smallText color--blue-400">[3Dセキュア認証パラメータ]</span>  
-                カード顧客のメールアドレス  
+                カード顧客のメールアドレス
             tds2_home_phone_cc:
               type: string
               minLength: 1
@@ -29708,7 +29708,7 @@ components:
                 <span class="smallText color--blue-400">[3Dセキュア認証パラメータ]</span>  
                 自宅電話の国コード  
                 自宅電話の国コードを設定した場合  
-                自宅電話番号の設定が必要  
+                自宅電話番号の設定が必要
             tds2_home_phone_no:
               type: string
               minLength: 1
@@ -29718,7 +29718,7 @@ components:
                 自宅電話番号  
                 自宅電話番号を設定した場合  
                 自宅電話の国コードの設定が必要  
-                ハイフン（-）なし、数字のみ  
+                ハイフン（-）なし、数字のみ
             tds2_mobile_phone_cc:
               type: string
               minLength: 1
@@ -29727,7 +29727,7 @@ components:
                 <span class="smallText color--blue-400">[3Dセキュア認証パラメータ]</span>  
                 携帯電話の国コード  
                 携帯電話の国コードを設定した場合  
-                携帯電話番号の設定が必要  
+                携帯電話番号の設定が必要
             tds2_mobile_phone_no:
               type: string
               minLength: 1
@@ -29736,7 +29736,7 @@ components:
                 <span class="smallText color--blue-400">[3Dセキュア認証パラメータ]</span>  
                 携帯電話番号  
                 携帯電話番号の国コードを設定した場合  
-                ハイフン（-）なし、数字のみ  
+                ハイフン（-）なし、数字のみ
             tds2_work_phone_cc:
               type: string
               minLength: 1
@@ -29745,7 +29745,7 @@ components:
                 <span class="smallText color--blue-400">[3Dセキュア認証パラメータ]</span>  
                 職場電話の国コード  
                 職場電話の国コードを設定した場合  
-                職場電話番号の設定が必要  
+                職場電話番号の設定が必要
             tds2_work_phone_no:
               type: string
               minLength: 1
@@ -29754,63 +29754,63 @@ components:
                 <span class="smallText color--blue-400">[3Dセキュア認証パラメータ]</span>  
                 職場電話番号  
                 職場電話番号を設定した場合  
-                ハイフン（-）なし、数字のみ  
+                ハイフン（-）なし、数字のみ
             tds2_ship_addr_city:
               type: string
               minLength: 1
               maxLength: 50
               description: |
                 <span class="smallText color--blue-400">[3Dセキュア認証パラメータ]</span>  
-                出荷先住所の都市  
+                出荷先住所の都市
             tds2_ship_addr_country:
               type: string
               minLength: 1
               maxLength: 3
               description: |
                 <span class="smallText color--blue-400">[3Dセキュア認証パラメータ]</span>  
-                出荷先住所の国コード  
+                出荷先住所の国コード
             tds2_ship_addr_line_1:
               type: string
               minLength: 1
               maxLength: 50
               description: |
                 <span class="smallText color--blue-400">[3Dセキュア認証パラメータ]</span>  
-                出荷先住所の区域部分の１行目  
+                出荷先住所の区域部分の１行目
             tds2_ship_addr_line_2:
               type: string
               minLength: 1
               maxLength: 50
               description: |
                 <span class="smallText color--blue-400">[3Dセキュア認証パラメータ]</span>  
-                出荷先住所の区域部分の２行目  
+                出荷先住所の区域部分の２行目
             tds2_ship_addr_line_3:
               type: string
               minLength: 1
               maxLength: 50
               description: |
                 <span class="smallText color--blue-400">[3Dセキュア認証パラメータ]</span>  
-                出荷先住所の区域部分の３行目  
+                出荷先住所の区域部分の３行目
             tds2_ship_addr_post_code:
               type: string
               minLength: 1
               maxLength: 16
               description: |
                 <span class="smallText color--blue-400">[3Dセキュア認証パラメータ]</span>  
-                出荷先住所の郵便番号  
+                出荷先住所の郵便番号
             tds2_ship_addr_state:
               type: string
               minLength: 1
               maxLength: 3
               description: |
                 <span class="smallText color--blue-400">[3Dセキュア認証パラメータ]</span>  
-                出荷先住所の州または都道府県コード  
+                出荷先住所の州または都道府県コード
             tds2_delivery_email_address:
               type: string
               minLength: 1
               maxLength: 254
               description: |
                 <span class="smallText color--blue-400">[3Dセキュア認証パラメータ]</span>  
-                納品先電子メールアドレス  
+                納品先電子メールアドレス
             tds2_delivery_timeframe:
               type: string
               minLength: 2
@@ -29821,14 +29821,14 @@ components:
                 01 = 電子デリバリー  
                 02 = 当日出荷  
                 03 = 翌日出荷  
-                04 = 2日目以降の出荷  
+                04 = 2日目以降の出荷
             tds2_gift_card_amount:
               type: string
               minLength: 1
               maxLength: 15
               description: |
                 <span class="smallText color--blue-400">[3Dセキュア認証パラメータ]</span>  
-                プリペイドカードまたはギフトカードの総購入金額  
+                プリペイドカードまたはギフトカードの総購入金額
             tds2_gift_card_count:
               type: string
               minLength: 2
@@ -29836,7 +29836,7 @@ components:
               description: |
                 <span class="smallText color--blue-400">[3Dセキュア認証パラメータ]</span>  
                 購入されたプリペイドカードまたはギフトカード / コードの総数  
-                0埋め2桁の数字  
+                0埋め2桁の数字
             tds2_gift_card_curr:
               type: string
               minLength: 3
@@ -29846,7 +29846,7 @@ components:
                 通貨コード  
                 ※以下のコードは対象外  
                 955, 956, 957, 958, 959, 960, 961, 962,  
-                963, 964, 999  
+                963, 964, 999
             tds2_pre_order_date:
               type: string
               minLength: 8
@@ -29854,7 +29854,7 @@ components:
               description: |
                 <span class="smallText color--blue-400">[3Dセキュア認証パラメータ]</span>  
                 商品の発売予定日  
-                YYYYMMDD形式  
+                YYYYMMDD形式
             tds2_pre_order_purchase_ind:
               type: string
               minLength: 2
@@ -29863,7 +29863,7 @@ components:
                 <span class="smallText color--blue-400">[3Dセキュア認証パラメータ]</span>  
                 商品の販売時期情報  
                 01 = 発売済み
-                02 = 先行予約商品  
+                02 = 先行予約商品
             tds2_reorder_items_ind:
               type: string
               minLength: 2
@@ -29872,7 +29872,7 @@ components:
                 <span class="smallText color--blue-400">[3Dセキュア認証パラメータ]</span>  
                 商品の注文情報  
                 01 = 初回注文  
-                02 = 再注文  
+                02 = 再注文
             tds2_ship_ind:
               type: string
               minLength: 2
@@ -29886,7 +29886,7 @@ components:
                 04 = 店舗へ配送 / 近所の店舗での受け取り（店舗の住所は配送先住所で指定する）  
                 05 = デジタル商品（オンラインサービス、電子ギフトカードおよび償還コードを含む）  
                 06 = 配送なし（旅行およびイベントのチケット）  
-                07 = その他（ゲーム、配送されないデジタルサービス、電子メディアの購読料など）  
+                07 = その他（ゲーム、配送されないデジタルサービス、電子メディアの購読料など）
             tds2_recurring_expiry:
               type: string
               minLength: 8
@@ -29894,7 +29894,7 @@ components:
               description: |
                 <span class="smallText color--blue-400">[3Dセキュア認証パラメータ]</span>  
                 継続課金の期限  
-                YYYYMMDD形式  
+                YYYYMMDD形式
             tds2_recurring_frequency:
               type: string
               minLength: 1
@@ -29951,21 +29951,21 @@ components:
             請求書メール送信フラグ  
               
             - `0`: メールを送信しない（デフォルト）  
-            - `1`: メールを送信する  
+            - `1`: メールを送信する
         receipt_mail_send_flag:
           type: string
           description: |
             領収書メール送信フラグ  
               
             - `0`: メールを送信しない（デフォルト）  
-            - `1`: メールを送信する  
+            - `1`: メールを送信する
         underpayment_mail_send_flag:
           type: string
           description: |
             差額請求メール送信フラグ  
               
             - `0`: メールを送信しない（デフォルト）  
-            - `1`: メールを送信する  
+            - `1`: メールを送信する
         invoice_number:
           type: string
           minLength: 1
@@ -30028,7 +30028,7 @@ components:
           type: object
           description: |
             発行元事業者情報  
-            指定しなかった場合、本番環境申請の際にご提出いただいた情報を利用します。  
+            指定しなかった場合、本番環境申請の際にご提出いただいた情報を利用します。
           properties:
             addr_country:
               type: string
@@ -30085,7 +30085,7 @@ components:
                 maxLength: 10
                 description: |
                   日付  
-                  yyyy/MM/dd  
+                  yyyy/MM/dd
               name:
                 type: string
                 minLength: 1
@@ -30096,13 +30096,13 @@ components:
                 minLength: 1
                 maxLength: 11
                 description: |
-                  単価  
+                  単価
               quantity:
                 type: number
                 minimum: 0
                 maximum: 2147483647
                 description: |
-                  数量  
+                  数量
               tax_rate:
                 type: number
                 minLength: 1
@@ -30132,7 +30132,7 @@ components:
                 以下のいずれかを指定してください。  
 
                 - `AUTH`: 仮売上  
-                - `CAPTURE`: 即時売上  
+                - `CAPTURE`: 即時売上
             tds_type:
               type: string
               minLength: 1
@@ -30141,7 +30141,7 @@ components:
                 3DS利用種別  
                 3DSを使用して決済を行うかを設定します。  
                 - `0`: 行わない（デフォルト）  
-                - `2`: 行う（3DS2.0を利用）  
+                - `2`: 行う（3DS2.0を利用）
             tds2_type:
               type: string
               minLength: 1
@@ -30158,7 +30158,7 @@ components:
               maxLength: 25
               description: |
                 <span class="smallText color--blue-400">[3Dセキュア認証パラメータ]</span>  
-                3Dセキュア表示店舗名  
+                3Dセキュア表示店舗名
             tds2_ch_acc_change:
               type: string
               minLength: 8
@@ -30166,7 +30166,7 @@ components:
               description: |
                 <span class="smallText color--blue-400">[3Dセキュア認証パラメータ]</span>  
                 3DSリクエスター アカウント最終更新日  
-                yyyyMMdd形式  
+                yyyyMMdd形式
             tds2_ch_acc_date:
               type: string
               minLength: 8
@@ -30174,7 +30174,7 @@ components:
               description: |
                 <span class="smallText color--blue-400">[3Dセキュア認証パラメータ]</span>  
                 3DSリクエスター アカウント開設日  
-                yyyyMMdd形式  
+                yyyyMMdd形式
             tds2_ch_acc_pw_change:
               type: string
               minLength: 8
@@ -30182,14 +30182,14 @@ components:
               description: |
                 <span class="smallText color--blue-400">[3Dセキュア認証パラメータ]</span>  
                 3DSリクエスター アカウントパスワード変更日  
-                yyyyMMdd形式  
+                yyyyMMdd形式
             tds2_nb_purchase_account:
               type: string
               minLength: 1
               maxLength: 4
               description: |
                 <span class="smallText color--blue-400">[3Dセキュア認証パラメータ]</span>  
-                過去6ヶ月間の購入回数  
+                過去6ヶ月間の購入回数
             tds2_payment_acc_age:
               type: string
               minLength: 8
@@ -30197,14 +30197,14 @@ components:
               description: |
                 <span class="smallText color--blue-400">[3Dセキュア認証パラメータ]</span>  
                 カード登録日  
-                yyyyMMdd形式  
+                yyyyMMdd形式
             tds2_provision_attempts_day:
               type: string
               minLength: 1
               maxLength: 3
               description: |
                 <span class="smallText color--blue-400">[3Dセキュア認証パラメータ]</span>  
-                過去24時間のカード追加の試行回数  
+                過去24時間のカード追加の試行回数
             tds2_ship_address_usage:
               type: string
               minLength: 8
@@ -30212,7 +30212,7 @@ components:
               description: |
                 <span class="smallText color--blue-400">[3Dセキュア認証パラメータ]</span>  
                 出荷先住所の最初の使用日  
-                yyyyMMdd形式  
+                yyyyMMdd形式
             tds2_ship_name_ind:
               type: string
               minLength: 2
@@ -30222,7 +30222,7 @@ components:
                 カード顧客名と出荷先名の一致/不一致情報  
                   
                 - `01`: カード顧客名と配送先名が一致  
-                - `02`: カード顧客名と配送先名が不一致  
+                - `02`: カード顧客名と配送先名が不一致
             tds2_suspicious_acc_activity:
               type: string
               minLength: 2
@@ -30233,21 +30233,21 @@ components:
                 カード顧客で、不審な行動（過去の不正行為を含む）を加盟店様が発見したかどうかを設定  
                   
                 - `01`: 不審な行動は見られなかった  
-                - `02`: 不審な行動が見られた  
+                - `02`: 不審な行動が見られた
             tds2_txn_activity_day:
               type: string
               minLength: 1
               maxLength: 3
               description: |
                 <span class="smallText color--blue-400">[3Dセキュア認証パラメータ]</span>  
-                過去24時間の取引回数  
+                過去24時間の取引回数
             tds2_txn_activity_year:
               type: string
               minLength: 1
               maxLength: 3
               description: |
                 <span class="smallText color--blue-400">[3Dセキュア認証パラメータ]</span>  
-                前年の取引回数  
+                前年の取引回数
             tds2_three_ds_req_auth_data:
               type: string
               minLength: 1
@@ -30262,7 +30262,7 @@ components:
                 03 = SSO(シングルサインオン)  
                 04 = イシュアーの認証情報  
                 05 = サードパーティ認証  
-                06 = FIDO認証  
+                06 = FIDO認証
             tds2_three_ds_req_auth_timestamp:
               type: string
               minLength: 12
@@ -30272,7 +30272,7 @@ components:
                 ログイン日時  
                 ログイン日時を設定した場合  
                 ログイン証跡/ログイン方法の設定が必要  
-                YYYYMMDDHHMM形式  
+                YYYYMMDDHHMM形式
             tds2_addr_match:
               type: string
               minLength: 1
@@ -30282,63 +30282,63 @@ components:
                 請求先住所と配送先住所の一致/不一致情報  
                 カード顧客の配送先住所とカード顧客の請求先住所の一致/不一致の設定が必要  
                 Y=一致  
-                N=不一致  
+                N=不一致
             tds2_bill_addr_city:
               type: string
               minLength: 1
               maxLength: 50
               description: |
                 <span class="smallText color--blue-400">[3Dセキュア認証パラメータ]</span>  
-                カード顧客の請求先住所の都市  
+                カード顧客の請求先住所の都市
             tds2_bill_addr_country:
               type: string
               minLength: 1
               maxLength: 3
               description: |
                 <span class="smallText color--blue-400">[3Dセキュア認証パラメータ]</span>  
-                カード顧客の請求先住所の国コード  
+                カード顧客の請求先住所の国コード
             tds2_bill_addr_line_1:
               type: string
               minLength: 1
               maxLength: 50
               description: |
                 <span class="smallText color--blue-400">[3Dセキュア認証パラメータ]</span>  
-                カード顧客の請求先住所の区域部分の１行目  
+                カード顧客の請求先住所の区域部分の１行目
             tds2_bill_addr_line_2:
               type: string
               minLength: 1
               maxLength: 50
               description: |
                 <span class="smallText color--blue-400">[3Dセキュア認証パラメータ]</span>  
-                カード顧客の請求先住所の区域部分の２行目  
+                カード顧客の請求先住所の区域部分の２行目
             tds2_bill_addr_line_3:
               type: string
               minLength: 1
               maxLength: 50
               description: |
                 <span class="smallText color--blue-400">[3Dセキュア認証パラメータ]</span>  
-                カード顧客の請求先住所の区域部分の３行目  
+                カード顧客の請求先住所の区域部分の３行目
             tds2_bill_addr_post_code:
               type: string
               minLength: 1
               maxLength: 16
               description: |
                 <span class="smallText color--blue-400">[3Dセキュア認証パラメータ]</span>  
-                カード顧客の請求先住所の郵便番号  
+                カード顧客の請求先住所の郵便番号
             tds2_bill_addr_state:
               type: string
               minLength: 1
               maxLength: 3
               description: |
                 <span class="smallText color--blue-400">[3Dセキュア認証パラメータ]</span>  
-                カード顧客の請求先住所の州または都道府県コード  
+                カード顧客の請求先住所の州または都道府県コード
             tds2_email:
               type: string
               minLength: 1
               maxLength: 254
               description: |
                 <span class="smallText color--blue-400">[3Dセキュア認証パラメータ]</span>  
-                カード顧客のメールアドレス  
+                カード顧客のメールアドレス
             tds2_home_phone_cc:
               type: string
               minLength: 1
@@ -30347,7 +30347,7 @@ components:
                 <span class="smallText color--blue-400">[3Dセキュア認証パラメータ]</span>  
                 自宅電話の国コード  
                 自宅電話の国コードを設定した場合  
-                自宅電話番号の設定が必要  
+                自宅電話番号の設定が必要
             tds2_home_phone_no:
               type: string
               minLength: 1
@@ -30357,7 +30357,7 @@ components:
                 自宅電話番号  
                 自宅電話番号を設定した場合  
                 自宅電話の国コードの設定が必要  
-                ハイフン（-）なし、数字のみ  
+                ハイフン（-）なし、数字のみ
             tds2_mobile_phone_cc:
               type: string
               minLength: 1
@@ -30366,7 +30366,7 @@ components:
                 <span class="smallText color--blue-400">[3Dセキュア認証パラメータ]</span>  
                 携帯電話の国コード  
                 携帯電話の国コードを設定した場合  
-                携帯電話番号の設定が必要  
+                携帯電話番号の設定が必要
             tds2_mobile_phone_no:
               type: string
               minLength: 1
@@ -30375,7 +30375,7 @@ components:
                 <span class="smallText color--blue-400">[3Dセキュア認証パラメータ]</span>  
                 携帯電話番号  
                 携帯電話番号の国コードを設定した場合  
-                ハイフン（-）なし、数字のみ  
+                ハイフン（-）なし、数字のみ
             tds2_work_phone_cc:
               type: string
               minLength: 1
@@ -30384,7 +30384,7 @@ components:
                 <span class="smallText color--blue-400">[3Dセキュア認証パラメータ]</span>  
                 職場電話の国コード  
                 職場電話の国コードを設定した場合  
-                職場電話番号の設定が必要  
+                職場電話番号の設定が必要
             tds2_work_phone_no:
               type: string
               minLength: 1
@@ -30393,63 +30393,63 @@ components:
                 <span class="smallText color--blue-400">[3Dセキュア認証パラメータ]</span>  
                 職場電話番号  
                 職場電話番号を設定した場合  
-                ハイフン（-）なし、数字のみ  
+                ハイフン（-）なし、数字のみ
             tds2_ship_addr_city:
               type: string
               minLength: 1
               maxLength: 50
               description: |
                 <span class="smallText color--blue-400">[3Dセキュア認証パラメータ]</span>  
-                出荷先住所の都市  
+                出荷先住所の都市
             tds2_ship_addr_country:
               type: string
               minLength: 1
               maxLength: 3
               description: |
                 <span class="smallText color--blue-400">[3Dセキュア認証パラメータ]</span>  
-                出荷先住所の国コード  
+                出荷先住所の国コード
             tds2_ship_addr_line_1:
               type: string
               minLength: 1
               maxLength: 50
               description: |
                 <span class="smallText color--blue-400">[3Dセキュア認証パラメータ]</span>  
-                出荷先住所の区域部分の１行目  
+                出荷先住所の区域部分の１行目
             tds2_ship_addr_line_2:
               type: string
               minLength: 1
               maxLength: 50
               description: |
                 <span class="smallText color--blue-400">[3Dセキュア認証パラメータ]</span>  
-                出荷先住所の区域部分の２行目  
+                出荷先住所の区域部分の２行目
             tds2_ship_addr_line_3:
               type: string
               minLength: 1
               maxLength: 50
               description: |
                 <span class="smallText color--blue-400">[3Dセキュア認証パラメータ]</span>  
-                出荷先住所の区域部分の３行目  
+                出荷先住所の区域部分の３行目
             tds2_ship_addr_post_code:
               type: string
               minLength: 1
               maxLength: 16
               description: |
                 <span class="smallText color--blue-400">[3Dセキュア認証パラメータ]</span>  
-                出荷先住所の郵便番号  
+                出荷先住所の郵便番号
             tds2_ship_addr_state:
               type: string
               minLength: 1
               maxLength: 3
               description: |
                 <span class="smallText color--blue-400">[3Dセキュア認証パラメータ]</span>  
-                出荷先住所の州または都道府県コード  
+                出荷先住所の州または都道府県コード
             tds2_delivery_email_address:
               type: string
               minLength: 1
               maxLength: 254
               description: |
                 <span class="smallText color--blue-400">[3Dセキュア認証パラメータ]</span>  
-                納品先電子メールアドレス  
+                納品先電子メールアドレス
             tds2_delivery_timeframe:
               type: string
               minLength: 2
@@ -30460,14 +30460,14 @@ components:
                 01 = 電子デリバリー  
                 02 = 当日出荷  
                 03 = 翌日出荷  
-                04 = 2日目以降の出荷  
+                04 = 2日目以降の出荷
             tds2_gift_card_amount:
               type: string
               minLength: 1
               maxLength: 15
               description: |
                 <span class="smallText color--blue-400">[3Dセキュア認証パラメータ]</span>  
-                プリペイドカードまたはギフトカードの総購入金額  
+                プリペイドカードまたはギフトカードの総購入金額
             tds2_gift_card_count:
               type: string
               minLength: 2
@@ -30475,7 +30475,7 @@ components:
               description: |
                 <span class="smallText color--blue-400">[3Dセキュア認証パラメータ]</span>  
                 購入されたプリペイドカードまたはギフトカード / コードの総数  
-                0埋め2桁の数字  
+                0埋め2桁の数字
             tds2_gift_card_curr:
               type: string
               minLength: 3
@@ -30485,7 +30485,7 @@ components:
                 通貨コード  
                 ※以下のコードは対象外  
                 955, 956, 957, 958, 959, 960, 961, 962,  
-                963, 964, 999  
+                963, 964, 999
             tds2_pre_order_date:
               type: string
               minLength: 8
@@ -30493,7 +30493,7 @@ components:
               description: |
                 <span class="smallText color--blue-400">[3Dセキュア認証パラメータ]</span>  
                 商品の発売予定日  
-                YYYYMMDD形式  
+                YYYYMMDD形式
             tds2_pre_order_purchase_ind:
               type: string
               minLength: 2
@@ -30502,7 +30502,7 @@ components:
                 <span class="smallText color--blue-400">[3Dセキュア認証パラメータ]</span>  
                 商品の販売時期情報  
                 01 = 発売済み
-                02 = 先行予約商品  
+                02 = 先行予約商品
             tds2_reorder_items_ind:
               type: string
               minLength: 2
@@ -30511,7 +30511,7 @@ components:
                 <span class="smallText color--blue-400">[3Dセキュア認証パラメータ]</span>  
                 商品の注文情報  
                 01 = 初回注文  
-                02 = 再注文  
+                02 = 再注文
             tds2_ship_ind:
               type: string
               minLength: 2
@@ -30525,7 +30525,7 @@ components:
                 04 = 店舗へ配送 / 近所の店舗での受け取り（店舗の住所は配送先住所で指定する）  
                 05 = デジタル商品（オンラインサービス、電子ギフトカードおよび償還コードを含む）  
                 06 = 配送なし（旅行およびイベントのチケット）  
-                07 = その他（ゲーム、配送されないデジタルサービス、電子メディアの購読料など）  
+                07 = その他（ゲーム、配送されないデジタルサービス、電子メディアの購読料など）
             tds2_recurring_expiry:
               type: string
               minLength: 8
@@ -30533,7 +30533,7 @@ components:
               description: |
                 <span class="smallText color--blue-400">[3Dセキュア認証パラメータ]</span>  
                 継続課金の期限  
-                YYYYMMDD形式  
+                YYYYMMDD形式
             tds2_recurring_frequency:
               type: string
               minLength: 1
@@ -30556,7 +30556,7 @@ components:
                 バーチャル口座の再利用が可能なインボイスの条件は以下の通りです。
 
                  - 参照するインボイスのステータスが `PAID` であること
-                 - 参照するインボイスのステータスが `PAID` に遷移してから90日以内であること  
+                 - 参照するインボイスのステータスが `PAID` に遷移してから90日以内であること
         client_field_1:
           type: string
           minLength: 1
@@ -30602,7 +30602,7 @@ components:
             登録や更新で設定している場合も、こちらの設定が優先されます。  
 
             - `0`: メールを送信しない（デフォルト）  
-            - `1`: メールを送信する  
+            - `1`: メールを送信する
         receipt_mail_send_flag:
           type: string
           minLength: 1
@@ -30612,7 +30612,7 @@ components:
             登録や更新で設定している場合も、こちらの設定が優先されます。  
 
             - `0`: メールを送信しない（デフォルト）  
-            - `1`: メールを送信する  
+            - `1`: メールを送信する
         underpayment_mail_send_flag:
           type: string
           minLength: 1
@@ -30622,7 +30622,7 @@ components:
             登録や更新で設定している場合も、こちらの設定が優先されます。  
 
             - `0`: メールを送信しない（デフォルト）  
-            - `1`: メールを送信する  
+            - `1`: メールを送信する
     InvoiceDetail.Opening.Response:
       allOf:
         - $ref: '#/components/schemas/Invoice'
