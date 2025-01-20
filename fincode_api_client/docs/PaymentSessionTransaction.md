@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **pay_type** | [**Array&lt;PaymentSessionPayType&gt;**](PaymentSessionPayType.md) | 決済手段\\ この決済URL上で使用できる決済手段を複数指定します。  - &#x60;Card&#x60;：カード決済 - &#x60;Konbini&#x60;：コンビニ決済 - &#x60;Paypay&#x60;：PayPay  | [optional] |
+| **pay_type** | [**Array&lt;PaymentSessionPayType&gt;**](PaymentSessionPayType.md) | 決済手段\\ この決済URL上で使用できる決済手段を指定します。複数指定可能です。  - &#x60;Card&#x60;：カード決済 - &#x60;Konbini&#x60;：コンビニ決済 - &#x60;Paypay&#x60;：PayPay - &#x60;Virtualaccount&#x60;：バーチャル口座決済  | [optional] |
 | **order_id** | **String** | オーダーID\\ このリダイレクト型決済URL上で決済後生成される決済情報のID  | [optional] |
 | **amount** | **Integer** | 利用金額  | [optional] |
 | **tax** | **Integer** | 税送料  | [optional] |
@@ -21,7 +21,7 @@ instance = FincodeApiClient::PaymentSessionTransaction.new(
   pay_type: null,
   order_id: o_**********************,
   amount: 1000,
-  tax: 100,
+  tax: 1000,
   client_field_1: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore,
   client_field_2: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore,
   client_field_3: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore

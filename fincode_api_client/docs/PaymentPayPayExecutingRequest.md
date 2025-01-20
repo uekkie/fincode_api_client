@@ -7,7 +7,7 @@
 | **pay_type** | [**PayType**](PayType.md) | 決済種別\\ この決済で利用する決済手段です。  - &#x60;Paypay&#x60;: PayPay  |  |
 | **access_id** | **String** | 取引ID  |  |
 | **customer_id** | **String** | 顧客ID\\ 購入者となる顧客のIDです。  | [optional] |
-| **redirect_url** | **String** | リダイレクトURL\\ 決済が完了した際にPayPayからリダイレクト先URL。  |  |
+| **redirect_url** | **String** | リダイレクトURL\\ 決済が完了した際のPayPayからのリダイレクト先URL。  |  |
 | **redirect_type** | [**RedirectType**](RedirectType.md) |  | [optional] |
 | **user_agent** | **String** | ユーザーエージェント\\ リクエストを送信したユーザーエージェントの情報。&#x60;redirect_type&#x60;が&#x60;1&#x60;（Webページ／Webアプリケーション）の場合指定できます。  | [optional] |
 

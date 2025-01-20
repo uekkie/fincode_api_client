@@ -27,7 +27,7 @@
 | **staff1_first_name** | **String** | 担当者1 名\\ 形式： 漢字/ひらがな/カタカナ/半角英字  |  |
 | **staff1_first_name_kana** | **String** | 担当者1 名（カナ）\\ 形式： 全角カナ  |  |
 | **staff1_company_name** | **String** | 担当者1 会社名\\ 形式： 漢字/ひらがな/カタカナ/半角英数  |  |
-| **staff1_belongs** | **String** | 担当者1 部署名\\ 形式： 漢字/ひらがな/カタカナ/半角英数  |  |
+| **staff1_belongs** | **String** | 担当者1 部署名\\ 形式： 漢字/ひらがな/カタカナ/半角英数  | [optional] |
 | **staff1_tel** | **String** | 担当者1 電話番号\\ 形式： 半角数字（ハイフンなし、PHS番号不可）  |  |
 | **staff1_mail** | **String** | 担当者1 メールアドレス\\ 形式： RFC 5322  |  |
 | **staff2_last_name** | **String** | 担当者2 姓\\ 形式： 漢字/ひらがな/カタカナ/半角英字  | [optional] |
@@ -39,7 +39,7 @@
 | **staff2_tel** | **String** | 担当者2 電話番号\\ 形式： 半角数字（ハイフンなし、PHS番号不可）  | [optional] |
 | **staff2_mail** | **String** | 担当者2 メールアドレス\\ 形式： RFC 5322  | [optional] |
 | **corporate** | **Boolean** | 事業形態\\ \\ - &#x60;true&#x60;: 法人\\ - &#x60;false&#x60;: 個人事業主  |  |
-| **corporate_info** | [**ContractInfoV2CorporateInfo**](ContractInfoV2CorporateInfo.md) |  | [optional] |
+| **corporate_info** | [**CorporateInfoV2**](CorporateInfoV2.md) | 法人情報 \\ &#x60;corporate&#x60;が&#x60;true&#x60;のとき必須  | [optional] |
 
 ## Example
 

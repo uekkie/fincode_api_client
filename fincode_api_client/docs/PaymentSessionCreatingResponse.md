@@ -20,6 +20,7 @@
 | **card** | [**PaymentSessionCard**](PaymentSessionCard.md) | カード決済に関する情報  | [optional] |
 | **konbini** | [**PaymentSessionKonbini**](PaymentSessionKonbini.md) | コンビニ決済に関する情報  | [optional] |
 | **paypay** | [**PaymentSessionPayPay**](PaymentSessionPayPay.md) | PayPayに関する情報  | [optional] |
+| **virtualaccount** | [**PaymentSessionVirtualAccount**](PaymentSessionVirtualAccount.md) | 銀行振込に関する情報  | [optional] |
 | **created** | **String** | 作成日\\ 形式：&#x60;yyyy/MM/dd HH:mm:ss.SSS&#x60;  | [optional] |
 | **updated** | **String** | 更新日\\ 形式：&#x60;yyyy/MM/dd HH:mm:ss.SSS&#x60;  | [optional] |
 
@@ -45,6 +46,7 @@ instance = FincodeApiClient::PaymentSessionCreatingResponse.new(
   card: null,
   konbini: null,
   paypay: null,
+  virtualaccount: null,
   created: 2022/05/16 23:59:59.999,
   updated: 2022/05/16 23:59:59.999
 )

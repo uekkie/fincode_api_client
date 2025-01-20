@@ -17,6 +17,7 @@ FincodeApiClient::CreatePaymentRequest.openapi_one_of
 #   :'PaymentApplePayCreatingRequest',
 #   :'PaymentCardCreatingRequest',
 #   :'PaymentDirectDebitCreatingRequest',
+#   :'PaymentGooglePayCreatingRequest',
 #   :'PaymentKonbiniCreatingRequest',
 #   :'PaymentPayPayCreatingRequest',
 #   :'PaymentVirtualAccountCreatingRequest'
@@ -50,6 +51,7 @@ FincodeApiClient::CreatePaymentRequest.build(data_that_doesnt_match)
 - `PaymentApplePayCreatingRequest`
 - `PaymentCardCreatingRequest`
 - `PaymentDirectDebitCreatingRequest`
+- `PaymentGooglePayCreatingRequest`
 - `PaymentKonbiniCreatingRequest`
 - `PaymentPayPayCreatingRequest`
 - `PaymentVirtualAccountCreatingRequest`

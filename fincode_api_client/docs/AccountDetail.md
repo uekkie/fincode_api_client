@@ -6,8 +6,10 @@
 | ---- | ---- | ----------- | ----- |
 | **detail_id** | **Integer** | 売上入金詳細 ID  | [optional] |
 | **shop_id** | **String** | ショップID  | [optional] |
+| **scheduled_deposit_date** | **String** | 入金予定日   形式： &#x60;yyyy/MM/dd HH:MM&#x60;  | [optional] |
 | **trade_type** | [**AccountDetailTradeType**](AccountDetailTradeType.md) |  | [optional] |
 | **payment_method** | [**AccountPaymentMethod**](AccountPaymentMethod.md) |  | [optional] |
+| **amount_correction_type** | **String** | 課金訂正内容  | [optional] |
 | **account_id** | **Integer** | 精算ID  | [optional] |
 | **order_id** | **String** | オーダー（決済）ID  | [optional] |
 | **access_id** | **String** | 取引ID  | [optional] |
@@ -34,8 +36,11 @@
 | **platform_web_registration_fee_taxin** | **Integer** | プラットフォームWeb登録利用料（税込）\\ ※ 口座振替のみ\\ ※ テナントのみ  | [optional] |
 | **platform_web_registration_fee_tax** | **Integer** | プラットフォームWeb登録利用料消費税\\ ※ 口座振替のみ\\ ※ テナントのみ  | [optional] |
 | **processed_date** | **String** | 取引の確定処理を行った日時 \\ 形式： &#x60;yyyy/MM/dd HH:MM&#x60;  | [optional] |
-| **aggregate_term_start** | **String** | 集計期間の開始日\\   形式： &#x60;yyyy/MM/dd HH:MM&#x60;  | [optional] |
+| **aggregate_term_start** | **String** | 集計期間の開始日\\ 形式： &#x60;yyyy/MM/dd HH:MM&#x60;  | [optional] |
 | **aggregate_term_end** | **String** | 集計期間の終了日\\ 形式： &#x60;yyyy/MM/dd HH:MM&#x60;  | [optional] |
+| **client_field_1** | **String** | 加盟店自由項目 1  | [optional] |
+| **client_field_2** | **String** | 加盟店自由項目 2  | [optional] |
+| **client_field_3** | **String** | 加盟店自由項目 3  | [optional] |
 | **created** | **String** | 作成日\\ 形式：&#x60;yyyy/MM/dd HH:mm:ss.SSS&#x60;  | [optional] |
 | **updated** | **String** | 更新日\\ 形式：&#x60;yyyy/MM/dd HH:mm:ss.SSS&#x60;  | [optional] |
 
@@ -47,8 +52,10 @@ require 'fincode_api_client'
 instance = FincodeApiClient::AccountDetail.new(
   detail_id: 12345,
   shop_id: s_***********,
+  scheduled_deposit_date: 2017/12/01 00:00,
   trade_type: null,
   payment_method: null,
+  amount_correction_type: 課金訂正内容,
   account_id: 1234567,
   order_id: o_**********************,
   access_id: a_**********************,
@@ -77,6 +84,9 @@ instance = FincodeApiClient::AccountDetail.new(
   processed_date: 2022/05/16 23:59,
   aggregate_term_start: 2022/05/16 23:59,
   aggregate_term_end: 2022/05/16 23:59,
+  client_field_1: 加盟店自由項目 1,
+  client_field_2: 加盟店自由項目 2,
+  client_field_3: 加盟店自由項目 3,
   created: 2022/05/16 23:59:59.999,
   updated: 2022/05/16 23:59:59.999
 )

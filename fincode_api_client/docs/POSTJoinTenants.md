@@ -14,7 +14,7 @@
 | **customer_group_id** | **String** | 顧客情報共有グループID\\ fincodeは同じ顧客情報共有グループIDを持つショップ間で顧客情報を共有します。  | [optional] |
 | **send_mail_address** | **String** | 通知先メールアドレス  | [optional] |
 | **shop_mail_address** | **String** | ショップメールアドレス  | [optional] |
-| **log_keep_days** | **String** | ログ保存日数  | [optional] |
+| **log_keep_days** | **Integer** | ログ保存日数  | [optional] |
 | **api_version** | **String** | APIバージョン  | [optional] |
 | **api_key_display_flag** | [**ApiKeyDisplayFlag**](ApiKeyDisplayFlag.md) |  | [optional] |
 | **created** | **String** | 作成日\\ 形式：&#x60;yyyy/MM/dd HH:mm:ss.SSS&#x60;  | [optional] |

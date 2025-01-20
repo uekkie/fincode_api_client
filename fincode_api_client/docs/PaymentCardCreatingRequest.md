@@ -7,11 +7,11 @@
 | **id** | **String** | オーダーID\\ 決済情報のIDです。  | [optional] |
 | **pay_type** | [**PayType**](PayType.md) | 決済種別\\ この決済で利用する決済手段です。  - &#x60;Card&#x60;: カード  |  |
 | **job_code** | [**CardPaymentJobCode**](CardPaymentJobCode.md) |  |  |
-| **amount** | **String** | 利用金額\\ &#x60;tax&#x60;との合計値が決済手段ごとに定められた決済金額の範囲内に収まる必要があります。\\ 参照： [カード決済 &gt; 制限事項 &gt; 利用可能な金額](https://docs.fincode.jp/payment/restriction)  | [optional] |
-| **tax** | **String** | 税送料\\ &#x60;amount&#x60;との合計値が決済手段ごとに定められた決済金額の範囲内に収まる必要があります。\\ 参照： [カード決済 &gt; 制限事項 &gt; 利用可能な金額](https://docs.fincode.jp/payment/restriction)  | [optional] |
+| **amount** | **String** | 利用金額   job_code &#x3D; &#x60;CHECK&#x60; 以外の場合は必須です。    &#x60;tax&#x60;との合計値が決済手段ごとに定められた決済金額の範囲内に収まる必要があります。\\ 参照： [カード決済 &gt; 制限事項 &gt; 利用可能な金額](/payment/restriction)  | [optional] |
+| **tax** | **String** | 税送料\\ &#x60;amount&#x60;との合計値が決済手段ごとに定められた決済金額の範囲内に収まる必要があります。\\ 参照： [カード決済 &gt; 制限事項 &gt; 利用可能な金額](/payment/restriction)  | [optional] |
 | **tds_type** | [**TdsType**](TdsType.md) |  | [optional] |
 | **tds2_type** | [**Tds2Type**](Tds2Type.md) |  | [optional] |
-| **td_tenant_name** | **String** | &lt;span class&#x3D;\&quot;smallText color--blue-400\&quot;&gt;[3Dセキュア認証パラメータ]&lt;/span&gt;\\ 加盟店名。\\ 3Dセキュア認証の際に表示されるショップ名や加盟店名を指定できます。\\ 未指定の場合、 カード決済の契約時にfincodeが下記の形式に従って設定した値が自動的に使用されます。\\ \\ 形式：&#x60;{{ショップID}}-{{英数字からなる固定値}}&#x60;  | [optional] |
+| **td_tenant_name** | **String** | &lt;span class&#x3D;\&quot;smallText color--blue-400\&quot;&gt;[3Dセキュア認証パラメータ]&lt;/span&gt;\\ 加盟店名。\\ 3Dセキュア認証の際に表示されるショップ名や加盟店名を指定できます。\\ 使用可能な文字は以下の通りです。 - 半角英数 - 半角記号： !\&quot;#$%&amp;&#39;()*+,-./:;&lt;&#x3D;&gt;?@[\\]&#x60;^_{|}~ - 半角スペース  未指定の場合、 カード決済の契約時にfincodeが下記の形式に従って設定した値が自動的に使用されます。\\ \\ 形式：&#x60;{{ショップID}}-{{英数字からなる固定値}}&#x60;  | [optional] |
 | **client_field_1** | **String** | 加盟店自由項目 1\\ 任意の値を挿入し、決済情報に保存できます。  | [optional] |
 | **client_field_2** | **String** | 加盟店自由項目 2  | [optional] |
 | **client_field_3** | **String** | 加盟店自由項目 3  | [optional] |

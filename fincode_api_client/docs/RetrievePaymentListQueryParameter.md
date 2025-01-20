@@ -15,6 +15,7 @@ FincodeApiClient::RetrievePaymentListQueryParameter.openapi_one_of
 # =>
 # [
 #   :'ApplePay',
+#   :'GooglePay',
 #   :'PayPay',
 #   :'RetrievePaymentListQueryParameterOneOf',
 #   :'RetrievePaymentListQueryParameterOneOf1',
@@ -48,6 +49,7 @@ FincodeApiClient::RetrievePaymentListQueryParameter.build(data_that_doesnt_match
 #### Return type
 
 - `ApplePay`
+- `GooglePay`
 - `PayPay`
 - `RetrievePaymentListQueryParameterOneOf`
 - `RetrievePaymentListQueryParameterOneOf1`

@@ -19,7 +19,7 @@
 | **postal_account_number_2** | **String** | ゆうちょ 預金番号  | [optional] |
 | **account_name** | **String** | 口座名義  | [optional] |
 | **account_name_kana** | **String** | 口座名義（カナ）  | [optional] |
-| **paper_application** | [**PaymentMethodDirectdebitPaperApplication**](PaymentMethodDirectdebitPaperApplication.md) |  | [optional] |
+| **paper_application** | [**DirectdebitPaperApplication**](DirectdebitPaperApplication.md) |  | [optional] |
 
 ## Example
 

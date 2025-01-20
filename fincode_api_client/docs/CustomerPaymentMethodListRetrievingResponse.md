@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **list** | [**Array&lt;PaymentMethod&gt;**](PaymentMethod.md) |  | [optional] |
+| **list** | [**Array&lt;CustomerPaymentMethodListRetrievingResponseListInner&gt;**](CustomerPaymentMethodListRetrievingResponseListInner.md) |  | [optional] |
 
 ## Example
 

@@ -7,13 +7,14 @@
 | **id** | **String** | 一括決済ID  | [optional] |
 | **shop_id** | **String** | ショップID  | [optional] |
 | **order_id** | **String** | オーダーID\\ 決済情報のIDです。  | [optional] |
+| **status** | [**PaymentBulkDetailStatus**](PaymentBulkDetailStatus.md) | 決済ステータス  - &#x60;CHECKED&#x60;: チェック済み&lt;br /&gt;&lt;span class&#x3D;\&quot;smallText\&quot;&gt;データのチェックが完了し、決済処理の実行を待っています。&lt;/span&gt; - &#x60;SUCCEEDED&#x60;: 決済成功&lt;br /&gt;&lt;span class&#x3D;\&quot;smallText\&quot;&gt;この決済の処理においてエラーが発生せず請求が完了しました。&lt;/span&gt; - &#x60;FAILED&#x60;: 決済失敗&lt;br /&gt;&lt;span class&#x3D;\&quot;smallText\&quot;&gt;この決済の処理において1件以上のエラーが発生しました。&lt;/span&gt;  | [optional] |
 | **access_id** | **String** | 取引ID  | [optional] |
 | **job_code** | [**CardPaymentJobCode**](CardPaymentJobCode.md) | 取引種別  - &#x60;CAPTURE&#x60;：売上確定  | [optional] |
 | **amount** | **Integer** | 利用金額  | [optional] |
 | **tax** | **Integer** | 税送料  | [optional] |
 | **total_amount** | **Integer** | 合計金額\\ &#x60;amount&#x60;と&#x60;tax&#x60;の合計値です。  | [optional] |
 | **method** | [**CardPayMethod**](CardPayMethod.md) |  | [optional] |
-| **pay_times** | [**CardPayTimes**](CardPayTimes.md) |  | [optional] |
+| **pay_times** | [**CardPayTimesResponse**](CardPayTimesResponse.md) |  | [optional] |
 | **customer_id** | **String** | 顧客ID  | [optional] |
 | **card_id** | **String** | カードID  | [optional] |
 | **client_field_1** | **String** | 加盟店自由項目 1 | [optional] |
@@ -36,6 +37,7 @@ instance = FincodeApiClient::PaymentBulkDetail.new(
   id: null,
   shop_id: s_***********,
   order_id: o_**********************,
+  status: null,
   access_id: a_**********************,
   job_code: null,
   amount: 1000,

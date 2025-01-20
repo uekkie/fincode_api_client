@@ -16,6 +16,7 @@ FincodeApiClient::CapturePaymentRequest.openapi_one_of
 # [
 #   :'PaymentApplePayCapturingRequest',
 #   :'PaymentCardCapturingRequest',
+#   :'PaymentGooglePayCapturingRequest',
 #   :'PaymentPayPayCapturingRequest'
 # ]
 ```
@@ -46,6 +47,7 @@ FincodeApiClient::CapturePaymentRequest.build(data_that_doesnt_match)
 
 - `PaymentApplePayCapturingRequest`
 - `PaymentCardCapturingRequest`
+- `PaymentGooglePayCapturingRequest`
 - `PaymentPayPayCapturingRequest`
 - `nil` (if no type matches)
 

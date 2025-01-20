@@ -16,6 +16,7 @@ FincodeApiClient::ChangeAmountOfPaymentRequest.openapi_one_of
 # [
 #   :'PaymentCardChangingAmountRequest',
 #   :'PaymentDirectDebitChangingAmountRequest',
+#   :'PaymentGooglePayChangingAmountRequest',
 #   :'PaymentPayPayChangingAmountRequest'
 # ]
 ```
@@ -46,6 +47,7 @@ FincodeApiClient::ChangeAmountOfPaymentRequest.build(data_that_doesnt_match)
 
 - `PaymentCardChangingAmountRequest`
 - `PaymentDirectDebitChangingAmountRequest`
+- `PaymentGooglePayChangingAmountRequest`
 - `PaymentPayPayChangingAmountRequest`
 - `nil` (if no type matches)
 

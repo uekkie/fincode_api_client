@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **examination_master_id** | [**ExaminationMasterId**](ExaminationMasterId.md) |  | [optional] |
+| **examination_master_id** | [**ContractExaminationMasterId**](ContractExaminationMasterId.md) |  | [optional] |
 | **status_code** | [**ExaminationStatus**](ExaminationStatus.md) |  | [optional] |
 | **member_code** | **String** | 加盟店番号  | [optional] |
 | **tds_available** | **Boolean** | 3Dセキュア認証利用可否  - &#x60;true&#x60;: 利用可 - &#x60;false&#x60;: 利用不可  | [optional] |

@@ -17,6 +17,7 @@ FincodeApiClient::ExecutePaymentRequest.openapi_one_of
 #   :'PaymentApplePayExecutingRequest',
 #   :'PaymentCardExecutingRequest',
 #   :'PaymentDirectDebitExecutingRequest',
+#   :'PaymentGooglePayExecutingRequest',
 #   :'PaymentKonbiniExecutingRequest',
 #   :'PaymentPayPayExecutingRequest',
 #   :'PaymentVirtualAccountExecutingRequest'
@@ -50,6 +51,7 @@ FincodeApiClient::ExecutePaymentRequest.build(data_that_doesnt_match)
 - `PaymentApplePayExecutingRequest`
 - `PaymentCardExecutingRequest`
 - `PaymentDirectDebitExecutingRequest`
+- `PaymentGooglePayExecutingRequest`
 - `PaymentKonbiniExecutingRequest`
 - `PaymentPayPayExecutingRequest`
 - `PaymentVirtualAccountExecutingRequest`
