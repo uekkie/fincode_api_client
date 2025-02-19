@@ -336,11 +336,7 @@ module FincodeApiClient
     # Custom attribute writer method with validation
     # @param [Object] merchant_name Value to be assigned
     def merchant_name=(merchant_name)
-      if merchant_name.nil?
-        fail ArgumentError, 'merchant_name cannot be nil'
-      end
-
-      if merchant_name.to_s.length > 25
+      if !merchant_name.nil? && merchant_name.to_s.length > 25
         fail ArgumentError, 'invalid value for "merchant_name", the character length must be smaller than or equal to 25.'
       end
 
