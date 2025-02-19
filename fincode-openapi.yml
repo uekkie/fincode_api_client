@@ -19590,6 +19590,7 @@ components:
             tds2_status:
               $ref: '#/components/schemas/ThreeDSecure2Status'
             merchant_name:
+              nullable: true
               allOf:
                 - $ref: '#/components/schemas/td_tenant_name'
             access_id:
