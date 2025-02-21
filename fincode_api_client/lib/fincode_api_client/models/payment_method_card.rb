@@ -351,9 +351,10 @@ module FincodeApiClient
         fail ArgumentError, 'invalid value for "access_id", the character length must be smaller than or equal to 24.'
       end
 
-      if access_id.to_s.length < 24
-        fail ArgumentError, 'invalid value for "access_id", the character length must be great than or equal to 24.'
-      end
+      # payment_methods APIで空文字が返却されるためチェックしない
+      # if access_id.to_s.length < 24
+      #   fail ArgumentError, 'invalid value for "access_id", the character length must be great than or equal to 24.'
+      # end
 
       @access_id = access_id
     end
