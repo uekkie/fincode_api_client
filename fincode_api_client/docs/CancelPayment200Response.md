@@ -17,6 +17,7 @@ FincodeApiClient::CancelPayment200Response.openapi_one_of
 #   :'PaymentApplePayCancelingResponse',
 #   :'PaymentCardCancelingResponse',
 #   :'PaymentDirectDebitCancelingResponse',
+#   :'PaymentGooglePayCancelingResponse',
 #   :'PaymentKonbiniCancelingResponse',
 #   :'PaymentPayPayCancelingResponse',
 #   :'PaymentVirtualAccountCancelingResponse'
@@ -50,6 +51,7 @@ FincodeApiClient::CancelPayment200Response.build(data_that_doesnt_match)
 - `PaymentApplePayCancelingResponse`
 - `PaymentCardCancelingResponse`
 - `PaymentDirectDebitCancelingResponse`
+- `PaymentGooglePayCancelingResponse`
 - `PaymentKonbiniCancelingResponse`
 - `PaymentPayPayCancelingResponse`
 - `PaymentVirtualAccountCancelingResponse`

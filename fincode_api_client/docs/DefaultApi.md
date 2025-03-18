@@ -5,6 +5,7 @@ All URIs are relative to *https://api.fincode.jp*
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
 | [**authorize_payment**](DefaultApi.md#authorize_payment) | **PUT** /v1/payments/{id}/auth | 決済 再オーソリ |
+| [**cancel_invoices**](DefaultApi.md#cancel_invoices) | **PUT** /v1/invoices/{id}/cancel | インボイス キャンセル |
 | [**cancel_payment**](DefaultApi.md#cancel_payment) | **PUT** /v1/payments/{id}/cancel | 決済 キャンセル |
 | [**capture_payment**](DefaultApi.md#capture_payment) | **PUT** /v1/payments/{id}/capture | 決済 売上確定 |
 | [**change_amount_of_payment**](DefaultApi.md#change_amount_of_payment) | **PUT** /v1/payments/{id}/change | 決済 金額変更 |
@@ -22,11 +23,18 @@ All URIs are relative to *https://api.fincode.jp*
 | [**delete_customer**](DefaultApi.md#delete_customer) | **DELETE** /v1/customers/{id} | 顧客 削除 |
 | [**delete_customer_card**](DefaultApi.md#delete_customer_card) | **DELETE** /v1/customers/{customer_id}/cards/{id} | カード 削除 |
 | [**delete_customer_payment_method**](DefaultApi.md#delete_customer_payment_method) | **DELETE** /v1/customers/{customer_id}/payment_methods/{id} | 決済手段 削除 |
+| [**delete_invoices**](DefaultApi.md#delete_invoices) | **DELETE** /v1/invoices/{id} | インボイス 削除 |
 | [**delete_payment_bulk**](DefaultApi.md#delete_payment_bulk) | **DELETE** /v1/payments/bulk/{id} | 一括決済 削除 |
 | [**delete_plan**](DefaultApi.md#delete_plan) | **DELETE** /v1/plans/{id} | プラン 削除 |
 | [**execute_payment**](DefaultApi.md#execute_payment) | **PUT** /v1/payments/{id} | 決済 実行 |
 | [**execute_payment_after_three_d_secureecure**](DefaultApi.md#execute_payment_after_three_d_secureecure) | **PUT** /v1/payments/{id}/secure | 認証後決済 実行 |
 | [**generate_barcode_of_payment**](DefaultApi.md#generate_barcode_of_payment) | **PUT** /v1/payments/{id}/barcode | バーコード発行 |
+| [**get_invoices**](DefaultApi.md#get_invoices) | **GET** /v1/invoices/{id} | インボイス 取得 |
+| [**get_invoices_list**](DefaultApi.md#get_invoices_list) | **GET** /v1/invoices | インボイス 一覧取得 |
+| [**open_invoices**](DefaultApi.md#open_invoices) | **PUT** /v1/invoices/{id}/open | インボイス 発行 |
+| [**paid_externally_invoices**](DefaultApi.md#paid_externally_invoices) | **PUT** /v1/invoices/{id}/paid_externally | インボイス 外部支払いマーク |
+| [**refresh_invoices_virtualaccount**](DefaultApi.md#refresh_invoices_virtualaccount) | **PUT** /v1/invoices/{id}/virtual_account/refresh | インボイス バーチャル口座再発行 |
+| [**register_invoices**](DefaultApi.md#register_invoices) | **POST** /v1/invoices | インボイス 作成 |
 | [**request_production_environment**](DefaultApi.md#request_production_environment) | **POST** /v1/contracts/examinations | テナントショップ 本番環境申請 |
 | [**reserve_provider**](DefaultApi.md#reserve_provider) | **POST** /v1/contracts/examinations/tenants/{id}/providers/reserve | テナントショップ 決済手段追加申請 |
 | [**retrieve_account**](DefaultApi.md#retrieve_account) | **GET** /v1/accounts/{id} | 売上入金 取得 |
@@ -60,6 +68,7 @@ All URIs are relative to *https://api.fincode.jp*
 | [**unsubscripbe_subscription**](DefaultApi.md#unsubscripbe_subscription) | **DELETE** /v1/subscriptions/{id} | サブスクリプション 解約 |
 | [**update_customer**](DefaultApi.md#update_customer) | **PUT** /v1/customers/{id} | 顧客 更新 |
 | [**update_customer_card**](DefaultApi.md#update_customer_card) | **PUT** /v1/customers/{customer_id}/cards/{id} | カード 更新 |
+| [**update_invoices**](DefaultApi.md#update_invoices) | **PUT** /v1/invoices/{id} | インボイス 更新 |
 | [**update_plan**](DefaultApi.md#update_plan) | **PUT** /v1/plans/{id} | プラン 更新 |
 | [**update_platform_shop**](DefaultApi.md#update_platform_shop) | **PUT** /v1/platforms/{id} | プラットフォームショップ 更新 |
 | [**update_subscription**](DefaultApi.md#update_subscription) | **PUT** /v1/subscriptions/{id} | サブスクリプション 更新 |
@@ -71,7 +80,7 @@ All URIs are relative to *https://api.fincode.jp*
 
 ## authorize_payment
 
-> <PaymentCardReauthorizingResponse> authorize_payment(id, opts)
+> <AuthorizePayment200Response> authorize_payment(id, opts)
 
 決済 再オーソリ
 
@@ -96,7 +105,7 @@ api_instance = FincodeApiClient::DefaultApi.new
 id = TODO # String | オーダーID（決済情報のID）
 opts = {
   tenant_shop_id: TODO, # String | <span class=\"smallText color--red-400\">※ プラットフォームのメインショップのみ指定可</span>\\ テナントショップID。\\ 指定したテナントショップを販売主とした決済のうち、`id`で指定した決済のオーソリを再度実行します。 
-  payment_card_reauthorizing_request: FincodeApiClient::PaymentCardReauthorizingRequest.new({pay_type: FincodeApiClient::PayType::CARD, access_id: 'a_**********************', method: FincodeApiClient::CardPayMethod::N1}) # PaymentCardReauthorizingRequest | 
+  authorize_payment_request: FincodeApiClient::PaymentCardReauthorizingRequest.new({pay_type: FincodeApiClient::PayType::CARD, access_id: 'a_**********************', method: FincodeApiClient::CardPayMethod::N1}) # AuthorizePaymentRequest | 
 }
 
 begin
@@ -112,7 +121,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<PaymentCardReauthorizingResponse>, Integer, Hash)> authorize_payment_with_http_info(id, opts)
+> <Array(<AuthorizePayment200Response>, Integer, Hash)> authorize_payment_with_http_info(id, opts)
 
 ```ruby
 begin
@@ -120,7 +129,7 @@ begin
   data, status_code, headers = api_instance.authorize_payment_with_http_info(id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <PaymentCardReauthorizingResponse>
+  p data # => <AuthorizePayment200Response>
 rescue FincodeApiClient::ApiError => e
   puts "Error when calling DefaultApi->authorize_payment_with_http_info: #{e}"
 end
@@ -132,11 +141,11 @@ end
 | ---- | ---- | ----------- | ----- |
 | **id** | [**String**](.md) | オーダーID（決済情報のID） |  |
 | **tenant_shop_id** | [**String**](.md) | &lt;span class&#x3D;\&quot;smallText color--red-400\&quot;&gt;※ プラットフォームのメインショップのみ指定可&lt;/span&gt;\\ テナントショップID。\\ 指定したテナントショップを販売主とした決済のうち、&#x60;id&#x60;で指定した決済のオーソリを再度実行します。  | [optional] |
-| **payment_card_reauthorizing_request** | [**PaymentCardReauthorizingRequest**](PaymentCardReauthorizingRequest.md) |  | [optional] |
+| **authorize_payment_request** | [**AuthorizePaymentRequest**](AuthorizePaymentRequest.md) |  | [optional] |
 
 ### Return type
 
-[**PaymentCardReauthorizingResponse**](PaymentCardReauthorizingResponse.md)
+[**AuthorizePayment200Response**](AuthorizePayment200Response.md)
 
 ### Authorization
 
@@ -148,13 +157,90 @@ end
 - **Accept**: application/json
 
 
+## cancel_invoices
+
+> <InvoiceDetailCancelingResponse> cancel_invoices(id, opts)
+
+インボイス キャンセル
+
+指定したIDを持つ、発行済みのインボイス情報をキャンセルします。\\ キャンセルは請求の取り下げを意味し、一度キャンセルしたインボイス情報をもとに再度請求することはできません。 
+
+### Examples
+
+```ruby
+require 'time'
+require 'fincode_api_client'
+# setup authorization
+FincodeApiClient.configure do |config|
+  # Configure Bearer authorization: Secret-Bearer-Auth
+  config.access_token = 'YOUR_BEARER_TOKEN'
+
+  # Configure HTTP basic authorization: Secret-Basic-Auth
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = FincodeApiClient::DefaultApi.new
+id = 'id_example' # String | インボイスID 
+opts = {
+  tenant_shop_id: TODO # String | <span class=\"smallText color--red-400\">※ プラットフォームのメインショップのみ指定可</span>\\ テナントショップID。\\ 指定したテナントショップを請求元としたインボイス請求書のキャンセルができます。 
+}
+
+begin
+  # インボイス キャンセル
+  result = api_instance.cancel_invoices(id, opts)
+  p result
+rescue FincodeApiClient::ApiError => e
+  puts "Error when calling DefaultApi->cancel_invoices: #{e}"
+end
+```
+
+#### Using the cancel_invoices_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<InvoiceDetailCancelingResponse>, Integer, Hash)> cancel_invoices_with_http_info(id, opts)
+
+```ruby
+begin
+  # インボイス キャンセル
+  data, status_code, headers = api_instance.cancel_invoices_with_http_info(id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <InvoiceDetailCancelingResponse>
+rescue FincodeApiClient::ApiError => e
+  puts "Error when calling DefaultApi->cancel_invoices_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **id** | **String** | インボイスID  |  |
+| **tenant_shop_id** | [**String**](.md) | &lt;span class&#x3D;\&quot;smallText color--red-400\&quot;&gt;※ プラットフォームのメインショップのみ指定可&lt;/span&gt;\\ テナントショップID。\\ 指定したテナントショップを請求元としたインボイス請求書のキャンセルができます。  | [optional] |
+
+### Return type
+
+[**InvoiceDetailCancelingResponse**](InvoiceDetailCancelingResponse.md)
+
+### Authorization
+
+[Secret-Bearer-Auth](../README.md#Secret-Bearer-Auth), [Secret-Basic-Auth](../README.md#Secret-Basic-Auth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
 ## cancel_payment
 
 > <CancelPayment200Response> cancel_payment(id, opts)
 
 決済 キャンセル
 
-決済をキャンセルします。キャンセルに成功すると`status`はキャンセル済み（`CANCELED`）に遷移します。\\ \\ ユーザーへの返金の行われ方などは決済手段によって異なります。\\ 詳細は[Docs > 決済](https://docs.fincode.jp/payment)から参照できます。 
+決済をキャンセルします。キャンセルに成功すると`status`はキャンセル済み（`CANCELED`）に遷移します。\\ \\ ユーザーへの返金の行われ方などは決済手段によって異なります。\\ 詳細は[Docs > 決済](/payment)から参照できます。 
 
 ### Examples
 
@@ -1384,7 +1470,7 @@ No authorization required
 
 ## delete_customer_payment_method
 
-> <CustomerPaymentMethodDeletingResponse> delete_customer_payment_method(customer_id, id, opts)
+> <CustomerPaymentMethodDeletingResponse> delete_customer_payment_method(customer_id, id, pay_type, opts)
 
 決済手段 削除
 
@@ -1411,13 +1497,14 @@ end
 api_instance = FincodeApiClient::DefaultApi.new
 customer_id = TODO # String | 顧客ID
 id = TODO # String | 決済手段ID
+pay_type = TODO # String | 
 opts = {
   tenant_shop_id: TODO # String | <span class=\"smallText color--red-400\">※ 顧客情報を共有しないプラットフォームのメインショップのみ指定可</span>\\ テナントショップID。\\ このテナントショップに紐づく顧客のうち、指定したIDの顧客に紐づく決済手段からIDで指定した決済手段を削除します。 
 }
 
 begin
   # 決済手段 削除
-  result = api_instance.delete_customer_payment_method(customer_id, id, opts)
+  result = api_instance.delete_customer_payment_method(customer_id, id, pay_type, opts)
   p result
 rescue FincodeApiClient::ApiError => e
   puts "Error when calling DefaultApi->delete_customer_payment_method: #{e}"
@@ -1428,12 +1515,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CustomerPaymentMethodDeletingResponse>, Integer, Hash)> delete_customer_payment_method_with_http_info(customer_id, id, opts)
+> <Array(<CustomerPaymentMethodDeletingResponse>, Integer, Hash)> delete_customer_payment_method_with_http_info(customer_id, id, pay_type, opts)
 
 ```ruby
 begin
   # 決済手段 削除
-  data, status_code, headers = api_instance.delete_customer_payment_method_with_http_info(customer_id, id, opts)
+  data, status_code, headers = api_instance.delete_customer_payment_method_with_http_info(customer_id, id, pay_type, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <CustomerPaymentMethodDeletingResponse>
@@ -1448,6 +1535,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **customer_id** | [**String**](.md) | 顧客ID |  |
 | **id** | [**String**](.md) | 決済手段ID |  |
+| **pay_type** | [**String**](.md) |  |  |
 | **tenant_shop_id** | [**String**](.md) | &lt;span class&#x3D;\&quot;smallText color--red-400\&quot;&gt;※ 顧客情報を共有しないプラットフォームのメインショップのみ指定可&lt;/span&gt;\\ テナントショップID。\\ このテナントショップに紐づく顧客のうち、指定したIDの顧客に紐づく決済手段からIDで指定した決済手段を削除します。  | [optional] |
 
 ### Return type
@@ -1457,6 +1545,83 @@ end
 ### Authorization
 
 [Secret-Bearer-Auth](../README.md#Secret-Bearer-Auth), [Public-Bearer-Auth](../README.md#Public-Bearer-Auth), [Secret-Basic-Auth](../README.md#Secret-Basic-Auth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## delete_invoices
+
+> <InvoiceDetailDeletingResponse> delete_invoices(id, opts)
+
+インボイス 削除
+
+指定したIDを持つ、下書き状態のインボイス情報を削除します。\\ 発行済みのインボイス情報は削除できません。 
+
+### Examples
+
+```ruby
+require 'time'
+require 'fincode_api_client'
+# setup authorization
+FincodeApiClient.configure do |config|
+  # Configure Bearer authorization: Secret-Bearer-Auth
+  config.access_token = 'YOUR_BEARER_TOKEN'
+
+  # Configure HTTP basic authorization: Secret-Basic-Auth
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = FincodeApiClient::DefaultApi.new
+id = 'id_example' # String | インボイスID 
+opts = {
+  tenant_shop_id: TODO # String | <span class=\"smallText color--red-400\">※ プラットフォームのメインショップのみ指定可</span>\\ テナントショップID。\\ 指定したテナントショップを販売主とした請求書情報を削除します。 
+}
+
+begin
+  # インボイス 削除
+  result = api_instance.delete_invoices(id, opts)
+  p result
+rescue FincodeApiClient::ApiError => e
+  puts "Error when calling DefaultApi->delete_invoices: #{e}"
+end
+```
+
+#### Using the delete_invoices_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<InvoiceDetailDeletingResponse>, Integer, Hash)> delete_invoices_with_http_info(id, opts)
+
+```ruby
+begin
+  # インボイス 削除
+  data, status_code, headers = api_instance.delete_invoices_with_http_info(id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <InvoiceDetailDeletingResponse>
+rescue FincodeApiClient::ApiError => e
+  puts "Error when calling DefaultApi->delete_invoices_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **id** | **String** | インボイスID  |  |
+| **tenant_shop_id** | [**String**](.md) | &lt;span class&#x3D;\&quot;smallText color--red-400\&quot;&gt;※ プラットフォームのメインショップのみ指定可&lt;/span&gt;\\ テナントショップID。\\ 指定したテナントショップを販売主とした請求書情報を削除します。  | [optional] |
+
+### Return type
+
+[**InvoiceDetailDeletingResponse**](InvoiceDetailDeletingResponse.md)
+
+### Authorization
+
+[Secret-Bearer-Auth](../README.md#Secret-Bearer-Auth), [Secret-Basic-Auth](../README.md#Secret-Basic-Auth)
 
 ### HTTP request headers
 
@@ -1857,9 +2022,471 @@ end
 - **Accept**: application/json
 
 
+## get_invoices
+
+> <InvoiceDetailRetrievingResponse> get_invoices(id, opts)
+
+インボイス 取得
+
+指定したIDを持つインボイス情報を取得します。 
+
+### Examples
+
+```ruby
+require 'time'
+require 'fincode_api_client'
+# setup authorization
+FincodeApiClient.configure do |config|
+  # Configure Bearer authorization: Secret-Bearer-Auth
+  config.access_token = 'YOUR_BEARER_TOKEN'
+
+  # Configure HTTP basic authorization: Secret-Basic-Auth
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = FincodeApiClient::DefaultApi.new
+id = 'id_example' # String | インボイスID 
+opts = {
+  tenant_shop_id: TODO # String | <span class=\"smallText color--red-400\">※ プラットフォームのメインショップのみ指定可</span>\\ テナントショップID。\\ 指定することで、指定したテナントショップのインボイス請求書情報を取得できます。 
+}
+
+begin
+  # インボイス 取得
+  result = api_instance.get_invoices(id, opts)
+  p result
+rescue FincodeApiClient::ApiError => e
+  puts "Error when calling DefaultApi->get_invoices: #{e}"
+end
+```
+
+#### Using the get_invoices_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<InvoiceDetailRetrievingResponse>, Integer, Hash)> get_invoices_with_http_info(id, opts)
+
+```ruby
+begin
+  # インボイス 取得
+  data, status_code, headers = api_instance.get_invoices_with_http_info(id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <InvoiceDetailRetrievingResponse>
+rescue FincodeApiClient::ApiError => e
+  puts "Error when calling DefaultApi->get_invoices_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **id** | **String** | インボイスID  |  |
+| **tenant_shop_id** | [**String**](.md) | &lt;span class&#x3D;\&quot;smallText color--red-400\&quot;&gt;※ プラットフォームのメインショップのみ指定可&lt;/span&gt;\\ テナントショップID。\\ 指定することで、指定したテナントショップのインボイス請求書情報を取得できます。  | [optional] |
+
+### Return type
+
+[**InvoiceDetailRetrievingResponse**](InvoiceDetailRetrievingResponse.md)
+
+### Authorization
+
+[Secret-Bearer-Auth](../README.md#Secret-Bearer-Auth), [Secret-Basic-Auth](../README.md#Secret-Basic-Auth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## get_invoices_list
+
+> <InvoiceListRetrievingResponse> get_invoices_list(opts)
+
+インボイス 一覧取得
+
+インボイス情報を一覧で取得します。クエリパラメータを指定して取得する条件を絞り込めます。 
+
+### Examples
+
+```ruby
+require 'time'
+require 'fincode_api_client'
+# setup authorization
+FincodeApiClient.configure do |config|
+  # Configure Bearer authorization: Secret-Bearer-Auth
+  config.access_token = 'YOUR_BEARER_TOKEN'
+
+  # Configure HTTP basic authorization: Secret-Basic-Auth
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = FincodeApiClient::DefaultApi.new
+opts = {
+  tenant_shop_id: TODO, # String | <span class=\"smallText color--red-400\">※ プラットフォームのメインショップのみ指定可</span>\\ テナントショップID。\\ 指定したテナントショップを請求元とした請求書情報を一覧で取得します。 
+  query: FincodeApiClient::GetInvoicesListQueryParameter.new # GetInvoicesListQueryParameter | 検索条件クエリパラメータ 
+}
+
+begin
+  # インボイス 一覧取得
+  result = api_instance.get_invoices_list(opts)
+  p result
+rescue FincodeApiClient::ApiError => e
+  puts "Error when calling DefaultApi->get_invoices_list: #{e}"
+end
+```
+
+#### Using the get_invoices_list_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<InvoiceListRetrievingResponse>, Integer, Hash)> get_invoices_list_with_http_info(opts)
+
+```ruby
+begin
+  # インボイス 一覧取得
+  data, status_code, headers = api_instance.get_invoices_list_with_http_info(opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <InvoiceListRetrievingResponse>
+rescue FincodeApiClient::ApiError => e
+  puts "Error when calling DefaultApi->get_invoices_list_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_shop_id** | [**String**](.md) | &lt;span class&#x3D;\&quot;smallText color--red-400\&quot;&gt;※ プラットフォームのメインショップのみ指定可&lt;/span&gt;\\ テナントショップID。\\ 指定したテナントショップを請求元とした請求書情報を一覧で取得します。  | [optional] |
+| **query** | [**GetInvoicesListQueryParameter**](.md) | 検索条件クエリパラメータ  | [optional] |
+
+### Return type
+
+[**InvoiceListRetrievingResponse**](InvoiceListRetrievingResponse.md)
+
+### Authorization
+
+[Secret-Bearer-Auth](../README.md#Secret-Bearer-Auth), [Secret-Basic-Auth](../README.md#Secret-Basic-Auth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## open_invoices
+
+> <InvoiceDetailOpeningResponse> open_invoices(id, opts)
+
+インボイス 発行
+
+IDで指定したインボイス情報をもとに請求を開始します。請求書WebページのURL発行、請求先顧客へのメール送信などを行います。\\ このAPIの呼び出し以降はインボイス 更新APIでは 回収困難フラグ 、および 加盟店自由項目 のみ更新できます。 
+
+### Examples
+
+```ruby
+require 'time'
+require 'fincode_api_client'
+# setup authorization
+FincodeApiClient.configure do |config|
+  # Configure Bearer authorization: Secret-Bearer-Auth
+  config.access_token = 'YOUR_BEARER_TOKEN'
+
+  # Configure HTTP basic authorization: Secret-Basic-Auth
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = FincodeApiClient::DefaultApi.new
+id = 'id_example' # String | インボイスID 
+opts = {
+  tenant_shop_id: TODO, # String | <span class=\"smallText color--red-400\">※ プラットフォームのメインショップのみ指定可</span>\\ テナントショップID。\\ 指定したテナントショップを請求元としたインボイス請求書の請求を実施します。 
+  invoice_detail_opening_request: FincodeApiClient::InvoiceDetailOpeningRequest.new # InvoiceDetailOpeningRequest | 
+}
+
+begin
+  # インボイス 発行
+  result = api_instance.open_invoices(id, opts)
+  p result
+rescue FincodeApiClient::ApiError => e
+  puts "Error when calling DefaultApi->open_invoices: #{e}"
+end
+```
+
+#### Using the open_invoices_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<InvoiceDetailOpeningResponse>, Integer, Hash)> open_invoices_with_http_info(id, opts)
+
+```ruby
+begin
+  # インボイス 発行
+  data, status_code, headers = api_instance.open_invoices_with_http_info(id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <InvoiceDetailOpeningResponse>
+rescue FincodeApiClient::ApiError => e
+  puts "Error when calling DefaultApi->open_invoices_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **id** | **String** | インボイスID  |  |
+| **tenant_shop_id** | [**String**](.md) | &lt;span class&#x3D;\&quot;smallText color--red-400\&quot;&gt;※ プラットフォームのメインショップのみ指定可&lt;/span&gt;\\ テナントショップID。\\ 指定したテナントショップを請求元としたインボイス請求書の請求を実施します。  | [optional] |
+| **invoice_detail_opening_request** | [**InvoiceDetailOpeningRequest**](InvoiceDetailOpeningRequest.md) |  | [optional] |
+
+### Return type
+
+[**InvoiceDetailOpeningResponse**](InvoiceDetailOpeningResponse.md)
+
+### Authorization
+
+[Secret-Bearer-Auth](../README.md#Secret-Bearer-Auth), [Secret-Basic-Auth](../README.md#Secret-Basic-Auth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## paid_externally_invoices
+
+> <InvoiceDetailMarkingResponse> paid_externally_invoices(id, opts)
+
+インボイス 外部支払いマーク
+
+指定したIDを持つ発行済みのインボイス情報を、fincodeによる決済機能でない方法で支払われたとしてマークします。\\ このインボイス情報のステータスは支払い完了（`PAID`）へ遷移し、fincode外支払フラグ（`is_paid_externally`）が`true` になります。 
+
+### Examples
+
+```ruby
+require 'time'
+require 'fincode_api_client'
+# setup authorization
+FincodeApiClient.configure do |config|
+  # Configure Bearer authorization: Secret-Bearer-Auth
+  config.access_token = 'YOUR_BEARER_TOKEN'
+
+  # Configure HTTP basic authorization: Secret-Basic-Auth
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = FincodeApiClient::DefaultApi.new
+id = 'id_example' # String | インボイスID 
+opts = {
+  tenant_shop_id: TODO, # String | <span class=\"smallText color--red-400\">※ プラットフォームのメインショップのみ指定可</span>\\ テナントショップID。\\ 指定したテナントショップを請求元としたインボイス請求書についての更新ができます。 
+  paid_externally_invoices_request: FincodeApiClient::PaidExternallyInvoicesRequest.new # PaidExternallyInvoicesRequest | 
+}
+
+begin
+  # インボイス 外部支払いマーク
+  result = api_instance.paid_externally_invoices(id, opts)
+  p result
+rescue FincodeApiClient::ApiError => e
+  puts "Error when calling DefaultApi->paid_externally_invoices: #{e}"
+end
+```
+
+#### Using the paid_externally_invoices_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<InvoiceDetailMarkingResponse>, Integer, Hash)> paid_externally_invoices_with_http_info(id, opts)
+
+```ruby
+begin
+  # インボイス 外部支払いマーク
+  data, status_code, headers = api_instance.paid_externally_invoices_with_http_info(id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <InvoiceDetailMarkingResponse>
+rescue FincodeApiClient::ApiError => e
+  puts "Error when calling DefaultApi->paid_externally_invoices_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **id** | **String** | インボイスID  |  |
+| **tenant_shop_id** | [**String**](.md) | &lt;span class&#x3D;\&quot;smallText color--red-400\&quot;&gt;※ プラットフォームのメインショップのみ指定可&lt;/span&gt;\\ テナントショップID。\\ 指定したテナントショップを請求元としたインボイス請求書についての更新ができます。  | [optional] |
+| **paid_externally_invoices_request** | [**PaidExternallyInvoicesRequest**](PaidExternallyInvoicesRequest.md) |  | [optional] |
+
+### Return type
+
+[**InvoiceDetailMarkingResponse**](InvoiceDetailMarkingResponse.md)
+
+### Authorization
+
+[Secret-Bearer-Auth](../README.md#Secret-Bearer-Auth), [Secret-Basic-Auth](../README.md#Secret-Basic-Auth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## refresh_invoices_virtualaccount
+
+> <InvoiceDetailRefreshResponse> refresh_invoices_virtualaccount(id)
+
+インボイス バーチャル口座再発行
+
+指定したインボイスに割り当てられているバーチャル口座について、期限が切れていて口座がクローズされている場合、新たなバーチャル口座を割り当てます。 
+
+### Examples
+
+```ruby
+require 'time'
+require 'fincode_api_client'
+# setup authorization
+FincodeApiClient.configure do |config|
+  # Configure Bearer authorization: Secret-Bearer-Auth
+  config.access_token = 'YOUR_BEARER_TOKEN'
+
+  # Configure HTTP basic authorization: Secret-Basic-Auth
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = FincodeApiClient::DefaultApi.new
+id = 'id_example' # String | インボイスID
+
+begin
+  # インボイス バーチャル口座再発行
+  result = api_instance.refresh_invoices_virtualaccount(id)
+  p result
+rescue FincodeApiClient::ApiError => e
+  puts "Error when calling DefaultApi->refresh_invoices_virtualaccount: #{e}"
+end
+```
+
+#### Using the refresh_invoices_virtualaccount_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<InvoiceDetailRefreshResponse>, Integer, Hash)> refresh_invoices_virtualaccount_with_http_info(id)
+
+```ruby
+begin
+  # インボイス バーチャル口座再発行
+  data, status_code, headers = api_instance.refresh_invoices_virtualaccount_with_http_info(id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <InvoiceDetailRefreshResponse>
+rescue FincodeApiClient::ApiError => e
+  puts "Error when calling DefaultApi->refresh_invoices_virtualaccount_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **id** | **String** | インボイスID |  |
+
+### Return type
+
+[**InvoiceDetailRefreshResponse**](InvoiceDetailRefreshResponse.md)
+
+### Authorization
+
+[Secret-Bearer-Auth](../README.md#Secret-Bearer-Auth), [Secret-Basic-Auth](../README.md#Secret-Basic-Auth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## register_invoices
+
+> <InvoiceCreatingResponse> register_invoices(opts)
+
+インボイス 作成
+
+インボイス情報を作成します。\\ 取引内容やご利用の決済手段などの各種入力項目は、インボイス 更新APIを利用して後から入力することも可能です。\\ インボイス 発行APIを呼び出すまで請求は行われません。 
+
+### Examples
+
+```ruby
+require 'time'
+require 'fincode_api_client'
+# setup authorization
+FincodeApiClient.configure do |config|
+  # Configure Bearer authorization: Secret-Bearer-Auth
+  config.access_token = 'YOUR_BEARER_TOKEN'
+
+  # Configure HTTP basic authorization: Secret-Basic-Auth
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = FincodeApiClient::DefaultApi.new
+opts = {
+  tenant_shop_id: TODO, # String | <span class=\"smallText color--red-400\">※ プラットフォームのメインショップのみ指定可</span>\\ テナントショップID。\\ 指定したテナントショップを請求元とした請求書情報を作成します。 
+  invoice_creating_request: FincodeApiClient::InvoiceCreatingRequest.new # InvoiceCreatingRequest | 
+}
+
+begin
+  # インボイス 作成
+  result = api_instance.register_invoices(opts)
+  p result
+rescue FincodeApiClient::ApiError => e
+  puts "Error when calling DefaultApi->register_invoices: #{e}"
+end
+```
+
+#### Using the register_invoices_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<InvoiceCreatingResponse>, Integer, Hash)> register_invoices_with_http_info(opts)
+
+```ruby
+begin
+  # インボイス 作成
+  data, status_code, headers = api_instance.register_invoices_with_http_info(opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <InvoiceCreatingResponse>
+rescue FincodeApiClient::ApiError => e
+  puts "Error when calling DefaultApi->register_invoices_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_shop_id** | [**String**](.md) | &lt;span class&#x3D;\&quot;smallText color--red-400\&quot;&gt;※ プラットフォームのメインショップのみ指定可&lt;/span&gt;\\ テナントショップID。\\ 指定したテナントショップを請求元とした請求書情報を作成します。  | [optional] |
+| **invoice_creating_request** | [**InvoiceCreatingRequest**](InvoiceCreatingRequest.md) |  | [optional] |
+
+### Return type
+
+[**InvoiceCreatingResponse**](InvoiceCreatingResponse.md)
+
+### Authorization
+
+[Secret-Bearer-Auth](../README.md#Secret-Bearer-Auth), [Secret-Basic-Auth](../README.md#Secret-Basic-Auth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## request_production_environment
 
-> <POSTContractsExaminationsResponse> request_production_environment(tenant_shop_id, opts)
+> <POSTContractsExaminationsResponse> request_production_environment(tenant_shop_id, shop_id, enable_immediate_use)
 
 テナントショップ 本番環境申請
 
@@ -1882,14 +2509,12 @@ end
 
 api_instance = FincodeApiClient::DefaultApi.new
 tenant_shop_id = TODO # String | <span class=\"smallText color--red-400\">※ プラットフォームのメインショップのみ指定可</span>\\ テナントショップID。\\ 指定したテナントショップのものとしてファイルをアップロードします。 
-opts = {
-  shop_id: TODO, # String | ショップID 
-  enable_immediate_use: FincodeApiClient::EnableImmediateUse::N1 # EnableImmediateUse | VISA/Mastercard即時利用をリクエストするかどうか\\\\ \\\\ 即時利用は以下の条件すべてに合致しないとき利用をリクエストできます。  - `本番環境申請情報.contract_info.site_published`が`true`でない（審査時点でWebサイトが用意されていない） - `本番環境申請情報.shop_info.deals_long_apply_content`が`true`である（審査に時間がかかる商材を取り扱うと表明している） 
-}
+shop_id = TODO # String | ショップID 
+enable_immediate_use = TODO # Boolean | VISA/Mastercard即時利用をリクエストするかどうか  - `true`： 即時利用をリクエストする - `false`： 即時利用をリクエストしない  即時利用は以下の場合リクエストできません。  - `本番環境申請情報.contract_info.site_published`が`true`でない（審査時点でWebサイトが用意されていない） - `本番環境申請情報.shop_info.deals_long_apply_content`が`true`である（審査に時間がかかる商材を取り扱うと表明している） 
 
 begin
   # テナントショップ 本番環境申請
-  result = api_instance.request_production_environment(tenant_shop_id, opts)
+  result = api_instance.request_production_environment(tenant_shop_id, shop_id, enable_immediate_use)
   p result
 rescue FincodeApiClient::ApiError => e
   puts "Error when calling DefaultApi->request_production_environment: #{e}"
@@ -1900,12 +2525,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<POSTContractsExaminationsResponse>, Integer, Hash)> request_production_environment_with_http_info(tenant_shop_id, opts)
+> <Array(<POSTContractsExaminationsResponse>, Integer, Hash)> request_production_environment_with_http_info(tenant_shop_id, shop_id, enable_immediate_use)
 
 ```ruby
 begin
   # テナントショップ 本番環境申請
-  data, status_code, headers = api_instance.request_production_environment_with_http_info(tenant_shop_id, opts)
+  data, status_code, headers = api_instance.request_production_environment_with_http_info(tenant_shop_id, shop_id, enable_immediate_use)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <POSTContractsExaminationsResponse>
@@ -1919,8 +2544,8 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **tenant_shop_id** | [**String**](.md) | &lt;span class&#x3D;\&quot;smallText color--red-400\&quot;&gt;※ プラットフォームのメインショップのみ指定可&lt;/span&gt;\\ テナントショップID。\\ 指定したテナントショップのものとしてファイルをアップロードします。  |  |
-| **shop_id** | [**String**](String.md) | ショップID  | [optional] |
-| **enable_immediate_use** | [**EnableImmediateUse**](EnableImmediateUse.md) | VISA/Mastercard即時利用をリクエストするかどうか\\\\ \\\\ 即時利用は以下の条件すべてに合致しないとき利用をリクエストできます。  - &#x60;本番環境申請情報.contract_info.site_published&#x60;が&#x60;true&#x60;でない（審査時点でWebサイトが用意されていない） - &#x60;本番環境申請情報.shop_info.deals_long_apply_content&#x60;が&#x60;true&#x60;である（審査に時間がかかる商材を取り扱うと表明している）  | [optional] |
+| **shop_id** | [**String**](String.md) | ショップID  |  |
+| **enable_immediate_use** | [**Boolean**](Boolean.md) | VISA/Mastercard即時利用をリクエストするかどうか  - &#x60;true&#x60;： 即時利用をリクエストする - &#x60;false&#x60;： 即時利用をリクエストしない  即時利用は以下の場合リクエストできません。  - &#x60;本番環境申請情報.contract_info.site_published&#x60;が&#x60;true&#x60;でない（審査時点でWebサイトが用意されていない） - &#x60;本番環境申請情報.shop_info.deals_long_apply_content&#x60;が&#x60;true&#x60;である（審査に時間がかかる商材を取り扱うと表明している）  |  |
 
 ### Return type
 
@@ -1960,9 +2585,9 @@ FincodeApiClient.configure do |config|
 end
 
 api_instance = FincodeApiClient::DefaultApi.new
-id = TODO # String | 指定したテナントショップに対して決済手段を追加申請します。。`Tenant-Shop-Id`ヘッダーも併せて指定してください。 
+id = TODO # String | 指定したテナントショップに対して決済手段を追加申請します。`Tenant-Shop-Id`ヘッダーも併せて指定してください。 
 tenant_shop_id = TODO # String | <span class=\"smallText color--red-400\">※ プラットフォームのメインショップのみ指定可</span>\\ テナントショップID。\\ 指定したテナントショップに対して決済手段を追加申請します。 
-provider = TODO # Array<PaymentProvider> | 追加対象決済手段\\\\ \\\\ 追加で申請する決済手段をリストで指定します。  - `PAYSLE`: コンビニ決済 - `PAYPAY`: PayPay - `APPLE_PAY_UC`: Apple Pay（VISA/Mastercard） - `APPLE_PAY_JCB`: Apple Pay（JCB/American Express/Diners Club） - `DIRECT_DEBIT`: 口座振替 - `VIRTUAL_ACCOUNT`: 銀行振込（バーチャル口座） 
+provider = TODO # Array<PaymentProvider> | 追加対象決済手段\\\\ \\\\ 追加で申請する決済手段をリストで指定します。  - `PAYSLE`: コンビニ決済 - `PAYPAY`: PayPay - `APPLE_PAY_UC`: Apple Pay（VISA/Mastercard- UCカード） - `APPLE_PAY_JCB_AMEX`: Apple Pay（JCB/American Express） - `GOOGLE_PAY_UC`: Google Pay（VISA/Mastercard - UCカード） - `GOOGLE_PAY_TFC`: Google Pay（VISA/Mastercard - トヨタファイナンス） - `GOOGLE_PAY_JCB_AMEX`: Google Pay（JCB/American Express） - `GOOGLE_PAY_DINERS`: Google Pay（Diners Club） - `DIRECT_DEBIT`: 口座振替 - `VIRTUAL_ACCOUNT`: 銀行振込（バーチャル口座） 
 
 begin
   # テナントショップ 決済手段追加申請
@@ -1995,9 +2620,9 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **id** | [**String**](.md) | 指定したテナントショップに対して決済手段を追加申請します。。&#x60;Tenant-Shop-Id&#x60;ヘッダーも併せて指定してください。  |  |
+| **id** | [**String**](.md) | 指定したテナントショップに対して決済手段を追加申請します。&#x60;Tenant-Shop-Id&#x60;ヘッダーも併せて指定してください。  |  |
 | **tenant_shop_id** | [**String**](.md) | &lt;span class&#x3D;\&quot;smallText color--red-400\&quot;&gt;※ プラットフォームのメインショップのみ指定可&lt;/span&gt;\\ テナントショップID。\\ 指定したテナントショップに対して決済手段を追加申請します。  |  |
-| **provider** | [**Array&lt;PaymentProvider&gt;**](Array.md) | 追加対象決済手段\\\\ \\\\ 追加で申請する決済手段をリストで指定します。  - &#x60;PAYSLE&#x60;: コンビニ決済 - &#x60;PAYPAY&#x60;: PayPay - &#x60;APPLE_PAY_UC&#x60;: Apple Pay（VISA/Mastercard） - &#x60;APPLE_PAY_JCB&#x60;: Apple Pay（JCB/American Express/Diners Club） - &#x60;DIRECT_DEBIT&#x60;: 口座振替 - &#x60;VIRTUAL_ACCOUNT&#x60;: 銀行振込（バーチャル口座）  |  |
+| **provider** | [**Array&lt;PaymentProvider&gt;**](Array.md) | 追加対象決済手段\\\\ \\\\ 追加で申請する決済手段をリストで指定します。  - &#x60;PAYSLE&#x60;: コンビニ決済 - &#x60;PAYPAY&#x60;: PayPay - &#x60;APPLE_PAY_UC&#x60;: Apple Pay（VISA/Mastercard- UCカード） - &#x60;APPLE_PAY_JCB_AMEX&#x60;: Apple Pay（JCB/American Express） - &#x60;GOOGLE_PAY_UC&#x60;: Google Pay（VISA/Mastercard - UCカード） - &#x60;GOOGLE_PAY_TFC&#x60;: Google Pay（VISA/Mastercard - トヨタファイナンス） - &#x60;GOOGLE_PAY_JCB_AMEX&#x60;: Google Pay（JCB/American Express） - &#x60;GOOGLE_PAY_DINERS&#x60;: Google Pay（Diners Club） - &#x60;DIRECT_DEBIT&#x60;: 口座振替 - &#x60;VIRTUAL_ACCOUNT&#x60;: 銀行振込（バーチャル口座）  |  |
 
 ### Return type
 
@@ -2037,7 +2662,7 @@ FincodeApiClient.configure do |config|
 end
 
 api_instance = FincodeApiClient::DefaultApi.new
-id = TODO # String | 売上入金情報のID
+id = TODO # String | 売上入金ID
 opts = {
   tenant_shop_id: TODO # String | <span class=\"smallText color--red-400\">※ プラットフォームのメインショップのみ指定可</span>\\ テナントショップID。\\ このテナントショップの売上入金情報のうち、指定したIDの売上入金情報を取得します。 
 }
@@ -2073,7 +2698,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **id** | [**String**](.md) | 売上入金情報のID |  |
+| **id** | [**String**](.md) | 売上入金ID |  |
 | **tenant_shop_id** | [**String**](.md) | &lt;span class&#x3D;\&quot;smallText color--red-400\&quot;&gt;※ プラットフォームのメインショップのみ指定可&lt;/span&gt;\\ テナントショップID。\\ このテナントショップの売上入金情報のうち、指定したIDの売上入金情報を取得します。  | [optional] |
 
 ### Return type
@@ -2114,7 +2739,7 @@ FincodeApiClient.configure do |config|
 end
 
 api_instance = FincodeApiClient::DefaultApi.new
-id = 'id_example' # String | 売上入金情報のID
+id = 'id_example' # String | 売上入金ID
 opts = {
   tenant_shop_id: TODO, # String | <span class=\"smallText color--red-400\">※ プラットフォームのメインショップのみ指定可</span>\\ テナントショップID。\\ このテナントショップの売上入金情報のうち、指定したIDの売上入金情報の売上入金詳細を取得します。 
   query: FincodeApiClient::PaginationQueryParams.new # PaginationQueryParams | 売上入金詳細の一覧取得において検索条件となるクエリパラメータ 
@@ -2151,7 +2776,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **id** | **String** | 売上入金情報のID |  |
+| **id** | **String** | 売上入金ID |  |
 | **tenant_shop_id** | [**String**](.md) | &lt;span class&#x3D;\&quot;smallText color--red-400\&quot;&gt;※ プラットフォームのメインショップのみ指定可&lt;/span&gt;\\ テナントショップID。\\ このテナントショップの売上入金情報のうち、指定したIDの売上入金情報の売上入金詳細を取得します。  | [optional] |
 | **query** | [**PaginationQueryParams**](.md) | 売上入金詳細の一覧取得において検索条件となるクエリパラメータ  | [optional] |
 
@@ -4364,6 +4989,85 @@ end
 - **Accept**: application/json
 
 
+## update_invoices
+
+> <InvoiceDetailUpdatingResponse> update_invoices(id, opts)
+
+インボイス 更新
+
+指定したIDを持つインボイス情報を更新します。\\ インボイス 発行APIを呼び出すまで請求は行われません。発行後は 回収困難フラグ、および 加盟店自由項目 のみが更新可能です。 
+
+### Examples
+
+```ruby
+require 'time'
+require 'fincode_api_client'
+# setup authorization
+FincodeApiClient.configure do |config|
+  # Configure Bearer authorization: Secret-Bearer-Auth
+  config.access_token = 'YOUR_BEARER_TOKEN'
+
+  # Configure HTTP basic authorization: Secret-Basic-Auth
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = FincodeApiClient::DefaultApi.new
+id = 'id_example' # String | インボイスID 
+opts = {
+  tenant_shop_id: TODO, # String | <span class=\"smallText color--red-400\">※ プラットフォームのメインショップのみ指定可</span>\\ テナントショップID。\\ 指定したテナントショップを販売主とした請求書情報を更新します。 
+  invoice_detail_updating_request: FincodeApiClient::InvoiceDetailUpdatingRequest.new # InvoiceDetailUpdatingRequest | 
+}
+
+begin
+  # インボイス 更新
+  result = api_instance.update_invoices(id, opts)
+  p result
+rescue FincodeApiClient::ApiError => e
+  puts "Error when calling DefaultApi->update_invoices: #{e}"
+end
+```
+
+#### Using the update_invoices_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<InvoiceDetailUpdatingResponse>, Integer, Hash)> update_invoices_with_http_info(id, opts)
+
+```ruby
+begin
+  # インボイス 更新
+  data, status_code, headers = api_instance.update_invoices_with_http_info(id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <InvoiceDetailUpdatingResponse>
+rescue FincodeApiClient::ApiError => e
+  puts "Error when calling DefaultApi->update_invoices_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **id** | **String** | インボイスID  |  |
+| **tenant_shop_id** | [**String**](.md) | &lt;span class&#x3D;\&quot;smallText color--red-400\&quot;&gt;※ プラットフォームのメインショップのみ指定可&lt;/span&gt;\\ テナントショップID。\\ 指定したテナントショップを販売主とした請求書情報を更新します。  | [optional] |
+| **invoice_detail_updating_request** | [**InvoiceDetailUpdatingRequest**](InvoiceDetailUpdatingRequest.md) |  | [optional] |
+
+### Return type
+
+[**InvoiceDetailUpdatingResponse**](InvoiceDetailUpdatingResponse.md)
+
+### Authorization
+
+[Secret-Bearer-Auth](../README.md#Secret-Bearer-Auth), [Secret-Basic-Auth](../README.md#Secret-Basic-Auth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## update_plan
 
 > <PlanUpdatingResponse> update_plan(id, opts)
@@ -4832,7 +5536,7 @@ end
 
 ## upload_examination_file
 
-> <ExaminationFileUploadingResponse> upload_examination_file(id, tenant_shop_id, opts)
+> <ExaminationFileUploadingResponse> upload_examination_file(id, tenant_shop_id, type, data)
 
 テナントショップ 審査ファイルアップロード
 
@@ -4856,14 +5560,12 @@ end
 api_instance = FincodeApiClient::DefaultApi.new
 id = TODO # String | 指定したテナントショップのものとしてファイルをアップロードします。`Tenant-Shop-Id`ヘッダーも併せて指定してください。 
 tenant_shop_id = TODO # String | <span class=\"smallText color--red-400\">※ プラットフォームのメインショップのみ指定可</span>\\ テナントショップID。\\ 指定したテナントショップのものとしてファイルをアップロードします。 
-opts = {
-  type: FincodeApiClient::ExaminationFileType::DRIVER_LICENSE_FRONT, # ExaminationFileType | 
-  data: TODO # Object | 審査ファイルデータ\\\\ \\\\ 画像ファイルをマルチパートアップロードするときはこの`data`フィールドに画像データを設定します。 
-}
+type = FincodeApiClient::ExaminationFileType::DRIVER_LICENSE_FRONT # ExaminationFileType | 
+data = TODO # Object | 審査ファイルデータ\\\\ \\\\ 画像ファイルをマルチパートアップロードするときはこの`data`フィールドに画像データを設定します。 
 
 begin
   # テナントショップ 審査ファイルアップロード
-  result = api_instance.upload_examination_file(id, tenant_shop_id, opts)
+  result = api_instance.upload_examination_file(id, tenant_shop_id, type, data)
   p result
 rescue FincodeApiClient::ApiError => e
   puts "Error when calling DefaultApi->upload_examination_file: #{e}"
@@ -4874,12 +5576,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<ExaminationFileUploadingResponse>, Integer, Hash)> upload_examination_file_with_http_info(id, tenant_shop_id, opts)
+> <Array(<ExaminationFileUploadingResponse>, Integer, Hash)> upload_examination_file_with_http_info(id, tenant_shop_id, type, data)
 
 ```ruby
 begin
   # テナントショップ 審査ファイルアップロード
-  data, status_code, headers = api_instance.upload_examination_file_with_http_info(id, tenant_shop_id, opts)
+  data, status_code, headers = api_instance.upload_examination_file_with_http_info(id, tenant_shop_id, type, data)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ExaminationFileUploadingResponse>
@@ -4894,8 +5596,8 @@ end
 | ---- | ---- | ----------- | ----- |
 | **id** | [**String**](.md) | 指定したテナントショップのものとしてファイルをアップロードします。&#x60;Tenant-Shop-Id&#x60;ヘッダーも併せて指定してください。  |  |
 | **tenant_shop_id** | [**String**](.md) | &lt;span class&#x3D;\&quot;smallText color--red-400\&quot;&gt;※ プラットフォームのメインショップのみ指定可&lt;/span&gt;\\ テナントショップID。\\ 指定したテナントショップのものとしてファイルをアップロードします。  |  |
-| **type** | [**ExaminationFileType**](ExaminationFileType.md) |  | [optional] |
-| **data** | [**Object**](Object.md) | 審査ファイルデータ\\\\ \\\\ 画像ファイルをマルチパートアップロードするときはこの&#x60;data&#x60;フィールドに画像データを設定します。  | [optional] |
+| **type** | [**ExaminationFileType**](ExaminationFileType.md) |  |  |
+| **data** | [**Object**](Object.md) | 審査ファイルデータ\\\\ \\\\ 画像ファイルをマルチパートアップロードするときはこの&#x60;data&#x60;フィールドに画像データを設定します。  |  |
 
 ### Return type
 

@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **pay_type** | [**Array&lt;PaymentSessionPayType&gt;**](PaymentSessionPayType.md) | 決済手段\\ この決済URL上で使用できる決済手段を複数指定します。  - &#x60;Card&#x60;：カード決済 - &#x60;Konbini&#x60;：コンビニ決済 - &#x60;Paypay&#x60;：PayPay  | [optional] |
+| **pay_type** | [**Array&lt;PaymentSessionPayType&gt;**](PaymentSessionPayType.md) | 決済手段\\ この決済URL上で使用できる決済手段を指定します。複数指定可能です。  - &#x60;Card&#x60;：カード決済 - &#x60;Konbini&#x60;：コンビニ決済 - &#x60;Paypay&#x60;：PayPay - &#x60;Virtualaccount&#x60;：バーチャル口座決済  | [optional] |
 | **amount** | **String** | 決済金額\\ 決済金額を指定します。\\ \\ 指定可能な金額の範囲は各決済手段ごとの制限事項に準じます。  |  |
 | **order_id** | **String** | オーダーID\\ このリダイレクト型決済URL上で決済後生成される決済情報のIDを予め指定できます。  | [optional] |
 | **tax** | **String** | 税送料\\ 税送料を指定します。\\ \\ 指定可能な金額の範囲は各決済手段ごとの制限事項に準じます。  | [optional] |

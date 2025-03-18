@@ -20,6 +20,8 @@
 | **bank_transfer_fee** | **Integer** | 振込手数料  | [optional] |
 | **total_amount** | **Integer** | この売上入金において精算の対象となった取引の総額。  | [optional] |
 | **fee_amount** | **Integer** | この売上入金において精算の対象となった取引にかかるfincodeへの手数料  | [optional] |
+| **taxable_fee_amount** | **Integer** | 課税対象手数料   | [optional] |
+| **nontaxable_fee_amount** | **Integer** | 非課税手数料  | [optional] |
 | **web_registration_fee_amount** | **Integer** | この売上入金の精算期間中に発生した振替口座のWeb登録手数料\\ ※ 口座振替のみ  | [optional] |
 | **tax_amount** | **Integer** | この売上入金において精算の対象となった取引にかかるfincodeへの手数料にかかる消費税  | [optional] |
 | **platform_fee_amount** | **Integer** | この売上入金において精算の対象となった取引にかかるプラットフォーム利用料\\ ※ テナントのみ  | [optional] |
@@ -51,6 +53,8 @@ instance = FincodeApiClient::AccountRetrievingResponse.new(
   bank_transfer_fee: 0,
   total_amount: 1000,
   fee_amount: 30,
+  taxable_fee_amount: 400,
+  nontaxable_fee_amount: 400,
   web_registration_fee_amount: 400,
   tax_amount: 2,
   platform_fee_amount: 0,

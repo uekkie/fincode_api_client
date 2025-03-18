@@ -17,6 +17,7 @@ FincodeApiClient::CreatePayment200Response.openapi_one_of
 #   :'PaymentApplePayCreatingResponse',
 #   :'PaymentCardCreatingResponse',
 #   :'PaymentDirectDebitCreatingResponse',
+#   :'PaymentGooglePayCreatingResponse',
 #   :'PaymentKonbiniCreatingResponse',
 #   :'PaymentPayPayCreatingResponse',
 #   :'PaymentVirtualAccountCreatingResponse'
@@ -50,6 +51,7 @@ FincodeApiClient::CreatePayment200Response.build(data_that_doesnt_match)
 - `PaymentApplePayCreatingResponse`
 - `PaymentCardCreatingResponse`
 - `PaymentDirectDebitCreatingResponse`
+- `PaymentGooglePayCreatingResponse`
 - `PaymentKonbiniCreatingResponse`
 - `PaymentPayPayCreatingResponse`
 - `PaymentVirtualAccountCreatingResponse`

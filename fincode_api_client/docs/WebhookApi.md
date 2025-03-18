@@ -17,6 +17,7 @@ All URIs are relative to *https://api.fincode.jp*
 | [**receive_webhook_of_direct_debit_payment**](WebhookApi.md#receive_webhook_of_direct_debit_payment) | **POST** /your-endpoint-on-directdebit-payment | 口座振替 |
 | [**receive_webhook_of_direct_debit_recurring_batch**](WebhookApi.md#receive_webhook_of_direct_debit_recurring_batch) | **POST** /your-endpoint-on-directdebit-recurring-batch | サブスクリプション課金（口座振替） |
 | [**receive_webhook_of_direct_debit_subscription**](WebhookApi.md#receive_webhook_of_direct_debit_subscription) | **POST** /your-endpoint-on-directdebit-subscription | サブスクリプション（口座振替） |
+| [**receive_webhook_of_google_pay_payment**](WebhookApi.md#receive_webhook_of_google_pay_payment) | **POST** /your-endpoint-on-googlepay-payment | GooglePay |
 | [**receive_webhook_of_konbini_payment**](WebhookApi.md#receive_webhook_of_konbini_payment) | **POST** /your-endpoint-on-konbini-payment | コンビニ決済 |
 | [**receive_webhook_of_pay_pay_payment**](WebhookApi.md#receive_webhook_of_pay_pay_payment) | **POST** /your-endpoint-on-paypay-payment | PayPay |
 | [**receive_webhook_of_registering_card_payment_bulk**](WebhookApi.md#receive_webhook_of_registering_card_payment_bulk) | **POST** /your-endpoint-on-card-payment-bulk-regist | 一括決済（カード決済） |
@@ -990,6 +991,81 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **webhook_event_subscription_direct_debit** | [**WebhookEventSubscriptionDirectDebit**](WebhookEventSubscriptionDirectDebit.md) |  | [optional] |
+
+### Return type
+
+[**WebhookResponse**](WebhookResponse.md)
+
+### Authorization
+
+[Secret-Bearer-Auth](../README.md#Secret-Bearer-Auth), [Secret-Basic-Auth](../README.md#Secret-Basic-Auth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json, text/plain
+
+
+## receive_webhook_of_google_pay_payment
+
+> <WebhookResponse> receive_webhook_of_google_pay_payment(opts)
+
+GooglePay
+
+GooglePayに関するイベント（`payments.googlepay.*`）で通知されるリクエストのボディの仕様です。 
+
+### Examples
+
+```ruby
+require 'time'
+require 'fincode_api_client'
+# setup authorization
+FincodeApiClient.configure do |config|
+  # Configure Bearer authorization: Secret-Bearer-Auth
+  config.access_token = 'YOUR_BEARER_TOKEN'
+
+  # Configure HTTP basic authorization: Secret-Basic-Auth
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = FincodeApiClient::WebhookApi.new
+opts = {
+  webhook_event_payment_google_pay: FincodeApiClient::WebhookEventPaymentGooglePay.new # WebhookEventPaymentGooglePay | 
+}
+
+begin
+  # GooglePay
+  result = api_instance.receive_webhook_of_google_pay_payment(opts)
+  p result
+rescue FincodeApiClient::ApiError => e
+  puts "Error when calling WebhookApi->receive_webhook_of_google_pay_payment: #{e}"
+end
+```
+
+#### Using the receive_webhook_of_google_pay_payment_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<WebhookResponse>, Integer, Hash)> receive_webhook_of_google_pay_payment_with_http_info(opts)
+
+```ruby
+begin
+  # GooglePay
+  data, status_code, headers = api_instance.receive_webhook_of_google_pay_payment_with_http_info(opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <WebhookResponse>
+rescue FincodeApiClient::ApiError => e
+  puts "Error when calling WebhookApi->receive_webhook_of_google_pay_payment_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **webhook_event_payment_google_pay** | [**WebhookEventPaymentGooglePay**](WebhookEventPaymentGooglePay.md) |  | [optional] |
 
 ### Return type
 

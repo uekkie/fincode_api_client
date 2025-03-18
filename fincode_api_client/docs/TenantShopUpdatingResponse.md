@@ -15,7 +15,7 @@
 | **platform_rate_list** | [**Array&lt;PlatformRateConfig&gt;**](PlatformRateConfig.md) | 決済手段ごとに存在するプラットフォーム手数料設定のリスト  | [optional] |
 | **send_mail_address** | **String** | 通知先メールアドレス  | [optional] |
 | **shop_mail_address** | **String** | ショップメールアドレス  | [optional] |
-| **log_keep_days** | **String** | ログ保存日数  | [optional] |
+| **log_keep_days** | **Integer** | ログ保存日数  | [optional] |
 | **api_version** | **String** | APIバージョン  | [optional] |
 | **api_key_display_flag** | **String** | 管理画面におけるAPIキー表示フラグ。  - &#x60;0&#x60;: 表示しない - &#x60;1&#x60;: 表示する  | [optional] |
 | **created** | **String** | 作成日\\ 形式：&#x60;yyyy/MM/dd HH:mm:ss.SSS&#x60;  | [optional] |
