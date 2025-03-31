@@ -507,11 +507,11 @@ module FincodeApiClient
       #   fail ArgumentError, 'access_id cannot be nil'
       # end
 
-      if access_id.to_s.length > 24
+      if !access_id.nil? && access_id.to_s.length > 24
         fail ArgumentError, 'invalid value for "access_id", the character length must be smaller than or equal to 24.'
       end
 
-      if access_id.to_s.length < 24
+      if !access_id.nil? && access_id.to_s.length < 24
         fail ArgumentError, 'invalid value for "access_id", the character length must be great than or equal to 24.'
       end
 
