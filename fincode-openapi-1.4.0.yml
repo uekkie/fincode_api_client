@@ -21105,6 +21105,12 @@ components:
           description: |
             サブスクリプションID\
             この決済情報がサブスクリプションにより生成されたものである場合、このフィールドにサブスクリプションIDが設定されます。
+        bill_id:
+          type: string
+          nullable: true
+          description: |
+            請求ID\
+            この決済に関連付けられた請求IDです。
         tds_type:
           nullable: true
           allOf:
