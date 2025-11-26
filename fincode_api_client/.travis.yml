@@ -8,4 +8,4 @@ script:
   - bundle install --path vendor/bundle
   - bundle exec rspec
   - gem build fincode_api_client.gemspec
-  - gem install ./fincode_api_client-1.0.0.gem
+  - gem install ./fincode_api_client-1.4.1.gem
