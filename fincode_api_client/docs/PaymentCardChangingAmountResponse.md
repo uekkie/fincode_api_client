@@ -32,6 +32,8 @@
 | **pay_times** | [**CardPayTimesResponse**](CardPayTimesResponse.md) |  | [optional] |
 | **bulk_payment_id** | **String** | 一括決済ID\\ この決済情報が一括決済機能を用いて登録されたものである場合、このフィールドに一括決済IDが設定されます。  | [optional] |
 | **subscription_id** | **String** | サブスクリプションID\\ この決済情報がサブスクリプションにより生成されたものである場合、このフィールドにサブスクリプションIDが設定されます。  | [optional] |
+| **bill_id** | **String** | 請求ID\\ この決済に関連付けられた請求IDです。  | [optional] |
+| **payment_method_id** | **String** | 決済手段ID\\ この決済に使用された決済手段のIDです。  | [optional] |
 | **tds_type** | [**TdsType**](TdsType.md) |  | [optional] |
 | **tds2_type** | [**Tds2Type**](Tds2Type.md) |  | [optional] |
 | **tds2_ret_url** | **String** | 3Dセキュア認証における戻りURL   3Dセキュア認証に必要なAPIの呼び出しやコールバック処理をすべて加盟店で実装する場合のみ使用します。   fincodeは3Dセキュア認証処理の過程において、このURLにPOSTメソッド、&#x60;Content-Type:application/x-www-form-urlencoded&#x60;で値を返します。    - &#x60;MD&#x60;: クエリパラメータとして返されます。 &#x60;access_id&#x60;と等しい値です。 - &#x60;event&#x60;: フォームデータとして返されます。この値を判定し後続の処理を分岐します。 - &#x60;param&#x60;: フォームデータとして返されます。[3Dセキュア認証API](https://docs.fincode.jp/api#tag/ThreeDSecureecure/executeThreeDSecureecureAuth)で使用します。 - &#x60;requestorTransId&#x60;: フォームデータとして返されます。（後続処理では使用しません。）  返却されるそれぞれの値についての[詳細はDocsで確認](https://docs.fincode.jp/payment/fraud_protection/3d_secure_2)できます。  | [optional] |
@@ -82,6 +84,8 @@ instance = FincodeApiClient::PaymentCardChangingAmountResponse.new(
   pay_times: null,
   bulk_payment_id: null,
   subscription_id: su_*********************,
+  bill_id: null,
+  payment_method_id: null,
   tds_type: null,
   tds2_type: null,
   tds2_ret_url: https://your-server.example.com/3ds2-return,
