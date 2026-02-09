@@ -21,7 +21,7 @@
 | **amount** | **String** | 利用金額  | [optional] |
 | **tax** | **String** | 税送料  | [optional] |
 | **konbini_code** | [**KonbiniCode**](KonbiniCode.md) |  | [optional] |
-| **konbini_store_code** | **Object** |  | [optional] |
+| **konbini_store_code** | **Object** | コンビニ店舗コード\\ コンビニ事業者ごとに独自体系の店舗コードです。  | [optional] |
 | **order_serial** | **String** | 注文管理ID  | [optional] |
 | **invoice_id** | **String** | 請求ID  | [optional] |
 | **error_code** | **String** | この決済において発生したエラーのうち、一番最新のエラーのエラーコードです。\\ [各エラーコードの定義はこちらを参照](https://docs.fincode.jp/develop_support/error)して確認できます。  | [optional] |

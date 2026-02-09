@@ -482,7 +482,6 @@ lib/fincode_api_client/api/class3_d_api.rb
 lib/fincode_api_client/api/webhook_api.rb
 lib/fincode_api_client/api_client.rb
 lib/fincode_api_client/api_error.rb
-lib/fincode_api_client/api_model_base.rb
 lib/fincode_api_client/configuration.rb
 lib/fincode_api_client/models/account.rb
 lib/fincode_api_client/models/account_detail.rb
