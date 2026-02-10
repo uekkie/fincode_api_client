@@ -11,5 +11,5 @@ Generator version: 7.9.0
 =end
 
 module FincodeApiClient
-  VERSION = '1.4.2'
+  VERSION = '1.4.3'
 end
