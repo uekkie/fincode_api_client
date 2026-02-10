@@ -120,6 +120,7 @@ module FincodeApiClient
         :'tds_type',
         :'tds2_type',
         :'merchant_name',
+        :'access_id',
         :'acs'
       ])
     end
@@ -347,15 +348,11 @@ module FincodeApiClient
     # Custom attribute writer method with validation
     # @param [Object] access_id Value to be assigned
     def access_id=(access_id)
-      if access_id.nil?
-        fail ArgumentError, 'access_id cannot be nil'
-      end
-
-      if access_id.to_s.length > 24
+      if !access_id.nil? && access_id.to_s.length > 24
         fail ArgumentError, 'invalid value for "access_id", the character length must be smaller than or equal to 24.'
       end
 
-      if access_id.to_s.length < 24
+      if !access_id.nil? && access_id.to_s.length < 24
         fail ArgumentError, 'invalid value for "access_id", the character length must be great than or equal to 24.'
       end
 

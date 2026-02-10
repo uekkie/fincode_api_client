@@ -19594,6 +19594,7 @@ components:
               allOf:
                 - $ref: '#/components/schemas/td_tenant_name'
             access_id:
+              nullable: true
               allOf:
                 - $ref: '#/components/schemas/access_id'
               description: |
