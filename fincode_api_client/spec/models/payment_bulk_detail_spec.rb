@@ -46,8 +46,20 @@ describe FincodeApiClient::PaymentBulkDetail do
   end
 
   describe 'test attribute "access_id"' do
-    it 'should work' do
-      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+    it 'nilを許容する（FAILEDステータスの場合にnilになりうる）' do
+      expect { instance.access_id = nil }.not_to raise_error
+    end
+
+    it '24文字は正常' do
+      expect { instance.access_id = 'a' * 24 }.not_to raise_error
+    end
+
+    it '23文字はArgumentError' do
+      expect { instance.access_id = 'a' * 23 }.to raise_error(ArgumentError)
+    end
+
+    it '25文字はArgumentError' do
+      expect { instance.access_id = 'a' * 25 }.to raise_error(ArgumentError)
     end
   end
 

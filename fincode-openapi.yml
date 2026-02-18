@@ -28194,6 +28194,7 @@ components:
         access_id:
           allOf:
             - $ref: '#/components/schemas/access_id'
+          nullable: true
         job_code:
           allOf:
             - $ref: '#/components/schemas/CardPaymentJobCode'
