@@ -19594,6 +19594,7 @@ components:
               allOf:
                 - $ref: '#/components/schemas/td_tenant_name'
             access_id:
+              nullable: true
               allOf:
                 - $ref: '#/components/schemas/access_id'
               description: |
@@ -21106,6 +21107,20 @@ components:
           description: |
             サブスクリプションID\
             この決済情報がサブスクリプションにより生成されたものである場合、このフィールドにサブスクリプションIDが設定されます。
+        bill_id:
+          type: string
+          nullable: true
+          description: |
+            請求ID\
+            この決済に関連付けられた請求IDです。
+        payment_method_id:
+          type: string
+          nullable: true
+          minLength: 25
+          maxLength: 25
+          description: |
+            決済手段ID\
+            この決済に使用された決済手段のIDです。
         tds_type:
           nullable: true
           allOf:
@@ -27577,7 +27592,7 @@ components:
       allOf:
         - $ref: '#/components/schemas/Subscription'
     properties-pay_type:
-      nullable: false
+      type: string
       allOf:
         - $ref: '#/components/schemas/SubscriptionPayType'
     SubscriptionResult.ListRetrieving.QueryParams:
@@ -28179,6 +28194,7 @@ components:
         access_id:
           allOf:
             - $ref: '#/components/schemas/access_id'
+          nullable: true
         job_code:
           allOf:
             - $ref: '#/components/schemas/CardPaymentJobCode'

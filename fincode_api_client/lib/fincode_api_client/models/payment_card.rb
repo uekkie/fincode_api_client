@@ -50,6 +50,12 @@ module FincodeApiClient
     # サブスクリプションID\\ この決済情報がサブスクリプションにより生成されたものである場合、このフィールドにサブスクリプションIDが設定されます。 
     attr_accessor :subscription_id
 
+    # 請求ID\\ この決済に関連付けられた請求IDです。 
+    attr_accessor :bill_id
+
+    # 決済手段ID\\ この決済に使用された決済手段のIDです。 
+    attr_accessor :payment_method_id
+
     attr_accessor :tds_type
 
     attr_accessor :tds2_type
@@ -130,6 +136,8 @@ module FincodeApiClient
         :'pay_times' => :'pay_times',
         :'bulk_payment_id' => :'bulk_payment_id',
         :'subscription_id' => :'subscription_id',
+        :'bill_id' => :'bill_id',
+        :'payment_method_id' => :'payment_method_id',
         :'tds_type' => :'tds_type',
         :'tds2_type' => :'tds2_type',
         :'tds2_ret_url' => :'tds2_ret_url',
@@ -169,6 +177,8 @@ module FincodeApiClient
         :'pay_times' => :'CardPayTimesResponse',
         :'bulk_payment_id' => :'String',
         :'subscription_id' => :'String',
+        :'bill_id' => :'String',
+        :'payment_method_id' => :'String',
         :'tds_type' => :'TdsType',
         :'tds2_type' => :'Tds2Type',
         :'tds2_ret_url' => :'String',
@@ -199,6 +209,8 @@ module FincodeApiClient
         :'pay_times',
         :'bulk_payment_id',
         :'subscription_id',
+        :'bill_id',
+        :'payment_method_id',
         :'tds_type',
         :'tds2_type',
         :'tds2_ret_url',
@@ -282,6 +294,14 @@ module FincodeApiClient
 
       if attributes.key?(:'subscription_id')
         self.subscription_id = attributes[:'subscription_id']
+      end
+
+      if attributes.key?(:'bill_id')
+        self.bill_id = attributes[:'bill_id']
+      end
+
+      if attributes.key?(:'payment_method_id')
+        self.payment_method_id = attributes[:'payment_method_id']
       end
 
       if attributes.key?(:'tds_type')
@@ -407,6 +427,14 @@ module FincodeApiClient
         invalid_properties.push('invalid value for "subscription_id", the character length must be great than or equal to 1.')
       end
 
+      if !@payment_method_id.nil? && @payment_method_id.to_s.length > 25
+        invalid_properties.push('invalid value for "payment_method_id", the character length must be smaller than or equal to 25.')
+      end
+
+      if !@payment_method_id.nil? && @payment_method_id.to_s.length < 25
+        invalid_properties.push('invalid value for "payment_method_id", the character length must be great than or equal to 25.')
+      end
+
       if !@tds2_ret_url.nil? && @tds2_ret_url.to_s.length > 256
         invalid_properties.push('invalid value for "tds2_ret_url", the character length must be smaller than or equal to 256.')
       end
@@ -492,6 +520,8 @@ module FincodeApiClient
       return false if !@bulk_payment_id.nil? && @bulk_payment_id.to_s.length < 25
       return false if !@subscription_id.nil? && @subscription_id.to_s.length > 25
       return false if !@subscription_id.nil? && @subscription_id.to_s.length < 1
+      return false if !@payment_method_id.nil? && @payment_method_id.to_s.length > 25
+      return false if !@payment_method_id.nil? && @payment_method_id.to_s.length < 25
       return false if !@tds2_ret_url.nil? && @tds2_ret_url.to_s.length > 256
       return false if !@return_url.nil? && @return_url.to_s.length > 256
       return false if !@return_url_on_failure.nil? && @return_url_on_failure.to_s.length > 256
@@ -608,6 +638,20 @@ module FincodeApiClient
       end
 
       @subscription_id = subscription_id
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] payment_method_id Value to be assigned
+    def payment_method_id=(payment_method_id)
+      if !payment_method_id.nil? && payment_method_id.to_s.length > 25
+        fail ArgumentError, 'invalid value for "payment_method_id", the character length must be smaller than or equal to 25.'
+      end
+
+      if !payment_method_id.nil? && payment_method_id.to_s.length < 25
+        fail ArgumentError, 'invalid value for "payment_method_id", the character length must be great than or equal to 25.'
+      end
+
+      @payment_method_id = payment_method_id
     end
 
     # Custom attribute writer method with validation
@@ -752,6 +796,8 @@ module FincodeApiClient
           pay_times == o.pay_times &&
           bulk_payment_id == o.bulk_payment_id &&
           subscription_id == o.subscription_id &&
+          bill_id == o.bill_id &&
+          payment_method_id == o.payment_method_id &&
           tds_type == o.tds_type &&
           tds2_type == o.tds2_type &&
           tds2_ret_url == o.tds2_ret_url &&
@@ -778,7 +824,7 @@ module FincodeApiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [pay_type, job_code, status, card_id, brand, card_no, expire, holder_name, card_no_hash, method, pay_times, bulk_payment_id, subscription_id, tds_type, tds2_type, tds2_ret_url, return_url, return_url_on_failure, tds2_status, merchant_name, forward, issuer, transaction_id, approve, auth_max_date, item_code, send_url, acs].hash
+      [pay_type, job_code, status, card_id, brand, card_no, expire, holder_name, card_no_hash, method, pay_times, bulk_payment_id, subscription_id, bill_id, payment_method_id, tds_type, tds2_type, tds2_ret_url, return_url, return_url_on_failure, tds2_status, merchant_name, forward, issuer, transaction_id, approve, auth_max_date, item_code, send_url, acs].hash
     end
 
     # Builds the object from hash
